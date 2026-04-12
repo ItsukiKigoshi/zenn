@@ -29,7 +29,7 @@ published_at: "2026-03-11 11:44"
     - キーボード: JIS配列
     - おじいちゃんの形見なので発売から11年以上経った今でも大事に使っています．
 - オペレーティングシステム: [Fedora Linux 43 (Workstation Edition)](https://fedoraproject.org/workstation/)
-	- macOSがアップデートされなくなり，v20系以上のNode.jsが動かなくなったのでLinuxに切り替えました．初期設定時にBroadcom製のWi-Fiを認識させるのが面倒だった点を除いて，FedoraではこれまでMacでやっていたことが驚くほどシンプルに実現できています．
+	- macOSがアップデートされなくなり，v20系以上のNode.jsが動かなくなったのでLinuxに切り替えました．初期設定時にBroadcom製のWi-Fiチップにドライバを当てるのが面倒だった点を除いて，FedoraではこれまでMacでやっていたことが驚くほどシンプルに実現できています．
 
 ## 導入方法
 
