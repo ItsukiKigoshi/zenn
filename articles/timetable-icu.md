@@ -1,5 +1,5 @@
 ---
-title: ICUの履修計画アプリをAstro + Cloudflare Workers + D1でつくりました
+title: 国際基督教大学の履修計画アプリをAstro + Cloudflare Workers + D1でつくりました
 emoji: 📚
 type: tech
 topics:
