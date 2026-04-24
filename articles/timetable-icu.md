@@ -91,7 +91,7 @@ https://timetable.icu/
 - [Bun](https://bun.sh/)（おまけ）: JSランタイム
 - [Coudflare Registrar](https://www.cloudflare.com/products/registrar/)（おまけ）: ドメイン登録事業者
 ### Why Astro?
-- ずっとコードの手入れをしてこなかった旧プロジェクト（Next.js）を忘れてAstroに出来たのは良かった．
+- ずっとコードの手入れをしてこなかった旧プロジェクト（Next.js）を忘れて，Astroでコードを一新できたのは良かった．
 	- 開発者として新たなことが学べ，コード負債を一掃できる．
 - Webアプリという性質上Next.jsでSPAという選択肢もよかったのだろうが，Astroに乗り換えることで商用有料で課金最低額が20\$のVercelではなく，課金最低額が5\$で無料枠が太っ腹なCloudflareが現実的な選択肢になった点は良かった．
 - [Landing Page](https://timetable.icu/)などJavaScriptが不要なページの表示速度がultra fast（PageSpeedInsights>=98とか）なのはおそらくAstroのおかげ．
