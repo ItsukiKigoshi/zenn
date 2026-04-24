@@ -23,6 +23,8 @@ https://timetable.icu/
     - 大学アカウントでログインすると，デバイス間で最新の時間割を同期できます．
 3. 日英両言語対応
 
+----
+
 以前にも[似たようなアプリ](https://itsukikigoshi.github.io/icu-catalogue/)をつくりましたが，当時データ保存は[localStorage](https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage)での管理に留まり，また，ICU独自の[授業同士が食い込む時間割](https://www.icu.ac.jp/news/2406181000.html)の表示にも対応していませんでした．
 
 今回製作したWebアプリケーションではコース検索とICUの独自スケジュール表示に加え，デバイス間同期などの機能も実装しましたのでその開発の全体像をお見せします．
