@@ -11,7 +11,6 @@ topics:
 published: true
 published_at: "2025-02-25 14:48"
 ---
-
 ### Background
 iPhone, iPad「カレンダー」アプリでは，Google Calendar上で登録した「委任」（Delegation）カレンダーが表示されません．
 
