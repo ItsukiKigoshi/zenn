@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "FedoraをMacBook Pro (13 inch, Mid 2014)でデュアルブート"
 emoji: "👏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: []
