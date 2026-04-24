@@ -10,7 +10,7 @@ topics:
   - 大学
 published: true
 ---
-## " [What's This?](https://www.youtube.com/watch?v=o36k8upu3Ks) ": 「ICUのじかんわり」
+## [What's This?](https://www.youtube.com/watch?v=o36k8upu3Ks): 「ICUのじかんわり」
 私が通う国際基督教大学（ICU; 東京・三鷹）の非公式履修計画/時間割アプリをつくりました．
 
 https://timetable.icu/
