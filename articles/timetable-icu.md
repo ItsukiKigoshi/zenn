@@ -113,7 +113,7 @@ https://timetable.icu/
 - Vercelを以前の時間割アプリプロジェクトで使ったことがあって，Vercel有料プランが20\$/月スタートだった点が私のお財布には痛く，殆ど儲からないアプリに運用費をかけたくなかったのでもう少し柔軟なデプロイ先を探していた．
 - あと，純粋にCloudflareを触ってみたかった．
 	- あらゆる場所で目にする[CAPTCHA代替技術](https://www.cloudflare.com/application-services/products/turnstile/)を生んだり，[Hono](https://hono.dev/)開発者が所属している会社という認識だった．
-	- GoogleのreCAPTCHAに関しては，なぜ私たちが無給でWaymoの画像認識精度向上をさせられている（かもしらない，Googleは公式に認めていないので推測に過ぎない）のか分からない．
+	- GoogleのreCAPTCHAに関しては，なぜ私たちが無給でWaymoの画像認識精度向上をさせられている（かもしれない，Googleは公式に認めていないので推測に過ぎない）のか分からない．
 		- OpenAIがアフリカの英語話者にGPTの訓練を行わせたために当地の英語のくせChatGPTが残った\[[出典](https://www.nikkei.com/article/DGXZQOUC190OK0Z10C24A5000000/)\]という話があったが，それでも彼らは給料をもらっていたはずだ．それをなぜGoogleに対しては無料で私たちが？いつもあの横断歩道を選ばされる時にそのことを思うと嫌な気分になる．
 		- しかし，[よく分からん記号がどの角度で置いてあるかを選ぶあの難しすぎる認証](https://blog.lycolia.info/0212)に比べればよっぽどマシかも知れない．もはや知能レベルだけで人間を見分けるのは殆ど不可能なのではないかしら．
 ![Cloudflare本社 in San Francisco|471](https://static.zenn.studio/user-upload/973f9523ab1c-20260424.webp =500x)
