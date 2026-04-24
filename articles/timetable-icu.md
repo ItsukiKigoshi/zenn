@@ -1,11 +1,13 @@
 ---
 title: ICUの履修計画アプリをAstro + Cloudflare Workers + D1でつくりました
 emoji: 📚
-type: idea
+type: tech
 topics:
   - Astro
   - Cloudflare
   - cloudflareworkers
+  - d1
+  - 大学
 published: false
 ---
 ## ["What's This?"](https://www.youtube.com/watch?v=o36k8upu3Ks)
@@ -14,18 +16,18 @@ published: false
 https://timetable.icu/
 
 ### できること
-1. 日英両言語対応: 留学生が多いので必須機能でした．
+1. 日英両言語対応
 2. 全コースを検索
 	- 大学が一般公開しているシラバスデータなどから構築された授業情報を表示・検索できます．
 3. 時間割の表示・同期
 	- ICU独自のスケジュールに対応した時間割が作れるほか，同時間帯に複数の授業を入れられるので迷っているコースらを吟味することが出来ます．
 	- 大学アカウントでログインすると，デバイス間で最新の時間割を同期できます．
 
-以前にも[似たようなアプリ](https://itsukikigoshi.github.io/icu-catalogue/)をつくりましたが，当時データ保存は[localStorage](https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage)での管理に留まり，また，ICU独自の[授業時限同士が食い込む時間割](https://www.icu.ac.jp/news/2406181000.html)の表示にも対応していませんでした．
+以前にも[似たようなアプリ](https://itsukikigoshi.github.io/icu-catalogue/)をつくりましたが，当時データ保存は[localStorage](https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage)での管理に留まり，また，ICU独自の[授業同士が食い込む時間割](https://www.icu.ac.jp/news/2406181000.html)の表示にも対応していませんでした．
 
-今回製作したWebアプリケーションではコース検索とICU独自の時間割表示に加え，デバイス間同期などの機能も実装しましたのでその開発の全体像をお見せします．
+今回製作したWebアプリケーションではコース検索とICUの独自スケジュール表示に加え，デバイス間同期などの機能も実装しましたのでその開発の全体像をお見せします．
 
-本アプリのソースコードは[こちら](https://gitlab.com/ItsukiKigoshi/timetable.icu)で公開しており，どなたでも[問題点を報告](https://gitlab.com/ItsukiKigoshi/timetable.icu)できます．主に学内者からのコントリビュートを想定しておりますが，それ以外の方でもお気づきの点がありましたらお知らせ願えますと幸いです．
+本アプリのソースコードは[こちら](https://gitlab.com/ItsukiKigoshi/timetable.icu)で公開しており，どなたでも[問題を報告](https://gitlab.com/ItsukiKigoshi/timetable.icu)できます．主に学内者からのコントリビュートを想定しておりますが，それ以外の方でもお気づきの点がありましたらお知らせ願えますと幸いです．
 ## なぜ自作?
 既に世の中に数多ある時間割アプリの自作を決意するに至った理由は以下に主に3つです．
 1. **友人からのリクエスト**
@@ -54,9 +56,9 @@ https://timetable.icu/
 | ---- | ---- | ---- | ---- |----  |
 | 開発元 | Kohshi Yamaguchi | 非公開| リクルート | Penmark |
 | 動作環境 | iOS | iOS, Web| iOS, Android| iOS, Android |
-| 特徴 | ICU内で目測で圧倒的なシェア（だった）．2026年度版には今のところ更新されていない． | 2026年初頭に公開されたサービス．アプリ内で表示されるユーザ数は90人超．大学が数千人規模であることを考えると既にある程度ののシェアを持っている．| リクルートIDログインが必須で規約に求人目的でのデータ利用が明記されている．個人的にはちょっと嫌かも．時間割見るのに私のPontaポイントの残高を知られる必要なくない？ | 公式シラバスからのデータ取得を謳っている．この4つの中で唯一同時間帯への複数授業追加に対応 |
+| 特徴 | ICU内の目測で圧倒的なシェア（だった）．2026年度版には今のところ更新されていない． | 2026年初頭に公開されたサービス．アプリ内で表示されるユーザ数は90人超．大学が数千人規模であることを考えると既にある程度ののシェアを持っている．| リクルートIDログインが必須で規約に求人目的でのデータ利用が明記されている．個人的にはちょっと嫌かも．時間割見るのに私のPontaポイントの残高を知られる必要なくない？ | 公式シラバスからのデータ取得を謳っている．この4つの中で唯一同時間帯への複数授業追加に対応 |
 |ICU独自スケジュール|O|O|X|X|
-|技術スタック|Swift|VanillaJS(?), Express, Render \(APIのレスポンスヘッダーより推測)|不明|Flutter+Firebase\[[出典](https://note.com/penmarkjp/n/n64919ce034b1)\]|
+|技術スタック|Swift|VanillaJS(?), Express, Render \[APIレスポンスヘッダーより推測\]|不明|Flutter+Firebase\[[出典](https://note.com/penmarkjp/n/n64919ce034b1)\]|
 :::
 ::: details コラム2: ICUの時間割アプリ今昔
 - 1代目「ICUTTABLE」
@@ -78,15 +80,16 @@ https://timetable.icu/
     - [Twitter](https://x.com/timetable4icu)
 あくまでも独自調査に基づくものです．「○代目」も独自調査に基づき，網羅性は担保しません．
 :::
-## 技術選定
+## 👀Take a Closer Look at 技術選定
 ### 技術構成まとめ
-- Astro 
-	- React
-- Cloudflare Workers+D1 (SQLite)
-- DrizzleORM
-- Bun（おまけ）
-- Coudflare Registrar（おまけ）		
-### Why [Astro](https://astro.build/)?
+- [Astro](https://astro.build/) : フロントエンド
+	- [React](https://react.dev/) (詳述しない)
+- [Cloudflare Workers](https://www.cloudflare.com/ja-jp/developer-platform/products/workers/)+[D1](https://www.cloudflare.com/ja-jp/developer-platform/products/d1/) (SQLite): サーバ/DB
+- [DrizzleORM](https://orm.drizzle.team/): ORM
+- [BetterAuth](https://better-auth.com/): 認証
+- [Bun](https://bun.sh/)（おまけ）: JSランタイム
+- Coudflare Registrar（おまけ）: ドメイン登録業者	
+### Why Astro?
 - ずっとコードの手入れをしてこなかった旧プロジェクト（Next.js）は忘れてAstroに出来たのは良かった．
 	- 開発者として新たなことが学べ，コード負債を一掃できる．
 - Webアプリという性質上Next.jsでSPAという選択肢もよかったのだろうが，Astroに乗り換えることで商用有料で課金最低額が20\$のVercelではなく，課金最低額が5\$で無料枠が太っ腹なCloudflareが現実的な選択肢になった点は良かった．
@@ -95,39 +98,39 @@ https://timetable.icu/
 	- JS不要なところでJSXを書く必要がない．
 - 難点は/timetable, /exploreといったページ切り替えで毎回ロードが発生すること．
 	- 各ページの読込速度が短いので通信状況が良ければそこまで気にならない．
-- スタイリングには[Tailwind CSS](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/)を使いました．
-	- LLMが出力したコードには大量の余計なスタイリングと絵文字が付いてきます．
+- スタイリングには[Tailwind CSS](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/)を使った．
+	- LLMが出力したコードには大量の余計なスタイリングと絵文字が付いてくる．
 		- 影とか，ボーダーとか，彼らは他の要素の統一なんて気にせずスタイリング付けてくる．
-		- 絵文字は，文字コードでアイコンらしい図形が出力されるので彼らはよく出力しますが，これもAIらしさを増すだけです．私は[Lucide Icons](https://lucide.dev/)を使いました．美しいアイコンの作者の皆様に感謝です．もちろん絵文字も美しいです，ただ，AIがそれを乱用しているというだけで．
-	- AIらしさは作品の魅力を損なうだけです．たとえパッと見が良くてもそこに人間の手が加わっていないと分かると私はとても幻滅します．チェーン店のメニューに監修したシェフの顔が描いてあるのも，イトーヨーカドーの野菜に生産者の顔を載せるのも，人間らしさが信頼感を生むというコミュニケーションの一要素ではないでしょうか？
-	- だからこそ私はDaisyUIを用いることで全体の配色と各コンポーネントの統一感を持たせました．
-	- また，キャンパスで撮影された写真や生産者の顔をランディングページに載せました．これこそが現実世界にいる私たちの特権です！
-		- 彼らは写真を"生成"しますが，人間であるところの我々には生成せずともそこに世界があり，ベクトル演算なしでフィルムに焼けばその景色を"写した"ことになるのですから！
-### Why [Cloudflare Workers](https://www.cloudflare.com/ja-jp/developer-platform/products/workers/) + [D1](https://www.cloudflare.com/ja-jp/developer-platform/products/d1/)?
-- 無料で運用できる先として魅力的でした（実際今まで無料で運用している）．
-- 当初はAPI部分をWorkers，Static部分をPagesとしてdeployするものと思ってたがずいぶん前から[統合がアナウンス](https://blog.cloudflare.com/ja-jp/pages-and-workers-are-converging-into-one-experience/)されていたのでWorkersにDeployしました.
+		- 絵文字は，文字コードでアイコンらしい図形が出力されるので彼らはよく出力するが，これもAIらしさを増すだけ．私は[Lucide Icons](https://lucide.dev/)を使った．美しいアイコンの作者の皆様に感謝．もちろん絵文字も美しい，ただ，AIがそれを乱用しているというだけで．
+	- AIらしさは作品の魅力を損なうだけだ．たとえパッと見が良くてもそこに人間の手が加わっていないと分かると私はとても幻滅する．チェーン店のメニューに監修したシェフの顔が描いてあるのも，イトーヨーカドーの野菜に生産者の顔を載せるのも，人間らしさが信頼感を生むというコミュニケーションの一要素ではないか？
+	- だからこそ私はDaisyUIを用いることで全体の配色と各コンポーネントの統一感を持たせた．
+	- また，キャンパスで撮影された写真や生産者の顔をランディングページに載せた．これこそが現実世界にいる私たちの特権！
+		- 彼らは写真を"生成"するが，人間であるところの我々には生成せずともそこに世界があり，ベクトル演算なしでフィルムに焼けばその景色を"写した"ことになるのだから！
+### Why Cloudflare Workers + D1?
+- 無料で運用できる先として魅力的だった（実際今まで無料で運用している）．
+- 当初はAPI部分をWorkers，Static部分をPagesとしてdeployするものと思っていたがずいぶん前から[統合がアナウンス](https://blog.cloudflare.com/ja-jp/pages-and-workers-are-converging-into-one-experience/)されていたのでWorkersにDeployした.
 - Vercelを以前の時間割アプリプロジェクトで使ったことがあって，Vercel有料プランが20\$/月スタートだった点が私のお財布には痛く，殆ど儲からないアプリに運用費をかけたくなかったのでもう少し柔軟なデプロイ先を探していた．
 - あと，純粋にCloudflareを触ってみたかった．
 	- あらゆる場所で目にする[CAPTCHA代替技術](https://www.cloudflare.com/application-services/products/turnstile/)生んだり，[Hono](https://hono.dev/)開発者が所属している会社という認識でした．
 	- GoogleのreCAPTCHAに関しては，なぜ私たちが無給でWaymoの画像認識精度向上をさせられている（かもしらない，Googleは公式に認めていないので推測に過ぎない）のか分からない．
-		- OpenAIがアフリカの英語話者にGPTの訓練を行わせたために当地の英語のくせChatGPTが残った\[[出典](https://www.nikkei.com/article/DGXZQOUC190OK0Z10C24A5000000/)\]という話がありましたが，それでも彼らは給料をもらっていたはずです．それをなぜGoogleに対しては無料で私たちが？いつもあの横断歩道を選ばされる時にそのことを思うと嫌な気分になります．
-		- しかし，[よく分からん記号がどの角度で置いてあるかを選ぶあの難しすぎる認証](https://blog.lycolia.info/0212)に比べればよっぽどマシかも知れません．もはや知能レベルだけで人間を見分けるのは殆ど不可能でしょう．
+		- OpenAIがアフリカの英語話者にGPTの訓練を行わせたために当地の英語のくせChatGPTが残った\[[出典](https://www.nikkei.com/article/DGXZQOUC190OK0Z10C24A5000000/)\]という話があったが，それでも彼らは給料をもらっていたはずだ．それをなぜGoogleに対しては無料で私たちが？いつもあの横断歩道を選ばされる時にそのことを思うと嫌な気分になる．
+		- しかし，[よく分からん記号がどの角度で置いてあるかを選ぶあの難しすぎる認証](https://blog.lycolia.info/0212)に比べればよっぽどマシかも知れない．もはや知能レベルだけで人間を見分けるのは殆ど不可能なのではないかしら．
 ![Cloudflare本社 in San Francisco|471](https://static.zenn.studio/user-upload/973f9523ab1c-20260424.webp =500x)
 *せっかくSan Frainciscoが近いのでCloudflare本社を見に行きました．*
-### Why [DrizzleORM](https://orm.drizzle.team/)?
+### Why DrizzleORM?
 - [Prisma](https://www.prisma.io/)をずいぶん前に入門してよーわからんかった．特にスキーマ定義に使う独自言語．
 	- Drizzleはスキーマ定義をTypeScriptの構文で読めるので読みやすい．
-###  Why [BetterAuth](https://better-auth.com/)?
+###  Why BetterAuth?
 - 個人的にPasskeyが必須だった．
 	- 現在使っているのは私だけみたい．多くのユーザがOAuthで事足りているか，Passkeyの説明が足りていないか．
 	- ログイン手段が多くなることはセキュリティリスクもあげるので（特に学外者の侵入; 現状はほとんど秘匿情報を扱っておらず大きな問題にならないが，今後問題になる可能性）
 	- 私の利便性を犠牲にしてでもOAuth1本に絞るべき？一方で，Google OAuthはアプリに返ってくるまでのクリック数が多い（ユーザが多いから仕方ない）ので好きじゃない．
 - Supabase Authのrate limitやロックインが嫌だし，Auth.jsがBetterAuthに吸収されたことを踏まえて現代的な選択肢だった
-### Why [Bun](https://bun.sh/)?（おまけ）
+### Why Bun?（おまけ）
 - とにかく速いから．
-	- npm, yarn, pnpm, bunをすべて使ってきて正直機能面での違いはよく分からなかったけどインストール速度は一目瞭然だった．雷かな？ってくらいの速度でインストールされる（厳密にはグローバルに置いてあるキャッシュを読んでいるんだろうけど）
-	- プロジェクトが大きいときNode.jsとの互換性が要るとき，特に高いセキュリティが求められている場面ではpnpmの方が有利なのかも．
-	- bunのキャラクターを見る度においしそうで食べに行った．OSSのロゴって可愛くないものも多いと感じるけど，ロゴが可愛いって大事だと思う．![豚まん|50](https://static.zenn.studio/user-upload/5e5d359b89ff-20260424.png =250x)*おいしそうな豚まん (pork bun) in Berkeley, CA*
+	- npm, yarn, pnpm, bunをすべて使ってきて正直機能面での違いはよく分からなかったけれどインストール速度は一目瞭然だった．雷かな？ってくらいの速度でインストールされる（厳密にはグローバルに置いてあるキャッシュを読んでいるんだろうけど）
+	- 一方で，プロジェクトが大きいときやNode.jsとの互換性が要るとき，特に高いセキュリティが求められている場面ではpnpmの方が有利なのかも．
+	- bunのキャラクターを見る度においしそうでbunを食べに行った．OSSのロゴって可愛くないものも多いと感じるけど，ロゴが可愛いって大事だと思う．![豚まん|50](https://static.zenn.studio/user-upload/5e5d359b89ff-20260424.png =250x)*おいしそうな豚まん (pork bun) in Berkeley, CA*
 ### Why Cloudflare Registrar?（おまけ）
 - お名前.comと違って，頻繁な「セキュリティが危ない」みたいな煽りメールもないし（危ないと思うなら最初からその機能付けなーね），ダッシュボードが操作しにくく気づいたら勝手に要らんオプションつけられてることもないので，とても良い．
 	- 現代アートを愛する私からすればお名前com運営のGMOは[美術手帖オンライン](https://bijutsutecho.com/)に投資したり渋谷本社にアートペース（Cf. 下記"ちょっと寄り道"）があったり現代美術に理解があって好意的だったのに，お名前.comの体験が悪すぎてそれだけでフィランソロピーでの好印象が吹っ飛ぶほどである．
@@ -141,10 +144,10 @@ https://timetable.icu/
 
 ## 今後の課題
 ### ユーザ数の確保
-- 友達のために作ったものの，せっかく作ったから多くの人に使ってもらいたいのが人情．
+- 友達1人のために作ったものの，せっかく作ったから多くの人に使ってもらいたいのが人情．
 	- ユーザが増えないないなら，その友達さえ卒業すればサービスは閉じる．
 - 宣伝するためにやったこと
-	- 友達に宣伝．
+	- 友達に宣伝した
 		- Twitterで友達が宣伝してくれた
 		- 公式LINEで友達が宣伝してくれた
 	- 学内にポスターを貼る（大学の許可待ち）
@@ -152,7 +155,7 @@ https://timetable.icu/
 - 機密情報
 	- ほとんどが大学から公開されている情報
 - 攻撃
-	- 噂に聞いていたとおりWordPressやLaravel, PHPなどの脆弱性や.env/.gitなど機密情報窃取を狙う侵略者が頻繁にやっていることが[Workers Observability](https://developers.cloudflare.com/workers/observability/)で観測できて興味深い．
+	- 噂に聞いていたとおりWordPress，Laravel, PHPなどの脆弱性や.env/.gitなど機密情報窃取を狙う侵略者が頻繁にやっていることが[Workers Observability](https://developers.cloudflare.com/workers/observability/)で観測できて興味深い．
 		- きちんとそうした穴を閉じる対策を講じる良い経験になっている．
 		- 世の中にある攻撃手法の一端を知れておもしろい．
 		- 彼らはTwitterのリンクを踏んでいたり，あるいは自身がGoogleであると偽装したり色々な特徴があっておもしろい．
@@ -163,23 +166,42 @@ https://timetable.icu/
 	- 漏れてはいけないのはメール->名前->プロフィール写真（ほとんどが顔写真ではない）->履修情報（ユーザ情報と結びついたら居場所が漏れて危険）
 -->
 - プライバシーと運用の効率化のバランス
-	- 自分では読みにくいと分かっているのに，読みにくい[プライバシーポリシー](https://timetable.icu/privacy)を書いてしまうことに罪悪感を覚えます．
-		- 最低限，我々が運営のために保存しているデータについては明示しています．
-		- ブロックに分けたり要約するなどして，読みやすい規約（[Creative Commons](https://creativecommons.org/)のように[法的な文書](https://creativecommons.org/licenses/by/4.0/legalcode.en)と[一般向け文書](https://creativecommons.org/licenses/by/4.0/)を分けるべきかもしれません）う作っていくのが今後の課題です．
-	- 今後管理者が増えたときにどうやってガバナンスを確保していくのかが課題です．
+	- ユーザであれば読み飛ばすような読みにくい[プライバシーポリシー](https://timetable.icu/privacy)を自分でも書いてしまうことに罪悪感を覚える．
+		- 最低限，我々が運営のために保存しているデータについては明示している．
+		- ブロックに分けたり要約するなどして，読みやすい規約（[Creative Commons](https://creativecommons.org/)のように[法的な文書](https://creativecommons.org/licenses/by/4.0/legalcode.en)と[一般向け文書](https://creativecommons.org/licenses/by/4.0/)を分けるべきかもしれません）を作っていくのが今後の課題．
+	- 今後管理者が増えたときにどうやってガバナンスを確保していくのかも課題．
+### 引き継ぎ！
+- 私はもうすぐ4年生なので卒業しなくてはなりません．
+- 帰国次第ハッカソンやワークショップでも開いてWebプログラミングに興味が人の間口を学内で広めにゃあきません．
+- 将来的には，[IBS](https://office.icu.ac.jp/ctl/aps/ibs.html)と呼ばれる公式に履修相談を受けている学生団体や学修・教育センター（[CTL](https://office.icu.ac.jp/ctl/)）などとコラボしたりこのアプリケーションの開発を引き継げたりしたら本望です．
+	- 学生の履修にきっと役に立つものであることは保証出来るので，今後も透明性・責任のある運営と低コストの維持に努めます．
+### 🌸We are Hiring!
+あなたは ICU生ですか？
+Zennを読んでいるということはこうした技術に少しは興味があるということですね？
+充分過ぎる人材です！！
+ぜひ私たちと一緒に時間割アプリを作りましょう．
+10人ほどのDiscordサーバで開発や広報について議論していますのでぜひ[ご参加ください](https://discord.gg/2gmKTs4ezk)！
+もしくは開発者代表・木越 斎 (`c271155i`@`icu.ac.jp`)までどうぞ～
 ### 参考事例
 日本国内外を問わず大学生が時間割アプリを作るのはあるあるのようです．以下，特に参考にした事例たちです．
 - 北海道大学: [Hupass](https://hupass.hu-jagajaga.com/)
-- University of California, Berkeley: [Berkleytime](https://berkeleytime.com/)
-- University of Singapore: [NUSMods](https://nusmods.com/)
 - 筑波大学: [Twin:te](https://www.twinte.net/)
 	- 透明性の高い資金運用やチーム開発・OAuthトークンの取得のみで学籍番号などを保持しないprivacy by designなど，参考にするべき点は多い．
-- 
-### Who Wrote This?: It's Me! 木越 斎. 
-国際基督教大学3年生の木越 斎（きごし いつき）です．
+- University of California, Berkeley: [Berkleytime](https://berkeleytime.com/)
+- University of Singapore: [NUSMods](https://nusmods.com/)
+- [芝浦工業大学](https://qiita.com/koheisato/items/7f2e604233372af35b41)
+- [大阪公立大学](https://zenn.dev/omu_tryangle/articles/d3dfb4f369403d)
+## Who Wrote This?: It's Me! 木越 斎. 
+![Itsuki Kigoshi|181](https://cimetier.org/_astro/profile.CR0s2a3J_ZxUKlS.webp =250x)
+*[Itsuki Kigoshi/木越 斎](https://cimetier.org/)*
+この記事を書いたのは，国際基督教大学3年生の**木越 斎**（きごし いつき）です．
 今は交換留学でUC Berkeleyにいます．数学を学んでいます，と言いたいところですが地理や天文学など興味が広がり過ぎて実力が追いつかず途方にくれています．
-天文や地球科学（+海洋学??）と数理が関わるような分野で大学院に進学したい気持ちもありますが，私はこの先何を学んでいけば...
+天文や地球科学（+海洋学??）と数理が関わるような分野で大学院に進学したいでが，私はこの先何を学んでいけば...
 登山と現代美術鑑賞が趣味です．
-https://cimetier.org/
+
 - MIT Media Lab: https://www.media.mit.edu/
 - OIST: https://www.oist.jp/
+
+ご機嫌よう，
+**木越 斎**  (`itsuki`@`cimetier.org`)
+[GPG Key](https://cimetier.org/itsukikigoshi.asc): `359D 137D B901 C91B CDF9 8E60 E089 F042 AC48 2230`
