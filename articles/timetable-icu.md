@@ -16,12 +16,12 @@ published: true
 https://timetable.icu/
 
 ### 👍できること
-1. [全コースを検索](https://timetable.icu/explore)
+1. **[全コースを検索](https://timetable.icu/explore)**
     - [大学が一般公開しているシラバス](https://campus.icu.ac.jp/public/ehandbook/SearchCourseAndSyllabus.aspx)などから構築された授業情報を表示・検索できます．
-2. [時間割の表示・同期](https://timetable.icu/timetable)
+2. **[時間割の表示・同期](https://timetable.icu/timetable)**
     - ICU独自のスケジュールに対応した時間割が作れるほか，同時間帯に複数の授業を入れられるので迷っているコースらを吟味することが出来ます．
     - 大学アカウントでログインすると，デバイス間で最新の時間割を同期できます．
-3. 日英両言語対応
+3. **日英両言語対応**
 
 ----
 
