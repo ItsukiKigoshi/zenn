@@ -166,7 +166,7 @@ https://timetable.icu/
 		- ブロックに分けたり要約するなどして，読みやすい規約（[Creative Commons](https://creativecommons.org/)のように[法的な文書](https://creativecommons.org/licenses/by/4.0/legalcode.en)と[一般向け文書](https://creativecommons.org/licenses/by/4.0/)を分けるべきかも）を作っていくのが今後の課題．
 	- 今後管理者が増えたときにどうやってガバナンスを確保していくのかも課題．
 ### 引き継ぎ！
-- 私はもうすぐ4年生なので卒業しなくてはなりません．
+- 私はもうすぐ4年生なのでICUを卒業しなくてはなりません．
 - 帰国次第ハッカソンやワークショップでも開いてWebプログラミングに興味がある人の間口を学内で広めにゃあきません．
 - 将来的には，[IBS](https://office.icu.ac.jp/ctl/aps/ibs.html)と呼ばれる公式に履修相談を受けている学生団体や学修・教育センター（[CTL](https://office.icu.ac.jp/ctl/)）などとコラボしたりこのアプリケーションの開発を引き継げたりしたら本望です．
 	- 学生の履修にきっと役に立つものであることは保証出来るので，今後も透明性・責任のある運営と低コストの維持に努めます．
