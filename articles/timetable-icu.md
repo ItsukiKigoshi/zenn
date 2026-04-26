@@ -1,5 +1,5 @@
 ---
-title: 国際基督教大学の非公式時間割/履修計画アプリ「ICUのじかんわり」をAstro+Cloudflare Workers+D1でつくりました
+title: "国際基督教大学の非公式時間割/履修計画アプリ「ICUのじかんわり」をAstro+Cloudflare Workers+D1でつくりました"
 emoji: 🐦‍🔥
 type: tech
 topics:
