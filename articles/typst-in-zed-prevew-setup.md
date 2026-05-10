@@ -52,7 +52,7 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
     "tinymist": {
       "settings": {
         "exportPdf": "onSave",
-        "outputPath": "$dir/$name",
+        "outputPath": "$root/$dir/$name",
       },
     },
   },
