@@ -12,7 +12,7 @@ published_at: "2026-03-11 11:44"
 ---
 
 ## 大西配列とは
-![Thumbnail](https://storage.googleapis.com/zenn-user-upload/23ae6a808c5e-20260315.jpg)
+![Thumbnail](/images/d550cd8fe41fcd/macbook-fedora-o24.webp)
 [大西配列](https://o24.works/layout/)とは，[大西拓磨](https://o24.works/)というお兄さんがつくっている日本語ローマ字配列です．
 
 私は今回，普段使用しているMacBook Pro (13 inch; Mid 2014) のキーボードを掃除していたらキーキャップの爪を折ってしまったので，新しいキーキャップを買うついでに大西配列に変更しました．
@@ -34,7 +34,7 @@ published_at: "2026-03-11 11:44"
 ## 導入方法
 
 まず，キーキャップを入れ替えます．
-![MacBook Keyboard with O24 Layout](https://storage.googleapis.com/zenn-user-upload/bd39cf697ff0-20260315.jpeg)
+![MacBook Keyboard with O24 Layout](/images/d550cd8fe41fcd/o24-keyboard-layout.webp)
 じゃじゃーん．
 
 次に，[keyd](https://github.com/rvaiya/keyd)というツールでキー配置を設定します．
@@ -163,13 +163,13 @@ sudo keyd reload
 個人的には，よく使うT（新しいタブ）R（再読み込み）W（閉じる）N（新規タブ）というショートカットキーも場所が移動してしまったので，どうせならZXCVの位置も最適化されたものもあれば使いたい（なければつくってみるのもいいかも）と思います．
 
 まだ初めて3日ほどなのでタイピング速度は遅いですが（以下のグラフで大きな数値の落ち込みがQWERTY→大西への切り替え; 縦軸がタイピング速度, 横軸が概ね時間），[このサイト](https://www.e-typing.ne.jp/)に登録した8年ほど前と同水準の200点以上を大西配列で打てるように練習したいです．
-![E-typing](https://storage.googleapis.com/zenn-user-upload/dafa662c5564-20260315.png)
+![E-typing](/images/d550cd8fe41fcd/e-typing-20260311.webp)
 
 ## 追記: 2026/04/11
 使用開始から一ヶ月ほどが経ち，ずいぶんタイピングが上達してきました．タッチタイピングにはまだ及びませんが，私は今もコーディングやメール執筆などで日常的に大西配列を使用しています．
 「使用しています」といっても，キー配置は一度変えてしまうと戻すのが面倒なので，「使うしか他がない」とも言えるでしょう．いずれにせよ子音と母音が交互に打てる大西配列は使っていて気持ちが良いです．
 子どもが出来たら新配列で育てようかしら．
-![続・E-Typing](/images/2026-04-11_20-15-25.png)
+![続・E-Typing](/images/d550cd8fe41fcd/e-typing-20260411.webp)
 
 
 木越 斎

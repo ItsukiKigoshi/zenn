@@ -65,7 +65,7 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
 いよいよお料理の始まりです．バターはごま油でも代用できます．
 
 `Zed > Extensions` (Ctrl-Shift-X) を開き「Typst」と検索し，[Typst Extension](https://github.com/zed-extensions/typst)をインストールします．
-![Zed拡張機能で「Typst」の検索結果](/images/typst-extension-zed.webp)
+![Zed拡張機能で「Typst」の検索結果](/images/typst-in-zed-prevew-setup/typst-extension-zed.webp)
 
 ### 🧂Tinymistの設定
 次に，自動的にPDFが生成されるようにZedの設定を変更します．
@@ -90,7 +90,7 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
 
 これで，`ファイル名.typ`というTypstファイルを作ると，同じディレクトリ内に`ファイル名.pdf`というPDFが生成されるようになります．
 
-![Zed上でTypstファイルから自動で書き出されたPDFファイル](/images/tinymist-pdf-exported.webp)
+![Zed上でTypstファイルから自動で書き出されたPDFファイル](/images/typst-in-zed-prevew-setup/tinymist-pdf-exported.webp)
 
 素晴らしい！
 
@@ -98,7 +98,7 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
 
 
 生成されたPDFをお気に入りのプレビューアプリで開き，Zedの横に並べれば...
-![ZedとPDFプレビューを並べた最高の執筆環境](/images/typst-preview.webp)
+![ZedとPDFプレビューを並べた最高の執筆環境](/images/typst-in-zed-prevew-setup/typst-preview.webp)
 この通り！プレビュー環境が整いました．
 味が足りない場合はお好みでホットソースでもかけてお召し上がりください．
 
