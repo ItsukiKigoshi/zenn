@@ -15,9 +15,9 @@ published: true
 ### 🥕Typstとは
 [Typst](https://typst.app/)とは，2023年にリリースされたRust製の新興組版エンジンです．
 
-より簡単に執筆できるように設計されたLaTeXのようなもので，数式や表を含むドキュメント/スライド等をシンプルな関数で記述できます．
+より簡単に執筆できるように設計された[LaTeX](https://www.latex-project.org/)のようなもので，数式や表を含むドキュメント/スライド等をシンプルな関数で記述できます．
 
-今回紹介した方法の他に，[Webエディタ](https://typst.app/)（LaTeXで言うところのOverleaf）を使う方法があります．気軽に試してみたい方はまずそちらをどうぞ．
+今回紹介した方法の他に，[Webエディタ](https://typst.app/)（LaTeXで言うところの[Overleaf](https://www.overleaf.com/)）を使う方法があります．気軽に試してみたい方はまずそちらをどうぞ．
 
 https://typst.app/
 
