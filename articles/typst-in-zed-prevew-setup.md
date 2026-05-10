@@ -8,7 +8,7 @@ topics:
   - fedora
   - rust
   - cargo
-published: false
+published: true
 ---
 ## 🥬本日使用するお材料の紹介
 
