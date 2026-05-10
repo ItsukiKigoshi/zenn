@@ -80,6 +80,7 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
         "outputPath": "$dir/$name",
       },
     },
+  },
 }
 ```
 - 上記の設定では，`.typ`ファイルの保存時にTypstファイルと同じフォルダにPDFファイルが生成されます．
