@@ -34,31 +34,6 @@ https://typst.app/
 
 https://zed.dev/
 
-## 🥣お下味: 必要なツールのインストール
-### 🫚Rust/Cargoのインストール
-TypstはRustという言語で記述されているので，まずはそのRustとお仲間のCargo^[**Cargo**: Rustに関連するファイル群を管理するツール; パッケージマネージャ]をインストールします．
-
-筆者の使用するFedora Linuxでは
-```sh
-# Linux/macOSの場合
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-でRust/Cargoをインストールします．
-
-
-  - Rust/Cargoのインストール方法は「[Rust をインストール - Rustプログラミング言語](https://rust-lang.org/ja/tools/install/)」をご参照ください．
-  - RustなしでのTypstインストール方法もあります．詳しくは[Typst ダウンロードガイド](https://typst.app/open-source/#download)を参照してください．
-
-この工程で刻んだ生姜が後で効いてきます．
-  
-### 🍄‍🟫Typstのインストール
-
-次に，Rust/Cargo 経由で Typst をインストールして味に深みを加えましょう．
-```sh
-cargo install --locked typst-cli
-```
-前述した「Rustを使わない方法」でTypstをインストールした場合，この工程は不要です．
-
 ## 🫕ZedでTypstプレビュー環境設定
 ### 🧈Typst Extensionのインストール
 ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dreamin/tinymist)をインストールすることで味を調節します．
@@ -110,3 +85,9 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
 お料理終わり．
 
 木越 斎 (2026/05/10; Provided with [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en))
+
+
+:::details 変更履歴
+- 2026/05/10T22:03UTC+0 Zedでのプレビュー環境構築にtypst-cliのインストールは不要でしたので，typst-cliをインストールする記述を削除しました．
+- すべての変更履歴は[GitHub](https://github.com/ItsukiKigoshi/zenn.dev/commits/main/articles/typst-in-zed-prevew-setup.md)で確認できます．
+:::
