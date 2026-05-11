@@ -9,4 +9,4 @@ topics:
 published: false
 ---
 - Yubikeyよりも簡単なセキュリティ対策？
-- 署名だかじゃなくて`ssh git@gitlaab.com`もSSHエージェント経由にできる
+- 署名だけじゃなくて`ssh git@gitlaab.com`もSSHエージェント経由にできる
