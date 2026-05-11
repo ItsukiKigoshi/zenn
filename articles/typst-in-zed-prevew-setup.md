@@ -43,7 +43,7 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
 ![Zed拡張機能で「Typst」の検索結果](/images/typst-in-zed-prevew-setup/typst-extension-zed.webp)
 
 ### 🧂Tinymistの設定
-次に，自動的にPDFが生成されるようにZedの設定を変更します．
+次に，自動的にPDFが出力されるようにZedの設定を変更します．
 塩コショウが効いて味がつきますね．
 ```jsonc:~/.config/zed/settings.json
 {
@@ -58,12 +58,12 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
   },
 }
 ```
-- 上記の設定では，`.typ`ファイルの保存時にTypstファイルと同じフォルダにPDFファイルが生成されます．
-  - `"exportPdf": "onType"`とすることで，エディタで`.typ`ファイルを編集するなりPDFが生成されるようになります．
-  - `"outputPath": "$root/$name"`とすることで，PDFの書出先をプロジェクトのルートディレクトリにできます．
+- 上記の設定では，`.typ`ファイルの保存時にTypstファイルと同じフォルダにPDFファイルが出力されます．
+  - `"exportPdf": "onType"`とすることで，エディタで`.typ`ファイルを編集するなりPDFが出力されるようになります．
+  - `"outputPath": "$root/$name"`とすることで，PDFの出力先をプロジェクトのルートディレクトリにできます．
 - 他のオプションについては[Tinymist Documentation](https://myriad-dreamin.github.io/tinymist/feature/preview.html)をお読みください．
 
-これで，`ファイル名.typ`というTypstファイルを作ると，同じディレクトリ内に`ファイル名.pdf`というPDFが生成されるようになります．
+これで，`ファイル名.typ`というTypstファイルを作ると，同じディレクトリ内に`ファイル名.pdf`というPDFが出力されるようになります．
 
 ![Zed上でTypstファイルから自動で書き出されたPDFファイル](/images/typst-in-zed-prevew-setup/tinymist-pdf-exported.webp)
 
@@ -72,7 +72,7 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
 ### 🥢味見: 実際に見てみましょう．
 
 
-生成されたPDFをお気に入りのプレビューアプリで開き，Zedの横に並べれば...
+出力されたPDFをお気に入りのプレビューアプリで開き，Zedの横に並べれば...
 ![ZedとPDFプレビューを並べた最高の執筆環境](/images/typst-in-zed-prevew-setup/typst-preview.webp)
 この通り！プレビュー環境が整いました．
 味が足りない場合はお好みでホットソースでもかけてお召し上がりください．
