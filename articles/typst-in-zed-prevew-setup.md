@@ -36,7 +36,7 @@ https://zed.dev/
 
 ## 🫕ZedでTypstプレビュー環境設定
 ### 🧈Typst Extensionのインストール
-ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dreamin/tinymist)をインストールすることで味を調節します．
+ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dreamin/tinymist)をインストールします．
 いよいよお料理の始まりです．バターはごま油でも代用できます．
 
 `Zed > Extensions` (Ctrl-Shift-X) を開き「Typst」と検索し，[Typst Extension](https://github.com/zed-extensions/typst)をインストールします．
