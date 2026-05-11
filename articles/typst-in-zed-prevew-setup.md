@@ -7,7 +7,6 @@ topics:
   - zed
   - fedora
   - rust
-  - cargo
 published: true
 ---
 ## 🥬本日使用するお材料の紹介
