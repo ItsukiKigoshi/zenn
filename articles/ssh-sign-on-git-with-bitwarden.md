@@ -8,3 +8,5 @@ topics:
   - Git
 published: false
 ---
+- Yubikeyよりも簡単なセキュリティ対策？
+- 署名だかじゃなくて`ssh git@gitlaab.com`もSSHエージェント経由にできる
