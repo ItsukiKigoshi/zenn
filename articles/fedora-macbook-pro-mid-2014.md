@@ -16,8 +16,13 @@ published: false
 - 参考になったブログ
 	- 誰かがMacBook Air 12だかでFedoraをインストールしているブログが参考になった
 	- dnfでOS含め一括アップデートしてから
-- 安易に「AIすごい」とは言いたくないけど，Linuxの導入に関してはGoogle検索と，その元になったブログ投稿，Reddit Postsが約だったと言わざるを得ない．
-- 
+- 安易に「AIすごい」とは言いたくないけど，Linuxの導入に関してはGoogle検索と，その元になったブログ投稿，Reddit Postsが役立ったと言わざるを得ない．
+
+- https://etcher.balena.io/
+- 必要な物: 
+  - インターネット（Android, 携帯通信容量に余裕のあるiPhone, Ethernet）
+    - おじいちゃん
+  - パソコンオタク（Geek）
 
 ## よかったこと
 ## わるいこと
@@ -51,3 +56,28 @@ published: false
 - 日本語入力: Anthyの設定から"hangul"と"hangul_hanji"を適切にかな英数キーに割り当てる
 - keyd: 別記事
 - Tweaks: Caps LockをCtrlとしてつかう
+
+- Linuxの嫌なところ（日本語とWi-Fi）
+	- 日本語環境
+		- IBUS-Anthyが馬鹿（文の途中から打つとデタラメになる）, ATOKが恋しい
+		- オフライン辞書 (Mac辞書, 物書堂; 国語, 英和)が使いたい
+	- 良い音楽プレイヤー (編集, iPodとの同期)が無い (Rhythmbox, GNOME Music)
+	- 良いカレンダー (タイムゾーンの変更): GNOME Calendar
+	- Flatpakが結構権限関係で詰まる; でも環境は汚れない
+	- いけるところ
+		- Mailer: Thunderbird
+		- Browser: Zen (Firefox)
+		- Development: Zed, JetBrains; Linux-Firstな分野, 圧倒的な優位性
+		- 画像: Inkskape, GIMP; 慣れたら使える
+		- 動画: KDENLive; 慣れたら使える
+		- PDF: Document Viewer, ページなら並び替えなどは限定的だがまあ十分
+		- Office: ほとんど使えないが他人から送られてきたものを開く用途ではLibreOfficeで十分．
+			- ってか世の中の人はなぜLibreOfficeを使わないのか？OSに同梱されてないから，とかならクソ商法過ぎるだろ．
+			- GUIで操作できる範囲を広げて，Linux by Defaultを特にパソコンをさわり立ての子どもなどに広めていかなければ．
+			- ChromeOSは好例だが依然としてGoogleのベンダーロックイン
+
+https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-late-2011.html
+https://www.cyberciti.biz/faq/fedora-linux-install-broadcom-wl-sta-wireless-driver-for-bcm43228/
+https://www.gentoo.org/彼はGentoo Linuxを使っているようです
+https://www.thetestspecimen.com/posts/broadcom-wifi-modules-fedora/
+https://alex.dzyoba.com/blog/macbook-air-linux/
