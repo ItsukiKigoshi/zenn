@@ -37,7 +37,8 @@ pnpm dev # in Hono Project
 - https://etcher.balena.io/
 - 必要な物: 
   - インターネット（Android, 携帯通信容量に余裕のあるiPhone, Ethernet）
-    - おじいちゃん
+    - おじいちゃんが持っていた理由がわかった，有線結局最強の安定性
+    - 家帰ったらルーターから有線を引けるようにしよう
   - パソコンオタク（Geek）
     - ダンボール
     - 洗濯機改造
