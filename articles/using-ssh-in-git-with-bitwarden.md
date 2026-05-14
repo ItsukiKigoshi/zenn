@@ -132,3 +132,11 @@ GitLab/GitHubに署名されたコミットをpushすると画像のように`ve
 *GitHubに表示される署名済みマーク*
 
 みなさまも快適な鍵生活を送られんことを願っています．
+
+## おまけ🍽️
+文章だけでは寂しいので，ある日のブランチの写真を添えましょう．
+![ある日のブランチ](/images/using-ssh-in-git-with-bitwarden/IMG_1023.webp)
+もうすぐアメリカでの生活が終わってしまいます．少し[さみしいきもち](https://youtu.be/rzkfbW-6BdY)．
+また会いましょう．
+
+木越 斎 (2026/05/13; Provided with [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en))
