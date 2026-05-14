@@ -24,7 +24,7 @@ https://bitwarden.com/help/ssh-agent/
 同機能を使うことで，通常`ssh-keygen`で作成する時のように`~/.ssh`ディレクトリに直接秘密鍵が保存されることなく，Bitwardenが起動している間のみSSH鍵が使用できるようにできます．
 
 これで，デバイスの盗難やハッキング時にも，Bitwardenさえロックされていれば秘密鍵を盗まれなくなる，はずです．少なくとも`~/.ssh`をコピーされることはないでしょう．
-より厳格なセキュリティを求めるなら，外部へ秘密鍵が書き出し不可な[YubiKey](https://www.yubico.com/yubikey/)など外部セキュリティキーを使うべきなのでしょうか．俄然興味が沸きます．
+より厳格なセキュリティを求めるなら，外部へ秘密鍵が書き出し不可な[YubiKey](https://www.yubico.com/yubikey/)など外部セキュリティキーを使うべきなのでしょうか．俄然興味が湧きます．
 
 
 ## GitにおけるSSH
@@ -52,8 +52,8 @@ https://bitwarden.com/help/ssh-agent/
 この状態ではshellで鍵を見ようとして`ssh-add -L`しても，`Error connecting to agent: Connection refused`とエラーが出ます．
 Shellに鍵を認識してもらうために，`nano ~/.bashrc` (または`nano ~/.zshrc`)して，
 ```text:~/.bashrc
-# Flatpak
-export SSH_AUTH_SOCK=/home/<user>/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+# Flatpak版の場合
+export SSH_AUTH_SOCK=/home/<あなたのユーザ名>/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
 ```
 を書き加えます．
 各OS/アプリの種類によりPATHが異なります．[公式ヘルプの該当箇所](https://bitwarden.com/help/ssh-agent/#configure-bitwarden-ssh-agent)を参照してください．
@@ -68,7 +68,7 @@ git config --global gpg.format ssh
 
 あなたのSSHの公開鍵を事前にBitwardenからコピーしておき，
 ```sh
-git config --global user.signingkey "<あなたの署名用SSH公開鍵>"
+git config --global user.signingkey "<ssh-ed25519から始まるあなたの署名用SSH公開鍵>"
 ```
 で公開鍵をGitに伝えます．
 
@@ -85,7 +85,8 @@ touch ~/.ssh/allowed_signers
 ```
 でファイルを作成し，`nano ~/.ssh/allowed_signers`でその中に
 ```text
-<あなたがGit Commitに使用しているEmail> ssh-ed25519 <あなたの署名用SSH公開鍵>
+# 例: email@example.com ssh-ed25519 XXXXXXXX
+<あなたがGit Commitに使用しているEmail> "<ssh-ed25519から始まるあなたの署名用SSH公開鍵>"
 ```
 を書き込みます．あとは，
 ```sh
@@ -97,7 +98,7 @@ git config --global gpg.ssh.allowedSignersFile "$HOME/.ssh/allowed_signers"
 このままではGitLab/GitHub側はあなたのSSH鍵を知る由もありません．伝えてあげましょう．
 それぞれのサイトにログインした状態で，
 - GitLab: `User Settings > Access > SSH Keys`
-- GitHub: `Setting > SSH and GPG Keys > New SSH Key`で鍵を登録します． 
+- GitHub: `Setting > SSH and GPG Keys > New SSH Key`
 で鍵を登録します．
 GitHubは鍵追加時にその鍵が認証（`ssh git@github.com`）用かGit署名用かを選ぶ必要があります．私は異なる2つの鍵をそれぞれの用途に作成し追加しました．
 
@@ -123,7 +124,7 @@ ssh -T git@github.com
 ## Closing👋
 これで，Bitwardenを用いたSSH接続並びにコミット署名の準備が完了しました．デフォルトでコミットに署名するように設定していれば，これからあなたの端末で作成されるコミットには自動で署名が付きます．
 
-GitLab/GitHubに署名されたのコミットをpushすると画像のように`verified`と，検証済みのコミット署名であることが表示されます．
+GitLab/GitHubに署名されたコミットをpushすると画像のように`verified`と，検証済みのコミット署名であることが表示されます．
 ![Verified Commits on GitLab](/images/using-ssh-in-git-with-bitwarden/signed-commits-on-gitlab.webp)
 *GitLabに表示される署名済みマーク*
 
