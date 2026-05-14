@@ -10,14 +10,15 @@ topics:
   - GitHub
 published: true
 ---
-## Bitwardenとは
+## 前提
+### Bitwardenとは
 Bitwardenはオープンソースのパスワードマネージャで，Bitwardenが用意したフリーミアムプランを使用すれば基本無料で使用できます．組織向けのプランも存在するようですがここでは個人利用を想定します．
 https://bitwarden.com/
 
-### 余談: Why Bitwarden?
+#### 余談: Why Bitwarden?
 筆者はmacOSからLinuxへ乗り換えるときにiCloud Keychainからパスワードマネージャを移行する必要に迫られ，無料でiOSとLinuxで使える点，そしてオープンソースである点にも惹かれてBitwardenを使い始めました．サービスには満足しています．一方で，2026年4月には[Bitwarden CLIへのサプライチェーン攻撃](https://community.bitwarden.com/t/bitwarden-statement-on-checkmarx-supply-chain-incident/96127)が発生しており，秘匿情報を扱う以上，読者の皆様がパスワードマネージャ移行を検討する際には慎重に比較なさることをおすすめします．とはいえ，私は今後もBitwardenを使用するつもりです．
 
-## BitwardenのSSHエージェント
+### BitwardenのSSHエージェントとは
 Bitwardenは，SSH鍵を同ソフトウェア内で管理する方法を2025年1月より提供しています．
 
 https://bitwarden.com/help/ssh-agent/
@@ -26,8 +27,7 @@ https://bitwarden.com/help/ssh-agent/
 これで，デバイスの盗難やハッキング時にも，Bitwardenさえロックされていれば秘密鍵を盗まれなくなる，はずです．少なくとも`~/.ssh`をコピーされることはないでしょう．
 より厳格なセキュリティを求めるなら，外部へ秘密鍵が書き出し不可な[YubiKey](https://www.yubico.com/yubikey/)など外部セキュリティキーを使うべきなのでしょうか．俄然興味が湧きます．
 
-
-## GitにおけるSSH
+### GitにおけるSSHとは
 バージョン管理ツールであるGitは，デフォルトで[SSH（またはGPG）によるコミットへの署名](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work)を提供しています．また，[GitLab](https://docs.gitlab.com/user/ssh/)や[GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)などのGitホスティングサービスもリポジトリへのアクセス時にSSH接続を提供しています．
 
 今回はこの
@@ -37,7 +37,8 @@ https://bitwarden.com/help/ssh-agent/
 
 をそれぞれBitwardenで管理します．
 
-## BitwardenでのSSH鍵作成
+## さっそくはじめよう！🦞
+### BitwardenでのSSH鍵作成
 ここで説明する内容は，[公式ヘルプ](https://bitwarden.com/help/ssh-agent)（英語）が詳しいです．併せてご参照ください．
 
 まず，Bitwardenを開きます．私はFedoraのFlathub版を使っていますが，きっとあなたが[お使いのOSに対応したBitwardenクライアント](https://bitwarden.com/download/)が存在することでしょう．
@@ -48,7 +49,7 @@ https://bitwarden.com/help/ssh-agent/
 
 私はGit署名，GitHub接続, GitLab接続をそれぞれ別の鍵で管理したいので，3つ作成しました．
 
-## PATHを通す
+### PATHを通す
 この状態ではshellで鍵を見ようとして`ssh-add -L`しても，`Error connecting to agent: Connection refused`とエラーが出ます．
 Shellに鍵を認識してもらうために，`nano ~/.bashrc` (または`nano ~/.zshrc`)して，
 ```text:~/.bashrc
@@ -60,7 +61,7 @@ export SSH_AUTH_SOCK=/home/<あなたのユーザ名>/.var/app/com.bitwarden.des
 
 これで，`ssh-add -L`すればBitwardenで作成した鍵が見えることでしょう．
 
-## Git署名に設定する
+### Git署名に設定する
 Gitのコミット署名にSSH鍵を使うために，まず署名の形式がSSHであることをGitに伝えます．
 ```sh
 git config --global gpg.format ssh
@@ -94,7 +95,7 @@ git config --global gpg.ssh.allowedSignersFile "$HOME/.ssh/allowed_signers"
 ```
 で信頼できる鍵一覧をGitに伝えれば，ローカルのGitがあなたの鍵を信頼できるものと認識してくれます．
 
-## GitLab，GitHubへの公開鍵登録
+### GitLab，GitHubへの公開鍵登録
 このままではGitLab/GitHub側はあなたのSSH鍵を知る由もありません．伝えてあげましょう．
 それぞれのサイトにログインした状態で，
 - GitLab: `User Settings > Access > SSH Keys`
@@ -136,7 +137,7 @@ GitLab/GitHubに署名されたコミットをpushすると画像のように`ve
 ## おまけ🍽️
 文章だけでは寂しいので，ある日のブランチの写真を添えましょう．
 ![ある日のブランチ](/images/using-ssh-in-git-with-bitwarden/IMG_1023.webp)
-もうすぐアメリカでの生活が終わってしまいます．少し[さみしいきもち](https://youtu.be/rzkfbW-6BdY)．
+もうすぐアメリカでの生活が終わってしまいます．少し[さみしいきもち](https://youtu.be/rzkfbW-6BdY)です．
 また会いましょう．
 
 木越 斎 (2026/05/13; Provided with [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en))
