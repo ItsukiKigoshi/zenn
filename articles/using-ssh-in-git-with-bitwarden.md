@@ -37,7 +37,7 @@ https://bitwarden.com/help/ssh-agent/
 
 をそれぞれBitwardenで管理します．
 
-## さっそくはじめよう！🫎
+## さっそくはじめよう！🫏
 ### BitwardenでのSSH鍵作成
 ここで説明する内容は，[公式ヘルプ](https://bitwarden.com/help/ssh-agent)（英語）が詳しいです．併せてご参照ください．
 
