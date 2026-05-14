@@ -1,6 +1,6 @@
 ---
 title: GitのSSH署名/リモート接続にBitwarden SSHエージェントを使う
-emoji: 💨
+emoji: 🥭
 type: tech
 topics:
   - Bitwarden
