@@ -28,7 +28,7 @@ https://typst.app/
 
 ### 🧅Zedとは
 - [Zed](https://zed.dev/)は，これまたRustで開発されている，とにかく軽量なエディタです．
-  - 筆者は近年のMicrosoft製品（Windows, GitHub, VSCode）における一連のCopilot製品群押し付けや，そもそもどこに何の機能があるのか直感的に分からないデザインの使いにくさからVSCode (VSCodium)の使用を控えています．GitHubはまだしばらく権威がありそうだけれど．
+  - 筆者は近年のMicrosoft製品（Windows, GitHub, VSCode）における一連のCopilot製品群押し付けや，そもそもプラグインを入れないと始まらないデザインの使いにくさからVSCode (VSCodium)の使用を控えています．GitHubはまだしばらく権威がありそうだけれど．
   - しかし，今回導入するTypst環境を含め，Playwright（Webのテスト環境）などVSCodeにしかない/充実しているプラグインがある点が口惜しいです．
 
 https://zed.dev/
