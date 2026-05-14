@@ -10,6 +10,22 @@ published: false
 - なぜLinux?
 	- 私の使っているMacBook Pro Mid 2014で動く最新のmacOSである11 Big Surを使っていたが，12以降でないと動かない開発ツールが多くなった
 	- 高校生時代（2022-3頃）から既にNode 18系までしか動かずNode 20系での開発がうまく行かなかった気がする
+```sh
+dyld: Symbol not found: __ZNSt3__113basic_filebufIcNS_11char_traitsIcEEE4openEPKcj
+
+Referenced from: /Users/osamukigoshi/.nvm/versions/node/v24.13.0/bin/node (which was built for Mac OS X 13.5)
+
+Expected in: /usr/lib/libc++.1.dylib
+
+
+[1] 29870 abort node -v 
+```
+```sh
+pnpm dev # in Hono Project
+# Cloudflare Workers runtime cannot run on the current version of macOS
+```
+
+
 - なぜFedora?
 	- なんとなく以下の条件があった
 		- 私の中ではなるべくセットアップの負担が少なく，MacBook
