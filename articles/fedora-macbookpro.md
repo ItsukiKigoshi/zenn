@@ -110,6 +110,7 @@ https://www.gentoo.org/彼はGentoo Linuxを使っているようです
 https://www.thetestspecimen.com/posts/broadcom-wifi-modules-fedora/
 https://alex.dzyoba.com/blog/macbook-air-linux/
 
+https://github.com/ubuntu/gnome-shell-extension-appindicatorを入れな！
 
 ---
 ## 会話履歴
