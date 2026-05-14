@@ -23,6 +23,7 @@ published: false
   - インターネット（Android, 携帯通信容量に余裕のあるiPhone, Ethernet）
     - おじいちゃん
   - パソコンオタク（Geek）
+- Geminiから拾う
 
 ## よかったこと
 ## わるいこと
@@ -40,6 +41,7 @@ published: false
     - セキュリティ懸念
     - 結果として大学もこれでいけた
     - Nix (面倒; 日本語フォントが汚い), Ubuntu (デフォルトデスクトップが可愛くない), Zorin (有料版があるのが引かれないかも,だったらUbuntuで良くない？) 
+    - Wranglerが動かない
 - デュアルブート
     - パーティション作成 (確か800MBくらいの1領域余計に必要)
     - SDカードから起動
@@ -56,6 +58,9 @@ published: false
 - 日本語入力: Anthyの設定から"hangul"と"hangul_hanji"を適切にかな英数キーに割り当てる
 - keyd: 別記事
 - Tweaks: Caps LockをCtrlとしてつかう
+
+- Macでしかできないこと
+  - iPod更新
 
 - Linuxの嫌なところ（日本語とWi-Fi）
 	- 日本語環境
