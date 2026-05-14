@@ -8,7 +8,7 @@ topics:
   - Git
   - GitLab
   - GitHub
-published: false
+published: true
 ---
 ## Bitwardenとは
 Bitwardenはオープンソースのパスワードマネージャで，Bitwardenが用意したフリーミアムプランを使用すれば基本無料で使用できます．組織向けのプランも存在するようですがここでは個人利用を想定します．
