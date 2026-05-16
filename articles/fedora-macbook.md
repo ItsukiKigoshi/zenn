@@ -109,8 +109,9 @@ https://www.youtube.com/watch?v=p4lu-_6nY6Q
 		- ChromeOSは好例だが依然としてGoogleのベンダーロックイン
 	- LocalSend: 同じWiFiに接続しなくてはいけないという制限がありながら，ほとんどのケースでこれで事足りる
   	- AirDropの一番の使いどころは
- - FreeFileSync
+  - FreeFileSync
 	- この辺のソフトウェアには寄付せなあかんかも知れん
+	- Flatpakは.appみたいなもの．たまに権限で詰まる
 
 ## Fedoraにしてみて...
 ### よかったこと
