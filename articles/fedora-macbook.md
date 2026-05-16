@@ -154,3 +154,7 @@ https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-lat
 https://www.cyberciti.biz/faq/fedora-linux-install-broadcom-wl-sta-wireless-driver-for-bcm43228/
 https://www.thetestspecimen.com/posts/broadcom-wifi-modules-fedora/
 https://alex.dzyoba.com/blog/macbook-air-linux/
+![](/images/fedora-macbook/cardboard-laptop.webp)
+![](/images/fedora-macbook/partiton.webp)
+![](/images/fedora-macbook/scary-linux.webp)
+![](/images/fedora-macbook/hacking-laundry-machine.webp)
