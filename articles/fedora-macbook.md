@@ -349,7 +349,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
 ## おまけ: Computer Hacker - Ian
 ![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
 
-私が交換留学しているUC Berkeleyで住んでいる寮（正確には[Coop](https://www.bsc.coop/housing/our-houses-apartments/cloyne-court)）でいつもパソコンを触っている細い男の子がLinuxに詳しいという話を聞いたので，Wi-Fiがつながらない事を相談したら相談に乗ってくれました．
+私が交換留学しているUC Berkeleyで住んでいる寮（正確には[Coop](https://www.bsc.coop/housing/our-houses-apartments/cloyne-court)）でいつもパソコンを触っている細い男の子がLinuxに詳しいという話を聞いたので，Wi-Fiがつながらないと言ったら相談に乗ってくれました．
 
 ![自作のダンボールパソコン](/images/fedora-macbook/cardboard-laptop.webp =500x)*彼の部屋にあった自作の段ボールラップトップ*
 彼は，アプリのインストール時に1からソフトウェアをビルドをする[Getoo Linux](https://www.gentoo.org/)というディストリビューションを使っていて，部屋には自作の段ボールパソコンがあります．夏休みに開発を進めるらしい．
