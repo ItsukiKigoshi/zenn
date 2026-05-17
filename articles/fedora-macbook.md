@@ -161,7 +161,7 @@ https://www.ycam.jp/
 
 - 最新のMacBook Proと重量が殆ど変わりません！
   - 最新の再軽量MacBook Pro: [1.55kg](https://www.apple.com/macbook-pro/specs/#:~:text=1%2E55%20kg) 
-  - 私のMacBook Pro: [1.57kg](https://support.apple.com/ja-jp/111942#:~:text=1%2E57%20kg2)
+  - 私のMacBook Pro: [1.57kg](https://support.apple.com/ja-jp/111942#:~:text=1%2E57%20kg)
 - りんごが光ります ![光るりんご](/images/fedora-macbook/shining.webp =500x)
 - このMacBook Proは**Intel製チップ**で動作しています
   - 性能面の優劣はさしおいて，Linuxがブートしやすいです．
@@ -320,7 +320,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
 - Browser: [Zen](https://zen-browser.app/)
   - Arcみたいな新興ブラウザで，Gecko/FireFoxベースです．モダンなブラウザが欲しいけどChromiumベースに抵抗感がある私にピッタリです．
 - Development: [Zed](https://zed.dev/), [PyCharm](https://www.jetbrains.com/pycharm/) (重いけどJupyter Notebookが使いやすい)
-  - 開発はLinux-Firstな分野で，Linuxに圧倒的な優位性があります．XCcde以外は基本全部動く．
+  - 開発はLinux-Firstな分野で，Linuxに圧倒的な優位性があります．Xcode以外は基本全部動く．
   - 逆に，最新のmacOSがないとビルドできないXcodeって悪目立ちしすぎでは？もうちょっとインクルーシブになってください．
 - パスワード管理: [Bitwarden](https://bitwarden.com/)
 - 画像: [Inkscape](https://inkscape.org/), [GIMP](https://www.gimp.org/)
@@ -332,7 +332,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
   - 書き出し速度はmacOSでFinal Cut Proを使ったときより流石に劣ると思います．
 - PDF: [Document Viewer](https://apps.gnome.org/fr/Papers/)（標準）
   - ページ並び替えなどは限定的だがまあ十分
-  - たまに，ページを縮小しようとすると辺なページに飛ぶバグが地味に辛いです．
+  - たまに，ページを縮小しようとすると変なページに飛ぶバグが地味に辛いです．
 - Office: [LibreOffice](https://www.libreoffice.org/)
   - ほとんど使わないが，他人から送られてきたものを開く用途ではLibreOfficeで十分．
 	- ってか世の中の人はなぜLibreOfficeを使わないのでしょうか？多分OSに同梱されてないからです．Microsoft Officeなどなくても殆どの用途はLibreOfficeで済む（しかも無料である）のに，普及していないのが悲しすぎます．
