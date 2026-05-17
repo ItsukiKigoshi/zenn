@@ -204,7 +204,7 @@ https://www.ycam.jp/
   - FedoraはIBM傘下の商業向けLinuxディストリビューションベンダー・Red Hatが開発しているオープンソースでフリーOSです．Red "Hat"に対するFedora帽子ですね．おしゃれ．
   - Just worksすることが特徴です．
     - 面倒な設定無しでもそこそこ動きます．
-    - これはFedoraを使い始めた後に知ったことですが，Linuxの生みの親・LinusもFedora使っているようです![Linus uses Fedora](/images/fedora-macbook/linus.webp)*From [Linus Tech Tips on YouTube](https://youtu.be/mfv0V1SxbNA?t=2722)*
+  - これはFedoraを使い始めた後に知ったことですが，Linuxの生みの親・LinusもFedoraを使っているようです![Linus uses Fedora](/images/fedora-macbook/linus.webp)*From [Linus Tech Tips on YouTube](https://youtu.be/mfv0V1SxbNA?t=2722)*
     - "チョットデキル"あの人です．この写真の頃と比べると，だいぶお年を召されたよね．![ちょっとできる](/images/fedora-macbook/chotto.webp)*チョットデキル!*
 
 
