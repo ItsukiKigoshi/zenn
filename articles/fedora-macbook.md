@@ -118,9 +118,7 @@ https://www.ycam.jp/
 
 さて，脱線が過ぎましたが，彼らが使っていたのが，他ならぬMacintoshだったのです．メディアアートに限らずMacユーザが多いのはアーティストあるあるなのでしょう．当時（2014年）のMacは，今よりも一層「洗練された人が使っているもの」という印象が強かったと思います．山口市という田舎に住んでいたのできっと余計に．りんごマークが光るMacBook Proはもちろん，Mac Pro 
 （2013; "ゴミ箱"）を見たときなんて感動しました．
-[![ゴミ箱Mac Pro](https://upload.wikimedia.org/wikipedia/commons/d/d6/New_Mac_Pro_%2812093123884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original  =250x)
-*Paul Hudson from United Kingdom, CC BY 2.0, via Wikimedia Commons*
-](https://commons.wikimedia.org/wiki/File:New_Mac_Pro_(12093123884).jpg)
+[![ゴミ箱Mac Pro](https://upload.wikimedia.org/wikipedia/commons/d/d6/New_Mac_Pro_%2812093123884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original  =250x)](https://commons.wikimedia.org/wiki/File:New_Mac_Pro_(12093123884).jpg)*Paul Hudson from United Kingdom, CC BY 2.0, via Wikimedia Commons*
 
 こんな昔語りができるほど，2004年生まれの私も歳を取りました．
 そういえば小さい頃に通っていた[英語教室](http://redrobini.com/)の室長先生もMacが好きで，MacBook ProやiMac，それに発売されたばかりのApple Watchを使っていました．
@@ -129,7 +127,7 @@ https://www.ycam.jp/
 
 #### iMacを買ってもらった
 
-[![iMac Retina](https://upload.wikimedia.org/wikipedia/commons/e/e6/IMac_vector.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original =500x)*Rafael Fernandez, CC BY-SA 3.0, via Wikimedia Commons*](https://commons.wikimedia.org/wiki/File:IMac_vector.svg)
+[![iMac Retina](https://upload.wikimedia.org/wikipedia/commons/e/e6/IMac_vector.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original =500x)](https://commons.wikimedia.org/wiki/File:IMac_vector.svg)*Rafael Fernandez, CC BY-SA 3.0, via Wikimedia Commons*
 
 小学4年生の木越少年は当時，家にあった4万円の激安NECパソコン（Windows 7）にインストールした[Windows ムービーメーカー](https://ja.wikipedia.org/wiki/Windows_ムービーメーカー)で，図書館から借りたハンズオン本を片手に動画編集を覚えました．しかし，同ソフトウェアの機能は限定的で，たしか1クリップあたりに細かい継続時間指定が出来ないなど，限界も感じ始めていました．
 私の父親は子どもの潜在的なクリエイティビティに対する投資は惜しまない方針だったようで，iMovieが標準搭載されているiMacを近くのヤマダ電機だかビックカメラで一緒に買ってくれました．
@@ -187,7 +185,7 @@ https://www.ycam.jp/
 - **[Zorin](https://zorin.com/os/)**
   - 導入したそばから使えそうなOSの筆頭でした．
   - 一度ライブディスクから起動して試しましたが良い感じでした．
-  - しかし，後述のFedoraと比べて私に撮っての利点が少なく有償バージョンが存在することが少し嫌で辞めました．
+  - しかし，後述のFedoraと比べて私にとっての利点が少なく有償バージョンが存在することが少し嫌で辞めました．
   - FedoraがなければZorinにしてたかも．
 - **[NixOS](https://nixos.org/)**
   - よく聞くのでライブディスクで試しました．理想はいいのですが，日常使用には考えることが多すぎると感じました．
@@ -231,7 +229,7 @@ macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookで
     - Fedoraをインストールする容量を確保するために，macOSのストレージ内を整理し，消えてほしくないファイルはすべて外部に書き出します．
     - 私は外部ストレージが無かったので友人のUSBを借りました．
     - 理想的には，macOSの[Time Machine](https://support.apple.com/ja-jp/104984)バックアップをすると，いざというときにも復元できてよいでしょう．
-    - 容量を削る際には，[GrandPerspective](https://grandperspectiv.sourceforge.net/)というフリーソフトがディスクが何に使われているのかを見る上で役に立ちます． [![GrandPerspective](https://grandperspectiv.sourceforge.net/ScreenShots/3_4-FoldersBujumbura.png =500x)*各ファイルの容量が面積に対応して表示されます*](https://grandperspectiv.sourceforge.net/)
+    - 容量を削る際には，[GrandPerspective](https://grandperspectiv.sourceforge.net/)というフリーソフトがディスクが何に使われているのかを見る上で役に立ちます． [![GrandPerspective](https://grandperspectiv.sourceforge.net/ScreenShots/3_4-FoldersBujumbura.png =500x)](https://grandperspectiv.sourceforge.net/)*各ファイルの容量が面積に対応して表示されます*
     - 私の場合は，再インストール可能なXCodeやFinal Cut Pro関連の重たいファイルを消し，写真や動画，音楽を外に出しました．
     - 整理していたら，おじいちゃんが撮影した幼少期の私の動画が出てきました，ちゃんとMacの中に取っておいてくれたのだと思い胸が熱くなりました．![パンタグラフに見入る](/images/fedora-macbook/pantograph.webp =500x)*鉄道博物館でパンタグラフの動きに刮目する斎少年* ![治・講談](/images/fedora-macbook/osamu.webp =500x)*祖父が講談をやっている動画なんかも見つかりました*
 1. パーティションを作成
@@ -240,7 +238,7 @@ macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookで
     - この工程は非常に繊細で，おそらく失敗するとmacOSが起動しなくなり初期化が必要になるなど注意を要する工程です．ご自身でよく確認なさって，さらにバックアップなどで壊れても大丈夫な予防線を十分張った上で，「えいやっ」としてください（えいやっ，は良くないけど私はそうしました...背水の陣）．![ディスクユーティリティ](/images/fedora-macbook/partition.webp =500x)*作業中の写真; この後Fedoraの容量は300GBまで増やしました*![最終的なパーティション](/images/fedora-macbook/partition-latest.webp =500x)*最終的なパーティション分割はこの通りで，macOS 200GB, Fedora 300GBになっています*
 1. インストールメディアを作成
     - USB（私はSDカード）にFedoraのOS Imageを書き込みます
-    - 私は[Fedoraの公式サイト](https://fedoraproject.org/ja/workstation/download/)から.isoをダウンロードし，[Balena　Etcher](https://etcher.balena.io/)でSDカードに書き込みました．
+    - 私は[Fedoraの公式サイト](https://fedoraproject.org/ja/workstation/download/)から.isoをダウンロードし，[Balena Etcher](https://etcher.balena.io/)でSDカードに書き込みました．
     - Fedoraだけをインストールするなら，[Fedora Media Writer](https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/#_fedora_media_writer)というより簡単な方法が提供されています．
 1. USBから起動し，2で作成したパーティションにFedoraをインストールします
     - 間違えてmacOSの方を消さないでください．
@@ -302,7 +300,7 @@ $ sudo dnf install facetimehd-kmod
 https://zenn.dev/itsukikigoshi/articles/d550cd8fe41fcd
 
 ### その他
-- DropboxやJetBrains Toolboxなど，トップバーに表示されるインジケータの表示には，[こちらのGNOME Extension](https://extensions.gnome.org/extension/615/appindicator-support/)を入れてください！困難最初からあってもいいと思うですが，どうなってまんねやろなあ．
+- DropboxやJetBrains Toolboxなど，トップバーに表示されるインジケータの表示には，[こちらのGNOME Extension](https://extensions.gnome.org/extension/615/appindicator-support/)を入れてください！こんなん最初からあってもいいと思うですが，どうなってまんねやろなあ．
 
 ### メモ: いつからFedora?
 Fedoraを使い始めたのは2026/1/31のようです．
@@ -327,7 +325,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
 - 画像: [Inkscape](https://inkscape.org/), [GIMP](https://www.gimp.org/)
   - 老舗たちです．癖はあるけど慣れたら使えます．
   - シンプルさが欲しいならブラウザでFigmaやCanvaも使えますね．
-- 動編集画: [KdenLive](https://kdenlive.org/)
+- 動画編集: [KdenLive](https://kdenlive.org/)
   - 慣れたら使えます
   - Flatpak版じゃない（RPM版など）とプロプライエタリなコーデック（.movなど）が読めない
   - 書き出し速度はmacOSでFinal Cut Proを使ったときより流石に劣ると思います．
