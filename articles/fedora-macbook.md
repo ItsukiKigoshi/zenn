@@ -21,7 +21,7 @@ published: false
 
 私は，10年以上前に発売されたMacBook Pro ([Retina, 13-inch, Mid 2014](https://support.apple.com/ja-jp/111942)) を主たるコンピュータとして使用しています（まさかこんなに長く使うことになるなんて！）．
 このMacBook Proは，2018年に亡くなった[祖父](https://ja.wikipedia.org/wiki/木越治)の形見として，彼の息子になる私の父親から譲り受けました．それ以来ですから，私が中学生だった2018年からかれこれ8年近く使用していて，今私は大学生ですがまだ現役で活躍しています．
-しかし，同MacBook Proへインストール可能な最新OSの[macOS Big Sur](https://ja.wikipedia.org/wiki/MacOS_Big_Sur) (v11; 2020年)は私の趣味のWeb開発に関連する最新の開発環境を導入することは殆ど不可能です．高校生 (2022年あたり)からNode.js v18までしか動作せず，当時のLTSである20系を使えなかった記憶があります^[過去に関わっていたプロジェクトではNode v16を使っているので，ひょっとしたらv18すら動かなかったのかもしれない ([GitHub](https://github.com/hibiya-itchief/2024-quaint-app/blob/d0f200655489b32d398071594d55316d2a31afc8/.github/workflows/ci.yml#L22))]^[少なくともNode.js v20のサポートはmacOS 12以上でありそうです ([Github Discussion](https://github.com/nodejs/node/issues/47067#issuecomment-1474810592))]．
+しかし，同MacBook Proへインストール可能な最新OSの[macOS Big Sur](https://ja.wikipedia.org/wiki/MacOS_Big_Sur) (v11; 2020年)は私の趣味のWeb開発に関連する最新の開発環境を導入することは殆ど不可能です．高校生 (2022年あたり)からNode.js v18までしか動作せず，当時のLTSである20系を使えなかった記憶があります^[過去に関わっていたプロジェクトではNode v16を使っているので，ひょっとしたらv18すら動かなかったのかもしれない ([GitHub](https://github.com/hibiya-itchief/2024-quaint-app/blob/d0f200655489b32d398071594d55316d2a31afc8/.github/workflows/ci.yml#L22))]^[少なくともNode.js v20のサポートはmacOS 12以上でありそうです ([GitHub Discussion](https://github.com/nodejs/node/issues/47067#issuecomment-1474810592))]．
 
 ### コラム: 技術的な限界の詳細
 実際，実験的にHonoのプロジェクトを触ってみようとしたところ，`$pnpm dev`で`Cloudflare Workers runtime cannot run on the current version of macOS`と言われてしまう始末...
@@ -95,7 +95,7 @@ macOSから離れる機会をくれてありがとう．
 #### 家族はみーんなWindows.
 私は，母方の祖父母がWindows 95だか98のパソコン教室を自宅で開いていたり，父方の祖父は昔からMS-DOSを使っていて，父親もMS-DOSを子供の頃に習ったという厳格なWindows家系に生まれました．
 
-父方の祖父は私が今使っているMacBookでWindows on Parallel Desktopを使っていました．支給されたのがMacBookだったからそれを使っていただけという理由らしい．多分一番使っていたのはワープロソフト[一太郎](https://www.justsystems.com/jp/products/ichitaro/) (Windowsでしか動作しない)だし．わけわかめ！たしかその祖父は生前にmacOSのライブかな漢字変換が嫌いとか，Macに対して良い事は言っていなかったような...
+父方の祖父は私が今使っているMacBookでWindows on Parallels Desktopを使っていました．支給されたのがMacBookだったからそれを使っていただけという理由らしい．多分一番使っていたのはワープロソフト[一太郎](https://www.justsystems.com/jp/products/ichitaro/) (Windowsでしか動作しない)だし．わけわかめ！たしかその祖父は生前にmacOSのライブかな漢字変換が嫌いとか，Macに対して良い事は言っていなかったような...
 
 私の父親も，[Let's Note](https://panasonic.jp/cns/pc/products/lineup/)/[VAIO](https://vaio.com/)/Surfaceを使っていて，[秀丸エディタ](https://hide.maruo.co.jp/software/hidemaru.html)（Windows専用のフリーエディタ）でメモとか研究メモの執筆をしています．
 
@@ -247,7 +247,7 @@ macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookで
 
 
 ## 【本題4】Fedoraのセットアップ
-これでFedoraが起動するようになりました！しかし，これだけでは日常使いができません．最大の壁は①WiFi接続と②日本語入力です．ついでに，カメラのセットアップもしておくべきでしょう．
+これでFedoraが起動するようになりました！しかし，これだけでは日常使いができません．最大の壁は①Wi-Fi接続と②日本語入力です．ついでに，カメラのセットアップもしておくべきでしょう．
 
 ここで必要になってくるのが有線インターネットです．この時代のMacBookにはBroadcom製のWi-Fiチップが搭載されており，それを使った無線通信には，専用Wi-Fiドライバをインストールする必要があります．というのも，BroadcomのWi-Fiドライバはプロプライエタリである（オープンソフトウェアでない）ため，Linuxに同梱されません．
 
@@ -337,8 +337,8 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
   - ほとんど使わないが，他人から送られてきたものを開く用途ではLibreOfficeで十分．
 	- ってか世の中の人はなぜLibreOfficeを使わないのでしょうか？多分OSに同梱されてないからです．Microsoft Officeなどなくても殆どの用途はLibreOfficeで済む（しかも無料である）のに，普及していないのが悲しすぎます．
 	- パソコンをさわり立ての子どもなどに，より簡単に使えるLinuxや自由ソフトウェアを広めていかなければ，子どもの世代まで不要なMS365に高額を払わせることになってしまいます...ここで負の連鎖は終わらせましょう．
-- [LocalSend](https://localsend.org/): AirDorpの代替
-  - 同じWiFiに接続しなくてはいけないという制限がありながら，ほとんどのケースでこれで事足りる
+- [LocalSend](https://localsend.org/): AirDropの代替
+  - 同じWi-Fiに接続しなくてはいけないという制限がありながら，ほとんどのケースでこれで事足りる
  	- AirDropの一番の使いどころは自分のPC↔iPhoneであることに気づいたので，その用途が満たせれば十分．
 - [FreeFileSync](https://freefilesync.org/)
   - デジタルペーパやiPhoneのVLCとパソコンを同期できます．便利．
@@ -364,8 +364,8 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
   - wranglerもpnpmもnodeもbunも最高にサクサク動きます．
   - 開発が止まってた原因は，Mac自体の性能ではなくmacOSのせいでした．
 ### よくないところ
-- WiFiの接続がよく切れる
-	- 住んでいる寮のWiFiが不安定なのもその理由の一つだろうが，どのWiFiにも接続になくなって，再起動するまで治らないことがあります．
+- Wi-Fiの接続がよく切れる
+	- 住んでいる寮のWi-Fiが不安定なのもその理由の一つだろうが，どのWi-Fiにも接続になくなって，再起動するまで治らないことがあります．
  	- そもそもLinuxを使うならbroadcomでなくIntel製やMediaTek製のワイヤレスチップが推奨されるようです．Broadcom-wlドライバはそもそもが非推奨なので切れても仕方ない．
 - 日本語
 		- かな漢字変換は，ATOKが恋しいです．ATOKで打っていて漢字変換について考える事なんてほとんど無かったのにい
