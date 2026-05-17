@@ -230,7 +230,7 @@ macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookで
     - Fedoraをインストールする容量を確保するために，macOSのストレージ内を整理し，消えてほしくないファイルはすべて外部に書き出します．
     - 私は外部ストレージが無かったので友人のUSBを借りました．
     - 理想的には，macOSの[Time Machine](https://support.apple.com/ja-jp/104984)バックアップをすると，いざというときにも復元できてよいでしょう．
-    - 容量を削る際には，[GrandPerspective](https://grandperspectiv.sourceforge.net/)というフリーソフトがディスクが何に使われているのかを見る上で役に立ちます． [![GrandPerspective](https://grandperspectiv.sourceforge.net/ScreenShots/3_4-FoldersBujumbura.png =500x)](https://grandperspectiv.sourceforge.net/)*各ファイルの容量が面積に対応して表示されます*
+    - 容量を削る際には，[GrandPerspective](https://grandperspectiv.sourceforge.net/)というフリーソフトが，各ファイルのディスク占有割合を確認する上で役に立ちます． ![GrandPerspective](https://grandperspectiv.sourceforge.net/ScreenShots/3_4-FoldersBujumbura.png =500x)*各ファイル容量が面積に対応して表示されます*
     - 私の場合は，再インストール可能なXCodeやFinal Cut Pro関連の重たいファイルを消し，写真や動画，音楽を外に出しました．
     - 整理していたら，おじいちゃんが撮影した幼少期の私の動画が出てきました，ちゃんとMacの中に取っておいてくれたのだと思い胸が熱くなりました．![パンタグラフに見入る](/images/fedora-macbook/pantograph.webp =500x)*鉄道博物館でパンタグラフの動きに刮目する斎少年* ![治・講談](/images/fedora-macbook/osamu.webp =500x)*祖父が講談をやっている動画なんかも見つかりました*
 1. パーティションを作成
