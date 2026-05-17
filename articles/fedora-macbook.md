@@ -286,6 +286,10 @@ $ sudo dnf install facetimehd-kmod
 - 私は初期設定でIBUS-[Anthy](https://github.com/fujiwarat/anthy-unicode)を選びました，
 - Macの「かな」「英数」キーをその通りに当てはめるには一工夫必要で，Anthy設定内のキー設定で`latin_mode`に`Hangul_Hanja`（「英数」キーに割り当てられた名前）, `hiragana_mode`に`Hangul`（「かな」キーに割り当てられた名前）を設定します．![Anthyで英数・かなキーを設定](/images/fedora-macbook/anthy.webp)
   - どのキーかを判定するのにものすごく時間がかかりました．みなさんはこれで簡単に設定できる事を祈ります．
+- Anthyのかな漢字変換はお世辞にも賢いと言えません．文の途中から打ったときに文節を区切るのが苦手で，あと「そんな熟語いつ使うん？」みたいなんがしょっちゅうでてきます．こればかりは[ATOK](https://www.atok.com/)が恋しい．
+  - 辞書と構文解析エンジンは今の時代に併せて改善の余地がありそうです．
+  - Anthy初代が未踏発なら，新しいプロジェクトも未踏としてプロポーザル出せるかしら．
+  - IBUS-SKKも試しましたが，`l`で英数モードにする仕様が変更できず，文章中に大量の"l"が登場して耐えられず辞めました．
 
 ここまでできれば大体パソコンとして使えるようになります！
 
@@ -298,113 +302,113 @@ https://zenn.dev/itsukikigoshi/articles/d550cd8fe41fcd
 ### その他
 - DropboxやJetBrains Toolboxなど，トップバーに表示されるインジケータの表示には，[こちらのGNOME Extension](https://extensions.gnome.org/extension/615/appindicator-support/)を入れてください！困難最初からあってもいいと思うですが，どうなってまんねやろなあ．
 
+### メモ: いつからFedora?
+Fedoraを使い始めたのは2026/1/31のようです．
+```sh
+(base) itsukikigoshi@fedora:~$ sudo stat / 
+# ...
+Créé : 2026-01-31 01:26:32.065996572 -0800
+```
 
-### コラム: ソフトウェア
-- Mailer: Thunderbird
-- Browser: Zen (Firefox)
-- Development: Zed, JetBrains; Linux-Firstな分野, 圧倒的な優位性
-- Bitwarden
-- 画像: Inkskape, GIMP; 慣れたら使える
-- 動画: KDENLive; 慣れたら使える, Flatpak版じゃないとプロプライエタリなコーデックが読めない
-- PDF: Document Viewer, ページなら並び替えなどは限定的だがまあ十分
-- Office: ほとんど使えないが他人から送られてきたものを開く用途ではLibreOfficeで十分．
-	- ってか世の中の人はなぜLibreOfficeを使わないのか？OSに同梱されてないから，とかならクソ商法過ぎるだろ．
-	- GUIで操作できる範囲を広げて，Linux by Defaultを特にパソコンをさわり立ての子どもなどに広めていかなければ．
-	- ChromeOSは好例だが依然としてGoogleのベンダーロックイン
-- LocalSend: 同じWiFiに接続しなくてはいけないという制限がありながら，ほとんどのケースでこれで事足りる
- 	- AirDropの一番の使いどころは
-- FreeFileSync
-- この辺のソフトウェアには寄付せなあかんかも知れん
-- Flatpakは.appみたいなもの．たまに権限で詰まる
-  - Flatreel
 
-- 参考になったブログ
-	  - 誰かがMacBook Air 12だかでFedoraをインストールしているブログが参考になった
-	  - dnfでOS含め一括アップデートしてから
+## コラム: ソフトウェア
+使っているソフトウェアを紹介します．macOSの頃は大抵Apple標準で済んでいましたが，GNOMEは標準だと機能が物足りない場合があります．
 
-https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-late-2011.html
-https://alex.dzyoba.com/blog/macbook-air-linux/
-
+- Mailer: [Thunderbird](https://www.thunderbird.net/fr/)
+  - 言わずと知れた．
+- Browser: [Zen](https://zen-browser.app/)
+  - Arcみたいな新興ブラウザで，Gecko/FireFoxベースです．モダンなブラウザが欲しいけどChromiumベースに抵抗感がある私にピッタリです．
+- Development: [Zed](https://zed.dev/), [PyCharm](https://www.jetbrains.com/pycharm/) (重いけどJupyter Notebookが使いやすい)
+  - 開発はLinux-Firstな分野で，Linuxに圧倒的な優位性があります．XCcde以外は基本全部動く．
+  - 逆に，最新のmacOSがないとビルドできないXcodeって悪目立ちしすぎでは？もうちょっとインクルーシブになってください．
+- パスワード管理: [Bitwarden](https://bitwarden.com/)
+- 画像: [Inkskcpe](https://inkscape.org/), [GIMP](https://www.gimp.org/)
+  - 老舗たちです．癖はあるけど慣れたら使えます．
+  - シンプルさが欲しいならブラウザでFigmaやCanvaも使えますね．
+- 動編集画: [KdenLive](https://kdenlive.org/)
+  - 慣れたら使えます
+  - Flatpak版じゃない（RPM版など）とプロプライエタリなコーデック（.movなど）が読めない
+  - 書き出し速度はmacOSでFinal Cut Proを使ったときより流石に劣ると思います．
+- PDF: [Document Viewer](https://apps.gnome.org/fr/Papers/)（標準）
+  - ページ並び替えなどは限定的だがまあ十分
+  - たまに，ページを縮小しようとすると辺なページに飛ぶバグが地味に辛いです．
+- Office: [LibreOffice](https://www.libreoffice.org/)
+  - ほとんど使わないが，他人から送られてきたものを開く用途ではLibreOfficeで十分．
+	- ってか世の中の人はなぜLibreOfficeを使わないのでしょうか？多分OSに同梱されてないからです．Microsoft Officeなどなくても殆どの用途はLibreOfficeで済む（しかも無料である）のに，普及していないのが悲しすぎます．
+	- パソコンをさわり立ての子どもなどに，より簡単に使えるLinuxや自由ソフトウェアを広めていかなければ，子どもの世代まで不要なMS365に高額を払わせることになってしまいます...ここで負の連鎖は終わらせましょう．
+- [LocalSend](https://localsend.org/): AirDorpの代替
+  - 同じWiFiに接続しなくてはいけないという制限がありながら，ほとんどのケースでこれで事足りる
+ 	- AirDropの一番の使いどころは自分のPC↔iPhoneであることに気づいたので，その用途が満たせれば十分．
+- [FreeFileSync](https://freefilesync.org/)
+  - デジタルペーパやiPhoneのVLCとパソコンを同期できます．便利．
+- この辺のソフトウェアには寄付せなあかんかも知れんです．
+- Flatpakというアプリの配布形式はmacOSでいう.appみたいなもので，サンドボックス化と言ってOSの他の部分に侵食し内容に設計されています．たまに権限で詰まるので[Flatseal](https://flathub.org/en/apps/com.github.tchx84.Flatseal)などを使って解いてあげます．
 
 ## おまけ: Computer Hacker - Ian
 ![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
 
-![](/images/fedora-macbook/cardboard-laptop.webp =500x)
-![](/images/fedora-macbook/hacking-laundry-machine.webp =500x)
+私が交換留学しているUC Berkeleyで住んでいる寮（正確には[Coop](https://www.bsc.coop/housing/our-houses-apartments/cloyne-court)）でいつもパソコンを触っている細い男の子がLinuxに詳しいという話を聞いたので，Wi-Fiがつながらない事を相談したら相談に乗ってくれました．
 
-- インターネットつながらないって言ったら色々いじってくれた
-- ダンボール
-- 洗濯機改造
-- https://www.gentoo.org/ 彼はGentoo Linuxを使っているようです
+![自作のダンボールパソコン](/images/fedora-macbook/cardboard-laptop.webp =500x)*彼の部屋にあった自作の段ボールラップトップ*
+彼は，アプリのインストール時に1からソフトウェアをビルドをする[Getoo Linux](https://www.gentoo.org/)というディストリビューションを使っていて，部屋には自作の段ボールパソコンがあります．夏休みに開発を進めるらしい．
+![Gentoo is not easy](/images/fedora-macbook/gentoo.webp =500x)*Ianはレポート提出前にFireFoxをアンインストールしてしまい，再インストールとコンパイルに30時間かかったことがあるらしい．全然LOLじゃなさすぎる．*
 
-![Gentoo is not easy](/images/fedora-macbook/gentoo.webp =500x)*レポート提出しようと思ったらFireFoxをアンインストールしてしまい，再インストールとコンパイルに30時間かかったらしい．全然LOLじゃなさすぎる．*
-```sh
-(base) itsukikigoshi@fedora:~$ sudo stat / 
-  Fichier : /
-   Taille : 190       	Blocs : 0          Blocs d'E/S : 4096   répertoire
-Périphérique : 0/37	Inœud : 256         Liens : 1
-Accès : (0555/dr-xr-xr-x)  UID : (    0/    root)   GID : (    0/    root)
-Contexte : system_u:object_r:root_t:s0
- Accès : 2026-05-16 00:25:47.727713744 -0700
-Modif. : 2026-05-09 18:50:02.739655681 -0700
-Changt : 2026-05-09 18:50:02.739655681 -0700
-  Créé : 2026-01-31 01:26:32.065996572 -0800
-```
-使い始めたのは2026/1/31だとよ
+彼は，寮内の洗濯機を無料にしようとしてました．多分試みは上手くいっていないのだけれど，あそこを分解しようとするだけで充分crazy(褒めてる)．
 
+![Fix Laundry Machine](/images/fedora-macbook/hacking-laundry-machine.webp =500x)*洗濯機を無料にするために改造．ちなみにこれとは関係なく来学期から無料になるらしい*
 
 ## 【本題5】Fedoraにしてみて...
 ### よかったこと
-- 開発体験の向上
-- OSのバージョンによる制約を受けない
+- 開発体験が向上しました．
+  - wranglerもpnpmもnodeもbunも最高にサクサク動きます．
+  - 開発が止まってた原因は，Mac自体の性能ではなくmacOSのせいでした．
 ### よくないところ
 - WiFiの接続がよく切れる
-	- 住んでいる寮のWiFiが不安定なのもその理由の一つだろうが，どのWiFiにも接続詞なくなって，再起動するまで治らないことがある．
-	- 個人的な仮説としては，寮のWiFi接続が切れるとFedora側でどうしていいか分からなくなって結果的にどこにも接続できなくなるんじゃないかと思う
-  - FedoraのアップデートでWiFiが使えなくなる事が一度あった．本来自動でビルドされるはずのwlというWiFiドライバがビルドされないかまだアップデートされていないかで使えない
- 	- そもそもlinuxを使うならbroadcomでなくIntel製
-- 日本語入力
-		- IBUS-Anthyが馬鹿（文の途中から打つとデタラメになる）, ATOKが恋しい
+	- 住んでいる寮のWiFiが不安定なのもその理由の一つだろうが，どのWiFiにも接続になくなって，再起動するまで治らないことがあります．
+ 	- そもそもLinuxを使うならbroadcomでなくIntel製やMediaTek製のワイヤレスチップが推奨されるようです．Broadcom-wlドライバはそもそもが非推奨なので切れても仕方ない．
+- 日本語
+		- かな漢字変換は，ATOKが恋しいです．ATOKで打っていて漢字変換について考える事なんてほとんど無かったのにい
 		- オフライン辞書 (Mac辞書, 物書堂; 国語, 英和)が使いたい
+      - Mac標準の辞書や物書堂のような引きやすい辞書が欲しいです．[GoldenDict](https://www.goldendict.org/)など，あるにはあるようですが辞書ファイルの追加方法が分かりません．
 - 標準アプリが（これはFedoraではなくGNOME）限定的
-  - Apple Musicに代わる良い音楽プレイヤー (編集, iPodとの同期)が無い (Rhythmboxはカバーが出ない, GNOME Musicも初回起動に時間がかかる，同じアルバムなのに別物と認識)
-	- Apple Calendarに代わる良いカレンダー (タイムゾーンの変更): GNOME Calendar
-  - いかにmacOS標準アプリがよくできているかを実感できる．ここはプロプライエタリさまさま
+  - Apple Musicに代わる良い音楽プレイヤー (編集, iPodとの同期)が無い
+    - Rhythmboxはカバーアートが出ない
+    - GNOME Musicも初回起動に時間がかかる，同じアルバムなのに別物と認識されるなど
+	- Apple Calendarに代わる良いカレンダー
+  	- GNOME Calendarはタイムゾーンの変更ができず困ります
+  - いかにmacOS標準アプリがよくできているかを実感しました．ここはプロプライエタリさまさまです．
 - 使えないアプリもまあまあある
-  - ドライブ系のローカル連携: 基本Dropboxしか使えない．iCloud, OneDrive, Google Driveはローカル同期用の公式アプリが存在しない（本当に？）
-  - Evernote -> Obsidian+Dropboxに乗り換えた（iPhoneと同期できない，やはりAndroid?でもGoogle好きじゃない）
-- Apple製品は使えない（そこまで問題ではない）
-  - iPodの更新: macOSを立ち上げる
-  - iMessage: iPhoneでやる（意外と困らない）
-    - RCSが普及すれば，よりiMessageである理由はなくなると思う．普及しろ～
-  - FaceTime: iPhoneでやる（意外と困らない）
-  - iCloud写真（iPhone写真のバックアップは日本帰ったらやらなきゃ）
-  - Final Cut Pro (GPUの扱い方はやはりmacOSの方がうまそう？)
+  - 個人用ストレージサービスのローカル連携は，基本Dropboxしか使えません．iCloud, OneDrive, Google Driveはローカル同期用の公式アプリが存在しないようです．
+  - iMessage: iPhoneでやれば意外と困りません
+    - RCSが普及すれば，よりiMessageである理由はなくなると思います．普及しろ～
+  - FaceTime: iPhoneでやれば意外と困らない
+  - iCloud写真: iPhone写真のバックアップは日本帰ったらやらなきゃです
+  - Final Cut Pro: GPUの扱い方はやはりmacOSの方がうまそうです
 
-## コラム: 次に買うなら?
-私もLet's Noteのゴツい見た目と，ソニー/NECと並んで数少ない日本メーカーである^[富士通のPC事業子会社である富士通クライアントコンピューティングはレノボに買収されたし...]点が好きなので，次に買うならFedora on Let's Note?
-- Lenovo
-- Framework（アメリカではよく観測した）
-![](/images/fedora-macbook/framework.webp)
+
+## コラム: 次にPCを買うなら?
+- Fedora on [Let's Note](https://panasonic.jp/cns/pc/products/lineup/)
+- Fedora on [Lenovo](https://www.lenovo.com/jp/ja/)
+- Fedora on [Framework](https://frame.work/): 修理が容易なPC．日本未発売．
+  - アメリカで実際に使っている学生を2例見かけました![カフェで観測したFramework](/images/fedora-macbook/framework.webp =300x)
+- [MacBook Pro](https://www.apple.com/jp/macbook-pro/)
+
+次にPCを買い換えるなら，現在のWindows PCはCopilotマークがおダサなので，それがないFrameworkかMacBook Proを買います．Frameworkはあまり安くない．
+
+今年のWWDC (2026)で，macOSのLiquid Glassがもう少し落ち着いたデザインになる事を願います．
 
 ## Linuxの世界
-- オープンソースカルチャーとの強い結びつき
-  - Wikipedia
-  - Internet ArchiveにもLinuxロゴがあったな
-  - "プロプライエタリ"ってはじめて言った
-- カルチャー
-  - "Linuxちょっとできる"
-  - Linuxのミームたち
-- アプリストアにフリーソフトウェアが充実しているのは，コミュニティとともに，参入障壁が低いこと（Apple Developers Program）
-  - せっかく写真ビューワアプリApollo Oneを買ったのに...
-- Arch Wiki
-- 源流志向, できるだけ源流をたどる(source of truth)
-  - 大抵英語で辛いけど，Docsを読むのがかなり利く．Tech Blogは入り口に，最終的に参照するのは公式ドキュメント
-- CLIに抵抗はだいぶなくなった
-  - なぜCLIはコマンドを知らないと何もできないんだろう
 
-これから何するの？
+macOSで開発が出来ないので代替手段を得るという消極的な理由でしたが，今（そしてアメリカ西海岸で）Linuxに出会えたことはよかったと思います．Internet Archiveを訪問した時もLinuxステッカーが貼ってあったし，この地域のフリーカルチャーとLinuxは密接に結びついてそうです．
+Linuxを使ったことで初めて「プロプライエタリ」という言葉を口にしたし，フリーソフトウェアコミュニティの厚さも実感したし，コマンドラインに抵抗感がなくなりました．
 
----
-## メモ
+このMacBook Proが壊れるまでは，ネジも付け直したりしながらFedoraと共に勉強や物作りに励みたいと思います．
 
+## 結びに代えて: これから何するの？
+2026年5月に交換留学を終えて日本に帰国し，ICUで卒業するミッションが控えているのですが，その先に宇宙科学も興味あるし登山をするので地学にも興味があるし，またモデリングなどの数値解析でコンピューティングが関わるような研究や仕事もしてみたいし，何をしていいか定まらず困っています．
+
+### 2026年夏は槍ヶ岳に遊びにきてね
+さしあたり今夏は長野県は北アルプス・槍ヶ岳の山小屋で勤務予定なので，お近くをご通行の際はご一報ください．
+山の上で働きながら，たまに縦走登山する夏にします．
+
+https://www.enzanso.co.jp/hutte-ooyari
