@@ -152,29 +152,47 @@ https://www.ycam.jp/
 ---
 
 ## なぜFedora Linux?
-- なんとなく以下の条件があった
-	- 私の中ではなるべくセットアップの負担が少ない
-	- クール
-- Fedora
-  - PureなGNOMEが綺麗
-  - 開発環境として適している
-  - Just works （面倒な設定無しでも結構動く）
-    - Linusも使っている: https://www.youtube.com/watch?v=mfv0V1SxbNA (直接的な理由ではない)
-- Nix (試した; 面倒; 日本語フォントが汚い), Ubuntu (デフォルトデスクトップが可愛くない), Zorin (試した; 有料版があるのが引かれないかも,だったらUbuntuで良くない？) 
+結果としてLinuxディストリビューション（macOSやWindowsと違って，LinuxではOSの核となる"Linuxカーネル"を元に派生した様々な種類のOSが存在します）として[Fedora](https://fedoraproject.org/)を選びました．簡単にその理由を書きます．
+この話には議論・闘争が付き物です．以下のミームが物語っています．だから深く立ち入りません．
+![Linux is Scary](/images/fedora-macbook/scary-linux.webp =300x)
+*"私，猫ミームが見たいだけやねんけど"*
 
-```sh
-(base) itsukikigoshi@fedora:~$ sudo stat / 
-  Fichier : /
-   Taille : 190       	Blocs : 0          Blocs d'E/S : 4096   répertoire
-Périphérique : 0/37	Inœud : 256         Liens : 1
-Accès : (0555/dr-xr-xr-x)  UID : (    0/    root)   GID : (    0/    root)
-Contexte : system_u:object_r:root_t:s0
- Accès : 2026-05-16 00:25:47.727713744 -0700
-Modif. : 2026-05-09 18:50:02.739655681 -0700
-Changt : 2026-05-09 18:50:02.739655681 -0700
-  Créé : 2026-01-31 01:26:32.065996572 -0800
-```
-使い始めたのは2026/1/31だとよ
+私には，なんとなく以下の条件がありました．
+- **セットアップの負担が少ない**: 本業が大学生なので，レポートや課題がこなしやすい環境であることが絶対条件でした．インターネットブラウズや印刷，Zoom参加などです．
+- **開発環境として不自由しない**: そもそものモチベーションが開発環境を整えることだったので，最新のパッケージが動作することが条件でした
+
+### 検討したディストリビューション
+- **[Zorin](https://zorin.com/os/)**
+  - 導入したそばから使えそうなOSの筆頭でした．
+  - 一度ライブディスクから起動して試しましたが良い感じでした．
+  - しかし，後述のFedoraと比べて私に撮っての利点が少なく有償バージョンが存在することが少し嫌で辞めました．
+  - FedoraがなければZorinにしてたかも．
+- **[NixOS](https://nixos.org/)**
+  - よく聞くのでライブディスクで試しました．理想はいいのですが，日常使用には考えることが多すぎると感じました．
+  - あと，デフォルトの日本語フォントがガビガビなのがテンション下がりました．
+  - ここで作成したNixOSのインストールメディアは，のちのちFedoraのパーティション拡張に使いました．ありがとうNixOS!
+- **[Ubuntu](https://ubuntu.com/desktop)**
+  - 小学生の頃に[日経Linux](https://www.fujisan.co.jp/product/1281679734/b/1204373/)を買って読んでいたくらいなので当然Ubuntuは検討しました．
+  - しかし，本当に単純な理由で，デフォルトデスクトップの色味が怖い（なぜ紫色で，おまけに不気味なマークなのですか？怖すぎる...）のでやめました．これが動物の写真だったらUbuntuを使っていたことでしょう．
+  - 試してすらいないです...試すべきだったかな．
+- [openSUSE](https://www.opensuse.org/)/[Linux Mint](https://www.linuxmint.com/)
+  - KDEやXfce環境はWindowsっぽく馴染めそうになかったので考慮しませんでした．
+- [Fedora Workstation](https://fedoraproject.org/workstation/)
+  - Fedora Workstationに搭載されているピュアな[GNOME](https://www.gnome.org/fr/)がただ単純に美しかったです．
+  - また，Fedoraはパッケージ更新に積極的で，最新の開発環境を手に入れる文脈からも適していました．
+  - FedoraはIBM傘下の商業向けLinuxディストリビューション・RedHatが開発しているオープンソースなフリーOSです．Red Hatに対するFedora帽子だね．
+  - Just works（面倒な設定無しでも結構動く）ことが特徴だと思います．
+    - これはFedoraを使い始めた後に知ったことですが，Linuxの生みの親・LinusもFedora使っているようです![Linus uses Fedora](/images/fedora-macbook/linus.webp)*From [Linus Tech Tips on YouTube](https://youtu.be/mfv0V1SxbNA?t=2722)*
+    - "チョットデキル"あの人です．だいぶお年を召されたよね．![ちょっとできる](/images/fedora-macbook/chotto.webp)*チョットデキル!*
+
+
+### おまけ: Computer Hacker - Ian
+![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
+
+![](/images/fedora-macbook/cardboard-laptop.webp =500x)
+![](/images/fedora-macbook/hacking-laundry-machine.webp =500x)
+
+
 
 ## Fedora Linuxをデュアルブートする手順
 - macOSを使う可能性があるので（実際に使った），Macは残す
@@ -208,6 +226,21 @@ https://www.youtube.com/watch?v=p4lu-_6nY6Q
 
 この際だから調べよう:
 - [ ] FAT32などのファイルシステムの違い
+
+
+```sh
+(base) itsukikigoshi@fedora:~$ sudo stat / 
+  Fichier : /
+   Taille : 190       	Blocs : 0          Blocs d'E/S : 4096   répertoire
+Périphérique : 0/37	Inœud : 256         Liens : 1
+Accès : (0555/dr-xr-xr-x)  UID : (    0/    root)   GID : (    0/    root)
+Contexte : system_u:object_r:root_t:s0
+ Accès : 2026-05-16 00:25:47.727713744 -0700
+Modif. : 2026-05-09 18:50:02.739655681 -0700
+Changt : 2026-05-09 18:50:02.739655681 -0700
+  Créé : 2026-01-31 01:26:32.065996572 -0800
+```
+使い始めたのは2026/1/31だとよ
 
 ## Fedoraのセットアップ
 - [ ] どんな感じになったか積極的にスクリーンショットを載せよう
@@ -298,8 +331,5 @@ https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-lat
 https://www.cyberciti.biz/faq/fedora-linux-install-broadcom-wl-sta-wireless-driver-for-bcm43228/
 https://www.thetestspecimen.com/posts/broadcom-wifi-modules-fedora/
 https://alex.dzyoba.com/blog/macbook-air-linux/
-![](/images/fedora-macbook/cardboard-laptop.webp)
 ![](/images/fedora-macbook/partiton.webp)
-![](/images/fedora-macbook/scary-linux.webp)
-![](/images/fedora-macbook/hacking-laundry-machine.webp)
-![](/images/fedora-macbook/munchausen-by-proxy.webp)
+
