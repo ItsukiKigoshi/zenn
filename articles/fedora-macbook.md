@@ -1,5 +1,5 @@
 ---
-title: 思い出が詰まったMacBook Pro (Mid 2014)でFedora Linuxをデュアルブートしよう
+title: MacBook Pro (Mid 2014)でFedora Linuxをデュアルブートしよう
 emoji: 🧽
 type: tech
 topics:
@@ -38,7 +38,7 @@ dyld: Symbol not found: __ZNKSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9al
 Referenced from: /Users/user/.pkgx/nodejs.org/v25.5.0/bin/node (which was built for Mac OS X 13.5)
 Expected in: /usr/lib/libc++.1.dylib 
 ```
-というエラーを目にするようになりました．
+というようなエラーを目にするようになりました．
 
 まあ，macOSのメジャーアップデートが毎年やってきて，基本的に開発環境は最新OSに追従していることを前提とするならば当然かもしれません...
 
@@ -73,9 +73,8 @@ macOS上でLinuxを立ち上げる選択肢として，[UTM](https://mac.getutm.
 そもそも，アクティブなサポートが殆ど切れているようなmacOSはセキュリティの観点からもあまり褒められたものではありません．
 macOSから離れる機会をくれてありがとう．
 
-
-## コラム: 厳格なWindows家系に生まれた私のAppleに対する想い
-### 家族はみーんなWindows
+## コラム: 厳格なWindows家系に生まれた私のAppleに対する想い，メディアアートとクライミング
+### 家族はみーんなWindows.
 私は，母方の祖父母がWindows 95だか98のパソコン教室を自宅で開いていたり，父方の祖父は昔からMS-DOSを使っていて，父親もMS-DOSを子供の頃に習ったという厳格なWindows家系に生まれたました．
 
 父方の祖父は私が今使っているMacBookでWindows on Parallel Desktopを使っていました．支給されたのがMacBookだったからそれを使っていただけという理由らしい．多分一番使っていたのはワープロソフト[一太郎](https://www.justsystems.com/jp/products/ichitaro/) (Windowsでしか動作しない)だし．わけわかめ！たしかその祖父は生前にmacOSのライブかな漢字変換が嫌いとか，Macに対して良い事は言っていなかったような...
@@ -92,7 +91,10 @@ https://www.ycam.jp/
 今思い返しても，あんな田舎（ちょっと失礼）に世界からメディアアーティストがやってきたり（時に故・[坂本龍一](https://www.ycam.jp/archive/profile/ryuichi-sakamoto/)，[大友良英](https://www.ycam.jp/archive/profile/yoshihide-otomo/)，[ダムタイプ](https://www.ycam.jp/archive/profile/dumb-type/)），常駐の開発集団・[インターラボ](https://www.ycam.jp/aboutus/interlab/)のクールなみなさんが子どもだった私と遊んでくれたりしたあの環境は，紛れもなく山口市の財産だと思います．ありがとうYCAM．
 
 私の趣味の現代アート鑑賞も，プログラミング（YCAMにはArduinoが転がっていた）やオープンカルチャー（作品は積極的にCreative Commonsライセンスで頒布されていた (例: [gonzoCam](https://www.ycam.jp/archive/software-hardware/gonzocam/))）への興味も間違いなくYCAMに根ざしています．
+
 まあ小学生当時の私はコンピュータというより[レゴブロックのこまどり撮影](https://youtube.com/playlist?list=PLVxEAWkQVBq7ZLbCohJz4OtNNkQ6UMr0c)にはまっていたので，全然コンピュータ関連に明るかった訳ではなかったですが．そういえばYouTubeへ動画をアップロードする方法を小学3-4年生の私に教えてくれたのも[深澤孝史](https://www.ycam.jp/archive/profile/takafumi-fukasawa/)さんという美術家の方でした．失礼極まりなかったであろう世間知らず・木越斎少年のガキに色々なことを教えてくれたことには感謝しかありません．今も元気にしているかしら．最後に会ったのは確かコロナ禍が始まってすぐの2020年で，Zoom越しの対面でした．
+
+### アートとMac
 
 さて，脱線が過ぎましたが，彼らが使っていたのが，他ならぬMacintoshだったのです．メディアアートに限らずMacユーザが多いのはアーティストあるあるなのでしょう．当時（2014年）のMacは，今よりも一層「洗練された人が使っているもの」という印象が強かったと思います．山口市という田舎に住んでいたのできっと余計に．りんごマークが光るMacBook Proはもちろん，Mac Pro 
 （2013; "ゴミ箱"）を見たときなんて感動しました．
@@ -100,7 +102,8 @@ https://www.ycam.jp/
 *Paul Hudson from United Kingdom, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons*
 
 こんな昔語りができるほど，2004年生まれの私も歳を取りました．
-そういえば小さい頃に通っていた[英語教室](http://redrobini.com/)の室長先生もMacが好きで，MacBook ProやiMacを使っていました．まだスキューモーフィズムの面影漂う[OS X Mavericks](https://ja.wikipedia.org/wiki/OS_X_Mavericks)でしたね（"OS X"！なんて懐かしい響き！！）．
+そういえば小さい頃に通っていた[英語教室](http://redrobini.com/)の室長先生もMacが好きで，MacBook ProやiMac，それに発売されたばかりのApple Watchを使っていました．
+まだスキューモーフィズムの面影漂う[OS X Mavericks](https://ja.wikipedia.org/wiki/OS_X_Mavericks)でしたね（"OS X"！なんて懐かしい響き！！）．そういえば室長の彼（"katsu-sensei"）は当時New York旅行でタイムズスクエアに行ったときの写真を見せてくれましたが，その約10年後に私も初めてそこを訪れるわけです．あの英語教室に行っていなかったら私は国際基督教大学に通っていないかもしれないし，UC Berkeleyに留学していなかったかもしれません，ふーん，振り返って見ると色々なものがつながっているのです．[Connecting the Dots](https://youtu.be/UF8uR6Z6KLc)^[こんなに喋って，私はただのApple Fanではありませんか！否定は出来ないけど安直ですみません]^[日本語字幕が関西弁でふざけていますね...今気づきました.]...ってか私の中を流れるこのコンピュータへの関心から今年友達が通うスタンフォードにも訪れたわけで，そこでSteve Jobsは20年前に講演をしたわけで．つーか今日ちょうどBerkeleyの卒業式で，ガウンを着た人がいっぱいいるカフェでこれを書いています．スタンフォードのライバルのBerkeleyで．ちょっとこじつけが過ぎますね．
 
 
 ### iMacを買ってもらった
@@ -108,42 +111,45 @@ https://www.ycam.jp/
 小学4年生の木越少年は当時，家にあった4万円の激安NECパソコン（Windows 7）にインストールした[Windows ムービーメーカー](https://ja.wikipedia.org/wiki/Windows_ムービーメーカー)で，図書館から借りたハンズオン本を片手に動画編集を覚えました．しかし，同ソフトウェアの機能は限定的で，たしか1クリップあたりに細かい継続時間指定が出来ないなど，限界も感じ始めていました．
 私の父親は子どもの潜在的なクリエイティビティに対する投資は惜しまない方針だったようで，iMovieが標準搭載されているiMacを近くのヤマダ電機だかビックカメラで一緒に買ってくれました．
 その後，そのiMacはMacBook Proとともに外付けDVDドライブを指したら電源系統のトラブルで（多分私が適当な外部電源をDVDドライブに差したのでショートした）起動しなくなり，数万円で修理したものの8GBのメモリでの作業は辛く，結局私が高校生の頃だったかPCリサイクルされました．ユニファイドボディは美しいですが，「ディスプレイだけは再利用しよう」みたいことがやりにくいですよね．それはまた別のお話．
+### "Yosemite"
 
-ところで，当時の最新OSはOS X Yosemiteで，子どもの私はその美しいデザインと発表会に感動しました．多分人生で初めて見たWWDCのKeynoteが2015です．
-  - そういや実際に行った，聖地巡礼
+ところで，当時の最新OSはOS X Yosemiteで，子どもの私はその美しいデザインと[その発表方法](https://youtu.be/w87fOAG8fjk?t=812)に感動しました．多分人生で初めて見たWWDC Keynote (WWDC 2014)です．Craig Federighiの冗談と美しいデザイン哲学のミックスは今見ても美しい．Yosemiteは10年以上前だけれど，今見ても見劣りがしないどころか，Liquid Glassよりも洗練されているようにさえ思えます．思い出補正マシマシですが．
 
+脱線の脱線ですがBerkeleyに来たからにはYosemite国立公園に行きました．小4の私はカリフォルニア州がどこにあるかも知らなかったわけなのですが，10年の時を経た聖地巡礼です．しかも，大学生になって始めたクライミングの聖地でもあるという，2つの意味での聖地を同時に巡るわけですね．
 
-- iPod nano, shuffle
-- Liquied Glass... 重い..
-- スキュモーフィズムが良かった，と手放しに褒めることはしないが，今のiOSにはバグが多い
-- 美しさもさることながら，求めているのはjust works
-- Big Surのデザインが好き．
+![El Capitan](/images/fedora-macbook/elcap.webp =400x)
+*Yosemiteの次のOS Xの名称にもなった，ヨセミテ国立公園の象徴: エル・キャピタン．私の滞在中には[ユージ・ヒラヤマ](https://yuji-hirayama.com/)がこの壁を登っていたらしい^[実は私が高校生の頃に参加した森美術館のワークショップで彼の娘さんとダンスしており，彼からクライミング講習も受けたことがあることを，ヨセミテに行った後思い出しました．縁過ぎる．![森美術館のワークショップでユージ・ヒラヤマのジムを訪れたときの写真](https://live.staticflickr.com/65535/51756727258_f07d7ca887.jpg)
+*©Mori Art Museum. All Rights reserved. Provided thru [Flickr](https://flic.kr/p/2mRyKQw). Another Energy-Related Community Engagement Program “Art Camp for under 22, Vol. 7 Human Begin: What Are We Doing Tomorrow?” Session #2: Saturday, July 10, 2021 Venue: “Climb Park Base Camp” (b-camp.jp/) in Iruma City, Saitama Prefecture Photo: Tayama Tatsuyuki*]．映画『[フリーソロ](https://ja.wikipedia.org/wiki/フリーソロ)』でアレックスオノルドが綱なしで登ったことも有名ですね*
 
-- MacBook Proが古くて開発に支障が...
-- パソコンを買い直すのも面倒だし，Linux入れてみるか！（Geminiにそう提案された）
-- 結果として大学もこれでいけた
+![壁を登るクラブメイト](/images/fedora-macbook/climbing.webp =400x)
+*写真に移る彼女は，（リアルライフでも）パートナーである少し上の彼と一緒にフリークライミングしていました．一緒にトラッドクライミングできるカップルなんて素敵過ぎる．日本帰国後の私の目標の1つはフリークライミングの技術を身につけることかな．*
 
-
-
-## MacBook Pro (13 inch, Mid 2014)の魅力
-- HDMI
-- 光る
-- SDカード
-- MagSafe
-- 今とそんなに重さが変わらない
-- Intel (Linuxがブートしやすい)
-  - Apple SiliconにはAsahi Linuxがひつようでちょっとめんどいっぽい
+### 他にもApple...
+小学生の頃に買ってもらったiPod nanoも，人生で初めて買った携帯電話のiPhone 12 miniもまだ現役．両親が友人の結婚式でもらったか何かの初代iPod Shuffle（容量1GB!）も以前は使っていました．
+![Apple Decices Still Workin'](/images/fedora-macbook/apples.webp =250x)
+*iPod nano (6th Gen), MacBook Pro, iPhone 12 mini*
 
 
+### MacBook Pro (Retina, 13-inch, Mid 2014)の魅力
+さて，祖父の形見であるMacBook Pro (Retina, 13-inch, Mid 2014)を今でも使っている理由に，ひとつは形見であることもありますが，それが製品として優れているからというのも理由のひとつです．なんせ，
+- このMacBook ProにはHDMIポートがついています
+- このMacBook ProにはSDカードスロットがついています
+- このMacBook ProにはMagSafe (磁石で取り外し可能な充電端子)がついています
 
- wranglerでこんなエラーが出るんだけど, それでもHonoを活用できる?
+上記の3機能は，2016年モデルで廃止され，その後また戻ってきた機能たちです．この時代のMacBook Proには必要不可欠がもう揃っていたのです！
 
-Warning: Unsupported macOS version detected (11.6.0). The Cloudflare Workers runtime may not work correctly on macOS versions below 13.5.0. Consider upgrading to macOS 13.5.0+ or using a DevContainer setup with a supported version of Linux (glibc 2.35+ required). 
+- 最新のMacBook Proと重量が殆ど変わりません！（最新の再軽量モデル: [1.55kg](https://www.apple.com/macbook-pro/specs/#:~:text=1%2E55%20kg) vs.私の: [1.57kg](https://support.apple.com/ja-jp/111942#:~:text=1%2E57%20kg2)）
+- りんごが光ります ![光るりんご](/images/fedora-macbook/shining.webp =500x)
+- Intel製チップ
+  - 性能面は置いておいて，Linuxがブートしやすいです．
+  - Apple SiliconでのLinuxにはAsahi Linuxという前提OS(?)が必要でちと手間がかかりそう．
 
-- Dockerすら動かない
-  - https://orbstack.dev/
 
+長くなりましたが，10年前のAppleが私を形作ったであろうお話でした．
 
+**（コラム終り）**
+
+---
 
 ## なぜFedora Linux?
 - なんとなく以下の条件があった
