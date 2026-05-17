@@ -13,7 +13,7 @@ published: true
 
 ## 【概要】
 旧式のMacBook Pro (Retina, 13-inch, Mid 2014) を現役で使用している私は，年初（2026年1月）に開発環境としてのmacOS 11 (Big Sur)に限界を感じ，Linux導入に踏み切りました．
-ここでは10年以上前に発売されたMacBook ProにFedora Linuxをデュアルブートした手順と，Linux移行に係る所感とAppleやLinuxへの想いを綴ります．
+ここでは10年以上前に発売されたMacBook ProにFedora Linuxをデュアルブートした手順と，Linux移行に係る所感や，Apple・Linuxへの想いを綴ります．
 
 ![日常に溶けるFedora](/images/fedora-macbook/fedora-daily-life.webp)*日常に溶けるFedora*
 
@@ -21,18 +21,19 @@ published: true
 
 私は，10年以上前に発売されたMacBook Pro ([Retina, 13-inch, Mid 2014](https://support.apple.com/ja-jp/111942)) を主たるコンピュータとして使用しています（まさかこんなに長く使うことになるなんて！）．
 このMacBook Proは，2018年に亡くなった[祖父](https://ja.wikipedia.org/wiki/木越治)の形見として，彼の息子になる私の父親から譲り受けました．それ以来ですから，私が中学生だった2018年からかれこれ8年近く使用していて，今私は大学生ですがまだ現役で活躍しています．
-しかし，同MacBook Proへインストール可能な最新OSの[macOS Big Sur](https://ja.wikipedia.org/wiki/MacOS_Big_Sur) (v11; 2020年)は私の趣味のWeb開発に関連する最新の開発環境を導入することは殆ど不可能です．高校生 (2022年あたり)からNode.js v18までしか動作せず，当時のLTSである20系を使えなかった記憶があります^[過去に関わっていたプロジェクトではNode v16を使っているので，ひょっとしたらv18すら動かなかったのかもしれない ([GitHub](https://github.com/hibiya-itchief/2024-quaint-app/blob/d0f200655489b32d398071594d55316d2a31afc8/.github/workflows/ci.yml#L22))]^[少なくともNode.js v20のサポートはmacOS 12以上でありそうです ([GitHub Discussion](https://github.com/nodejs/node/issues/47067#issuecomment-1474810592))]．
+しかし，同MacBook Proへインストール可能な最新OSの[macOS Big Sur](https://ja.wikipedia.org/wiki/MacOS_Big_Sur) (v11; 2020年)は私が趣味とするWebの最新開発環境を導入することは殆ど不可能です．そもそも，高校生 (2022年あたり)の頃からNode.js v18までしか動作せず，当時のLTSである20系を使えなかった記憶があります^[過去に関わっていたプロジェクトではNode v16を使っているので，ひょっとしたらv18すら動かなかったのかもしれない ([GitHub](https://github.com/hibiya-itchief/2024-quaint-app/blob/d0f200655489b32d398071594d55316d2a31afc8/.github/workflows/ci.yml#L22))]^[少なくともNode.js v20のサポートはmacOS 11以下が切り捨てられています ([GitHub Discussion](https://github.com/nodejs/node/issues/47067#issuecomment-1474810592))]．
 
 ### コラム: 技術的な限界の詳細
 実際，実験的にHonoのプロジェクトを触ってみようとしたところ，`$pnpm dev`で`Cloudflare Workers runtime cannot run on the current version of macOS`と言われてしまう始末...
 
+他にも，
 ```sh
 $ wrangler dev
 Warning: Unsupported macOS version detected (11.6.0).
 The Cloudflare Workers runtime may not work correctly on macOS versions below 13.5.0.
 Consider upgrading to macOS 13.5.0+ or using a DevContainer setup with a supported version of Linux (glibc 2.35+ required). 
 ```
-
+と言われたり．
 また，Nodeに関連するプロジェクトを開発しようとすると，事あるごとに
 ```sh
 dyld: Symbol not found: __ZNSt3__113basic_filebufIcNS_11char_traitsIcEEE4openEPKcj
@@ -74,7 +75,7 @@ https://mac.getutm.app
 ### GitHub Codespace [不可]
 
 自身のOSと関係なく環境を構築する選択肢として，[GitHub Codespace](https://github.com/features/codespaces)も検討しました．
-学生なら[Student Developer Pack](https://education.github.com/pack)を使えば無料で使えることを高校生の頃に使った経験から覚えていましたが，学生認証ができないのでCodespaceの使用は諦めました．そもそもオンラインでしか開発サーバを立ち上げられないのは不便だし...
+学生なら[Student Developer Pack](https://education.github.com/pack)で無料になることを高校生の頃に使った経験から覚えていましたが，学生認証ができないのでCodespaceの使用は諦めました．そもそもオンラインでしか開発サーバを立ち上げられないのは不便だし...
 
 具体的には，学生認証で私が交換留学生として滞在しているUniversity of California, Berkeleyのアカウント (`itsuki [at] berkeley.edu`)を使おうとしたところ，私みたいなNon-degree studentは受け入れないようになっているのか，ただの`berkeley.edu`ではなく`*.berkeley.edu`という，どこかの学科に属していることが求められるドメインでないと登録不可でした．
 
@@ -93,11 +94,11 @@ macOSから離れる機会をくれてありがとう．
 ### コラム: 厳格なWindows家系に生まれた私のAppleに対する想い
 
 #### 家族はみーんなWindows.
-私は，母方の祖父母がWindows 95だか98のパソコン教室を自宅で開いていたり，父方の祖父は昔からMS-DOSを使っていて，父親もMS-DOSを子供の頃に習ったという厳格なWindows家系に生まれました．
+私は，母方の祖父母がWindows 95だか98のパソコン教室を自宅で開いていたり，父方の祖父は昔からMS-DOSを使っていて，父親もMS-DOSを子どもの頃に習ったという厳格なWindows家系に生まれました．
 
-父方の祖父は私が今使っているMacBookでWindows on Parallels Desktopを使っていました．支給されたのがMacBookだったからそれを使っていただけという理由らしい．多分一番使っていたのはワープロソフト[一太郎](https://www.justsystems.com/jp/products/ichitaro/) (Windowsでしか動作しない)だし．わけわかめ！たしかその祖父は生前にmacOSのライブかな漢字変換が嫌いとか，Macに対して良い事は言っていなかったような...
+父方の祖父は，私が今使っているMacBookでParallels DesktopのWindowsを使っていました．支給されたのがMacBookだったからそれを使っていただけという理由らしい．多分一番使っていたのはワープロソフト・[一太郎](https://www.justsystems.com/jp/products/ichitaro/) (Windowsでしか動作しない)だし．わけわかめ！たしかその祖父は生前にmacOSのライブかな漢字変換が嫌いとか，Macに対して良い事は言っていなかったような...
 
-私の父親も，[Let's Note](https://panasonic.jp/cns/pc/products/lineup/)/[VAIO](https://vaio.com/)/Surfaceを使っていて，[秀丸エディタ](https://hide.maruo.co.jp/software/hidemaru.html)（Windows専用のフリーエディタ）でメモとか研究メモの執筆をしています．
+私の父親も，Windows PCである[Let's Note](https://panasonic.jp/cns/pc/products/lineup/)/[VAIO](https://vaio.com/)/Surfaceを使っていて，[秀丸エディタ](https://hide.maruo.co.jp/software/hidemaru.html)（Windows専用のフリーエディタ）でメモとか研究メモの執筆をしています．
 
 うちの母親もバックオフィス系の仕事をしているので，自宅でHPを使っているし．
 
@@ -112,11 +113,11 @@ https://www.ycam.jp/
 
 私の趣味の現代アート鑑賞も，プログラミング（YCAMにはArduinoが転がっていた）やオープンカルチャー（作品は積極的にCreative Commonsライセンスで頒布されていた (例: [gonzoCam](https://www.ycam.jp/archive/software-hardware/gonzocam/))）への興味も間違いなくYCAMに根ざしています．
 
-まあ小学生当時の私はコンピュータというより[レゴブロックのこまどり撮影](https://youtube.com/playlist?list=PLVxEAWkQVBq7ZLbCohJz4OtNNkQ6UMr0c)にはまっていたので，全然コンピュータ関連に明るかった訳ではなかったですが．そういえばYouTubeへ動画をアップロードする方法を小学3-4年生の私に教えてくれたのも[深澤孝史](https://www.ycam.jp/archive/profile/takafumi-fukasawa/)さんという美術家の方でした．失礼極まりなかったであろう世間知らず・木越斎少年のガキに色々なことを教えてくれたことには感謝しかありません．今も元気にしているかしら．最後に会ったのは確かコロナ禍が始まってすぐの2020年で，Zoom越しの対面でした．
+まあ小学生当時の私はコンピュータというより[レゴブロックのこまどり撮影](https://youtube.com/playlist?list=PLVxEAWkQVBq7ZLbCohJz4OtNNkQ6UMr0c)にはまっていたので，全然コンピュータ関連に明るかった訳ではなかったですが．そういえばYouTubeへ動画をアップロードする方法を小学3-4年生の私に教えてくれたのも[深澤孝史](https://www.ycam.jp/archive/profile/takafumi-fukasawa/)さんという美術家の方でした．失礼極まりなかったであろう世間知らずなガキの木越斎少年に色々なことを教えてくれたことには感謝しかありません．今も元気にしているかしら．最後に彼と会ったのは確かコロナ禍が始まってすぐの2020年で，Zoom越しの対面でした．
 
 #### アートとMac
 
-さて，脱線が過ぎましたが，彼らが使っていたのが，他ならぬMacintoshだったのです．メディアアートに限らずMacユーザが多いのはアーティストあるあるなのでしょう．当時（2014年）のMacは，今よりも一層「洗練された人が使っているもの」という印象が強かったと思います．山口市という田舎に住んでいたのできっと余計に．りんごマークが光るMacBook Proはもちろん，Mac Pro 
+さて，脱線が過ぎましたが，彼ら・メディアアーティストが使っていたのが，他ならぬMacintoshだったのです．メディアアートに限らずMacユーザが多いのはアーティストあるあるなのでしょう．当時（2014年）のMacは，今よりも一層「洗練された人が使っているもの」という印象が強かったと思います．山口市という田舎に住んでいたのできっと余計に．りんごマークが光るMacBook Proはもちろん，Mac Pro 
 （2013; "ゴミ箱"）を見たときなんて感動しました．
 ![Trash Bin Mac Pro](https://cdsassets.apple.com/live/SZLF0YNV/images/sp/112025_image_productid_134417_size_240x240.jsp =500x)
 *Retrived from [support.apple.com](https://support.apple.com/ja-jp/112025)*
@@ -132,13 +133,13 @@ https://www.ycam.jp/
 
 小学4年生の木越少年は当時，家にあった4万円の激安NECパソコン（Windows 7）にインストールした[Windows ムービーメーカー](https://ja.wikipedia.org/wiki/Windows_ムービーメーカー)で，図書館から借りたハンズオン本を片手に動画編集を覚えました．しかし，同ソフトウェアの機能は限定的で，たしか1クリップあたりに細かい継続時間指定が出来ないなど，限界も感じ始めていました．
 私の父親は子どもの潜在的なクリエイティビティに対する投資は惜しまない方針だったようで，iMovieが標準搭載されているiMacを近くのヤマダ電機だかビックカメラで一緒に買ってくれました．
-その後，そのiMacはMacBook Proとともに外付けDVDドライブを指したら電源系統のトラブルで（多分私が適当な外部電源をDVDドライブに差したのでショートした）起動しなくなり，数万円で修理したものの8GBのメモリでの作業は辛く，結局私が高校生の頃だったかPCリサイクルされました．ユニファイドボディは美しいですが，「ディスプレイだけは再利用しよう」みたいことがやりにくいですよね．それはまた別のお話．
+その後，そのiMacはMacBook Proとともに外付けDVDドライブを指したら電源系統のトラブルで（多分私が適当な外部電源をDVDドライブに差したのでショートした）起動しなくなり，数万円で修理したものの8GBのメモリでの作業は辛く，結局私が高校生の頃だったかPCリサイクルされました．ユニファイドボディは美しいですが，「ディスプレイだけは再利用しよう」みたいな活用がやりにくいですよね．それはまた別のお話．
 
 #### "Yosemite"
 
-ところで，当時の最新OSはOS X Yosemiteで，子どもの私はその美しいデザインと[その発表方法](https://youtu.be/w87fOAG8fjk?t=812)に感動しました．多分人生で初めて見たWWDC Keynote (WWDC 2014)です．Craig Federighiの冗談と美しいデザイン哲学のミックスは今見ても美しい．Yosemiteは10年以上前だけれど，今見ても見劣りがしないどころか，Liquid Glassよりも洗練されているようにさえ思えます．思い出補正マシマシですが．
+ところで，当時の最新OSはOS X Yosemiteで，子どもの私はその美しいデザインと[発表方法](https://youtu.be/w87fOAG8fjk?t=812)に感動しました．多分人生で初めて見たWWDC KeynoteがこのWWDC 2014です．Craig Federighiの冗談と美しいデザイン哲学のミックスは今見ても素敵．Yosemiteは10年以上前だけれど，今見ても見劣りがしないどころか，Liquid Glassよりも洗練されているようにさえ思えます．思い出補正マシマシ．
 
-脱線の脱線ですがBerkeleyに来たからにはYosemite国立公園に行きました．小4の私はカリフォルニア州がどこにあるかも知らなかったわけなのですが，10年の時を経た聖地巡礼です．しかも，大学生になって始めたクライミングの聖地でもあるという，2つの意味での聖地を同時に巡るわけですね．
+脱線の脱線ですがBerkeleyに来たからには行かねば，と思いYosemite国立公園に行きました．小4の私はカリフォルニア州がどこにあるかも知らなかったわけなのですが，12年の時を経た聖地巡礼です．しかも，大学生になって始めたクライミングの聖地でもあるという，2つの意味での聖地を巡るわけですね．
 
 ![El Capitan](/images/fedora-macbook/elcap.webp =400x)
 *Yosemiteの次にOS Xの名称になった，ヨセミテ国立公園の象徴: エル・キャピタン岩．私の滞在中には[ユージ・ヒラヤマ](https://yuji-hirayama.com/)がこの壁を登っていたらしい^[実は私が高校生の頃に参加した森美術館のワークショップで彼の娘さんとダンスしており，彼からクライミング講習も受けたことがあることを，ヨセミテに行った後思い出しました．縁過ぎる．[![森美術館のワークショップでユージ・ヒラヤマのジムを訪れたときの写真](https://live.staticflickr.com/65535/51756727258_f07d7ca887.jpg)](https://flic.kr/p/2mRyKQw)*©Mori Art Museum. All Rights reserved. Provided thru [Flickr](https://flic.kr/p/2mRyKQw). Another Energy-Related Community Engagement Program “Art Camp for under 22, Vol. 7 Human Begin: What Are We Doing Tomorrow?” Session #2: Saturday, July 10, 2021 Venue: “Climb Park Base Camp” (b-camp.jp/) in Iruma City, Saitama Prefecture Photo: Tayama Tatsuyuki*]．映画『[フリーソロ](https://ja.wikipedia.org/wiki/フリーソロ)』でアレックスオノルドが綱なしで登ったことでも有名ですね．一枚岩の花崗岩としては世界最大であると言われています．*
@@ -160,11 +161,11 @@ https://www.ycam.jp/
 
 上記の3機能は2016年モデルで廃止され，その後また戻ってきた機能たちです．つまり，必要不可欠な機能はこの時代のMacBook Proにもう揃っていたのです！
 
-- 最新のMacBook Proと重量が殆ど変わりません！
+- それに，このMacBook Proは最新のMacBook Proと重量が殆ど変わりません！
   - 最新の再軽量MacBook Pro: [1.55kg](https://www.apple.com/macbook-pro/specs/#:~:text=1%2E55%20kg) 
   - 私のMacBook Pro: [1.57kg](https://support.apple.com/ja-jp/111942#:~:text=1%2E57%20kg)
-- りんごが光ります ![光るりんご](/images/fedora-macbook/shining.webp =500x)
-- このMacBook Proは**Intel製チップ**で動作しています
+- さらに，りんごが光ります ![光るりんご](/images/fedora-macbook/shining.webp =500x)
+- また，このMacBook Proは**Intel製チップ**で動作しています
   - 性能面の優劣はさしおいて，Linuxがブートしやすいです．
   - Apple SiliconでのLinuxにはAsahi Linuxという前提OS(?)が必要でちと手間がかかりそう．
 
@@ -174,19 +175,19 @@ https://www.ycam.jp/
 **（コラムおわり）**
 
 ## 【本題2】なぜFedora Linux?
-結果を先に言えば，私はLinuxディストリビューション^[macOSやWindowsと違って，LinuxにはOSの核となる"Linuxカーネル"を元に派生した様々な種類のOSが存在します]として[Fedora Workstation](https://fedoraproject.org/workstation/)を選びました．ここでは簡単にその理由を書きます．この話には議論・闘争が付きものです．以下のミームが物語っています．だから深く立ち入りません．
+結論を先に言えば，私はLinuxディストリビューション^[macOSやWindowsと違って，Linuxには核となる"Linuxカーネル"を元に派生した様々な種類のOSが存在します]として[Fedora Workstation](https://fedoraproject.org/workstation/)を選びました．ここでは簡単にその理由を書きます．この話には議論・闘争が付きものです．以下のミームが物語っています．だから深く立ち入りません．
 ![Linux is Scary](/images/fedora-macbook/scary-linux.webp =300x)
 *"私，猫ミームが見たいだけやねんけど"*
 
 私には，なんとなくですが以下の条件がありました．
 - **セットアップの負担が少ない**: 本業が大学生なので，レポートや課題がこなしやすい環境であることが絶対条件でした．インターネットブラウズや印刷，Zoom参加などです．
-- **開発環境として不自由しない**: そもそものモチベーションが開発環境を整えることだったので，最新のパッケージが動作することが条件でした
+- **開発環境として不自由しない**: そもそものモチベーションが開発環境を整えることだったので，最新のパッケージが動作することが条件でした．
 
 ### 検討したディストリビューション
 - **[Zorin](https://zorin.com/os/)**
   - 導入したそばから使えそうなOSの筆頭でした．
   - 一度ライブディスクから起動して試しましたが良い感じでした．
-  - しかし，後述のFedoraと比べて私にとっての利点が少なく有償バージョンが存在することが少し嫌で辞めました．
+  - しかし，後述のFedoraと比べて私にとっての利点が少なく，また有償バージョンが存在することが少し嫌で辞めました．
   - FedoraがなければZorinにしてたかも．
 - **[NixOS](https://nixos.org/)**
   - よく聞くのでライブディスクで試しました．理想はいいのですが，日常使用には考えることが多すぎると感じました．
@@ -194,14 +195,14 @@ https://www.ycam.jp/
   - ここで作成したNixOSのインストールメディアは，のちのちFedoraのパーティション拡張に使いました．ありがとうNixOS!
 - **[Ubuntu](https://ubuntu.com/desktop)**
   - 小学生の頃に[日経Linux](https://www.fujisan.co.jp/product/1281679734/b/1204373/)を買って読んでいたくらいなので当然Ubuntuは検討しました．
-  - しかし，本当に単純な理由で，デフォルトデスクトップの色味が怖い（なぜ紫色で，おまけに不気味なマークなのですか？怖すぎる...）のでやめました．これが動物の写真だったらUbuntuを使っていたことでしょう．
+  - しかし，本当に単純な理由で，デフォルトデスクトップの色味が怖い（なぜ紫色で，おまけに不気味なマークなのですか？怖すぎる...）のでやめました．これがほのぼのとした動物の写真だったらUbuntuを使っていたことでしょう．
   - 試してすらいないです...試すべきだったかな．
 - **[openSUSE](https://www.opensuse.org/)**/**[Linux Mint](https://www.linuxmint.com/)**
   - KDEやXfce環境はWindowsっぽく馴染めそうになかったので考慮しませんでした．
 - **[Fedora Workstation](https://fedoraproject.org/workstation/)**: *君に決めた！*
   - Fedora Workstationに搭載されているピュアな[GNOME](https://www.gnome.org/fr/)がただ単純に美しかったです．
   - また，Fedoraはパッケージ更新に積極的で，最新の開発環境を手に入れる文脈からも適していました．
-  - FedoraはIBM傘下の商業向けLinuxディストリビューションベンダー・Red Hatが開発しているオープンソースでフリーOSです．Red "Hat"に対するFedora帽子ですね．おしゃれ．
+  - FedoraはIBM傘下の商業向けLinuxディストリビューションベンダー・Red Hatが開発しているオープンソースでフリーなOSです．Red "Hat"に対するFedora帽子ですね．おしゃれ．
   - Just worksすることが特徴です．
     - 面倒な設定無しでもそこそこ動きます．
   - これはFedoraを使い始めた後に知ったことですが，Linuxの生みの親・LinusもFedoraを使っているようです![Linus uses Fedora](/images/fedora-macbook/linus.webp)*From [Linus Tech Tips on YouTube](https://youtu.be/mfv0V1SxbNA?t=2722)*
@@ -209,18 +210,16 @@ https://www.ycam.jp/
 
 
 ## 【本題3】Fedora Linuxをデュアルブートする
-macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookでデュアルブートしていきます．後述しますが，実際にFinal Cut ProやiTunes (Music)が必要な場面が出てきてmacOSも使いました，しかし，普段macOSの出番は殆どありません．
+それでは，macOSとFedora Linuxのデュアルブートを始めましょう．今後もmacOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookでデュアルブートしていきます．
+実際に，Final Cut Pro（長い動画の書き出し時間はこっちの方が短い）やiTunes (Music; iPodとの同期)が必要な場面が出てきてmacOSも使いました，しかし，普段macOSの出番は殆どありません．
 
 ### 必要な物
 - **有線インターネット**（もしくはAndroidか，携帯通信容量に余裕のあるiPhone）
-  - おじいちゃんが持っていた理由がわかった，有線結局最強の安定性
-  - 家帰ったらルーターから有線を引けるようにしよう
 - **USB** (インストールメディア用)
   - 私は無かったのでSDカードで代用しました..
   - しかしSDカードは比較的衝撃に弱かったりするそうなのでおすすめしません
 - **パソコンオタク**（"Geek"; もし近くにいればきっと助けてくれるでしょう）
   - 「おまけ」で後述
-
 
 ### 手順
 本手順は，作業の全体像を示すために概略を掲載したものです．
@@ -252,11 +251,11 @@ macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookで
 
 ここで必要になってくるのが有線インターネットです．この時代のMacBookにはBroadcom製のWi-Fiチップが搭載されており，それを使った無線通信には，専用Wi-Fiドライバをインストールする必要があります．というのも，BroadcomのWi-Fiドライバはプロプライエタリである（オープンソフトウェアでない）ため，Linuxに同梱されません．
 
-Ethernet-Thunderbolt^[おじいちゃんがこのMacBookと一緒に持っていて，何に使うんだろうと思っていましたが，Linuxのインストールに必要だったのですね！]でEthernetにつなぐか，Wi-FiにつながったAndroid，または携帯通信容量に余裕のあるiPhone^[Androidと異なり，iPhoneは自分が接続中のWi-Fiを別のデバイスに中継することができません．よって，iPhoneをこの作業に使う場合は携帯通信を使うことになります．]をUSBでMacと繋ぎます．私は容量無制限プランの友達のiPhoneを借りました．初めは無制限であると知らなかったので，最初のインストール時に数GBまで膨らんでどうしようかと思いました．Ethernetか，Androidを使いましょう．Linuxを使っていると何かとAndroidの方が都合が良い時がありますが^[他には，ObsidianのDropbox経由の同期とか]，そのうちの1つです．イヤホンジャック返して．
+Ethernet-Thunderbolt^[おじいちゃんがこのMacBookと一緒に持っていて，何に使うんだろうと思っていましたが，Linuxのインストールに必要だったのですね！]でEthernetにつなぐか，Wi-FiにつながったAndroid，または携帯通信容量に余裕のあるiPhone^[Androidと異なり，iPhoneは自分が接続中のWi-Fiを別のデバイスに中継することができません．よって，iPhoneをこの作業に使う場合は携帯通信を使うことになります．]をUSBでMacと繋ぎます．私は容量無制限プランの友達のiPhoneを借りました．初めは無制限であると知らなかったので，最初のインストール時に数GBまで膨らんでどうしようかと思いました．Ethernetか，Androidを使いましょう．Linuxを使っていると何かとAndroidの方が都合が良い時がありますが^[他には，ObsidianのDropbox経由の同期とか]，これはそのうちの1つです．iPhoneにイヤホンジャック返して．
 
 ### broadcom-wl: Wi-Fiセットアップ
 ここからの工程は，私がやったときと同じく[こちらのブログ](https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-late-2011.html#:~:text=Updating%20the%20installation)を参照しています．
-インターネットにつながったら，まずは既存のライブラリを一括アップデートします．
+インターネットにつながったら，まずは既存のライブラリを一括アップデートし，ドライバをインストールします．
 
 ```sh
 # 一括アップデート
@@ -324,6 +323,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
   - 開発はLinux-Firstな分野で，Linuxに圧倒的な優位性があります．Xcode以外は基本全部動く．
   - 逆に，最新のmacOSがないとビルドできないXcodeって悪目立ちしすぎでは？もうちょっとインクルーシブになってください．
 - パスワード管理: [Bitwarden](https://bitwarden.com/)
+- ノート: [Obsidian](https://obsidian.md/) (Dropboxで同期), 標準メモ帳
 - 画像: [Inkscape](https://inkscape.org/), [GIMP](https://www.gimp.org/)
   - 老舗たちです．癖はあるけど慣れたら使えます．
   - シンプルさが欲しいならブラウザでFigmaやCanvaも使えますね．
@@ -376,8 +376,8 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
   - Apple Musicに代わる良い音楽プレイヤー (編集, iPodとの同期)が無い
     - Rhythmboxはカバーアートが出ない
     - GNOME Musicも初回起動に時間がかかる，同じアルバムなのに別物と認識されるなど
-	- Apple Calendarに代わる良いカレンダー
-  	- GNOME Calendarはタイムゾーンの変更ができず困ります
+  - Apple Calendarに代わる良いカレンダーが無い
+  	- GNOME Calendarはタイムゾーンの変更ができずたまに困ります
   - いかにmacOS標準アプリがよくできているかを実感しました．ここはプロプライエタリさまさまです．
 - 使えないアプリもまあまあある
   - 個人用ストレージサービスのローカル連携は，基本Dropboxしか使えません．iCloud, OneDrive, Google Driveはローカル同期用の公式アプリが存在しないようです．
@@ -389,15 +389,15 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
 
 
 ## コラム: 次にPCを買うなら?
+- [MacBook Pro](https://www.apple.com/jp/macbook-pro/)
 - Fedora on [Let's Note](https://panasonic.jp/cns/pc/products/lineup/)
 - Fedora on [Lenovo](https://www.lenovo.com/jp/ja/)
 - Fedora on [Framework](https://frame.work/): 修理が容易なPC．日本未発売．
-  - アメリカで実際に使っている学生を2例見かけました![カフェで観測したFramework](/images/fedora-macbook/framework.webp =300x)
-- [MacBook Pro](https://www.apple.com/jp/macbook-pro/)
+  - アメリカで実際に使っている学生を2例見かけました![カフェで観測したFramework](/images/fedora-macbook/framework.webp =300x)*近所でよく行くクレープ屋さんで発見したFramework*
 
-次にPCを買い換えるなら，現在のWindows PCはCopilotマークがおダサなので，それがないFrameworkかMacBook Proを買います．実はFrameworkもあまり安くない．
+次にPCを買い換えるなら，FrameworkかMacBook Proを買うと思います．実はFrameworkもあまり安くない．
 
-今年のWWDC (2026)で，macOSのLiquid Glassがもう少し落ち着いたデザインになる事を願います．
+macOSに関しては，今年のWWDC (2026)でLiquid Glassがもう少し落ち着いたデザインになる事を願います．
 
 ## Linuxの世界
 
@@ -410,10 +410,9 @@ Linuxを使ったことで初めて「プロプライエタリ」という言葉
 2026年5月に交換留学を終えて日本に帰国し，ICUで卒業するミッションが控えているのですが，その先に宇宙科学も興味あるし登山をするので地学にも興味があるし，またモデリングなどの数値解析でコンピューティングが関わるような研究や仕事もしてみたいし，何をしていいか定まらず困っています．
 
 ### 2026年夏は槍ヶ岳に遊びにきてね
-さしあたり今夏は長野県は北アルプス・槍ヶ岳の山小屋で勤務予定なので，お近くをご通行の際はご一報ください．
-山の上で働きながら，たまに縦走登山する夏にします．
+さしあたり今夏は長野県は北アルプス・槍ヶ岳の山小屋で勤務予定なので，お近くをご通行の際はご一報ください．山の上で働きながら，たまに縦走登山する夏にします．
 遊びに来てね．
 
 https://www.enzanso.co.jp/hutte-ooyari
 
-木越 斎 (2026/05/17; Provided with [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en))
+**木越 斎** (2026/05/17; Provided with [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en))
