@@ -71,8 +71,6 @@ https://mac.getutm.app
 自身のOSと関係なく環境を構築する選択肢として，[GitHub Codespace](https://github.com/features/codespaces)も検討しました．
 学生なら[Student Developer Pack](https://education.github.com/pack)を使えば無料で使えることを高校生の頃に使った経験から覚えていましたが，学生認証ができないのでCodespaceの使用は諦めました．そもそもオンラインでしか開発サーバを立ち上げられないのは不便だし...
 
-https://github.com/features/codespaces
-
 具体的には，学生認証で私が交換留学生として滞在しているUniversity of California, Berkeleyのアカウント (`itsuki [at] berkeley.edu`)を使おうとしたところ，私みたいなNon-degree studentは受け入れないようになっているのか，ただの`berkeley.edu`ではなく`*.berkeley.edu`という，どこかの学科に属していることが求められ入るドメインでないと登録不可でした．
 
 私が所属する国際基督教大学のドメイン（`icu.ac.jp`）も，私が日本からアクセスしていない，という理由ではじかれました．
@@ -133,7 +131,7 @@ https://www.ycam.jp/
 脱線の脱線ですがBerkeleyに来たからにはYosemite国立公園に行きました．小4の私はカリフォルニア州がどこにあるかも知らなかったわけなのですが，10年の時を経た聖地巡礼です．しかも，大学生になって始めたクライミングの聖地でもあるという，2つの意味での聖地を同時に巡るわけですね．
 
 ![El Capitan](/images/fedora-macbook/elcap.webp =400x)
-*Yosemiteの次のOS Xの名称にもなった，ヨセミテ国立公園の象徴: エル・キャピタン．私の滞在中には[ユージ・ヒラヤマ](https://yuji-hirayama.com/)がこの壁を登っていたらしい^[実は私が高校生の頃に参加した森美術館のワークショップで彼の娘さんとダンスしており，彼からクライミング講習も受けたことがあることを，ヨセミテに行った後思い出しました．縁過ぎる．[![森美術館のワークショップでユージ・ヒラヤマのジムを訪れたときの写真](https://live.staticflickr.com/65535/51756727258_f07d7ca887.jpg)](https://flic.kr/p/2mRyKQw)*©Mori Art Museum. All Rights reserved. Provided thru [Flickr](https://flic.kr/p/2mRyKQw). Another Energy-Related Community Engagement Program “Art Camp for under 22, Vol. 7 Human Begin: What Are We Doing Tomorrow?” Session #2: Saturday, July 10, 2021 Venue: “Climb Park Base Camp” (b-camp.jp/) in Iruma City, Saitama Prefecture Photo: Tayama Tatsuyuki*]．映画『[フリーソロ](https://ja.wikipedia.org/wiki/フリーソロ)』でアレックスオノルドが綱なしで登ったことも有名ですね*
+*Yosemiteの次にOS Xの名称になった，ヨセミテ国立公園の象徴: エル・キャピタン岩．私の滞在中には[ユージ・ヒラヤマ](https://yuji-hirayama.com/)がこの壁を登っていたらしい^[実は私が高校生の頃に参加した森美術館のワークショップで彼の娘さんとダンスしており，彼からクライミング講習も受けたことがあることを，ヨセミテに行った後思い出しました．縁過ぎる．[![森美術館のワークショップでユージ・ヒラヤマのジムを訪れたときの写真](https://live.staticflickr.com/65535/51756727258_f07d7ca887.jpg)](https://flic.kr/p/2mRyKQw)*©Mori Art Museum. All Rights reserved. Provided thru [Flickr](https://flic.kr/p/2mRyKQw). Another Energy-Related Community Engagement Program “Art Camp for under 22, Vol. 7 Human Begin: What Are We Doing Tomorrow?” Session #2: Saturday, July 10, 2021 Venue: “Climb Park Base Camp” (b-camp.jp/) in Iruma City, Saitama Prefecture Photo: Tayama Tatsuyuki*]．映画『[フリーソロ](https://ja.wikipedia.org/wiki/フリーソロ)』でアレックスオノルドが綱なしで登ったことも有名ですね．一枚岩の花崗岩としては世界最大であると言われています．*
 
 ![壁を登るクラブメイト](/images/fedora-macbook/climbing.webp =400x)
 *写真に写る彼女は，（リアルライフでも）パートナーである少し上にいる彼と一緒にフリークライミングしていました．一緒にトラッドクライミングできるカップルなんて素敵過ぎる．日本帰国後の私の1つの目標はフリークライミングの技術を身につけることかな．*
@@ -211,11 +209,7 @@ macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookで
   - 私は無かったのでSDカードで代用しました..
   - しかしSDカードは比較的衝撃に弱かったりするそうなのでおすすめしません
 - **パソコンオタク**（"Geek"; Optional）
-  - インターネットつながらないって言ったら色々いじってくれた
-  - ダンボール
-  - 洗濯機改造
-  - https://www.gentoo.org/ 彼はGentoo Linuxを使っているようです
-  - Ian "He is a computer hucker"
+
 
 ---
 
@@ -247,6 +241,12 @@ https://www.youtube.com/watch?v=p4lu-_6nY6Q
 ![](/images/fedora-macbook/cardboard-laptop.webp =500x)
 ![](/images/fedora-macbook/hacking-laundry-machine.webp =500x)
 
+- インターネットつながらないって言ったら色々いじってくれた
+- ダンボール
+- 洗濯機改造
+- https://www.gentoo.org/ 彼はGentoo Linuxを使っているようです
+
+![Gentoo is not easy](/images/fedora-macbook/gentoo.webp =500x)*レポート提出しようと思ったらFireFoxをアンインストールしてしまい，再インストールとコンパイルに30時間かかったらしい．全然LOLじゃなさすぎる．*
 ```sh
 (base) itsukikigoshi@fedora:~$ sudo stat / 
   Fichier : /
