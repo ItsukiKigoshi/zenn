@@ -297,7 +297,7 @@ $ sudo dnf install facetimehd-kmod
 ### キー設定
 - [GNOME Tweaks](https://wiki.gnome.org/Apps/Tweaks)をインストールすることで， Caps LockをCtrlとして使うなどの簡単なキーマップ変更が出来ます
 - さらに細かいキー設定には[keyd](https://github.com/rvaiya/keyd)がおすすめです．
-- 筆者は大西配列にして使っています．
+- 筆者は大西配列を使用しています．
 
 https://zenn.dev/itsukikigoshi/articles/d550cd8fe41fcd
 
