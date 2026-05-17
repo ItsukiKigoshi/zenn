@@ -83,9 +83,3 @@ ZedでTypst関連機能を提供する[Tinymist](https://github.com/Myriad-Dream
 お料理終わり．
 
 木越 斎 (2026/05/10; Provided with [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en))
-
-
-:::details 変更履歴
-- 2026/05/10T22:03UTC Zedでのプレビュー環境構築にtypst-cliのインストールは不要だったため，当該記述を削除しました．
-- すべての変更履歴は[GitHub](https://github.com/ItsukiKigoshi/zenn.dev/commits/main/articles/typst-in-zed-prevew-setup.md)で確認できます．
-:::
