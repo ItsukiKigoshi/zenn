@@ -175,7 +175,7 @@ https://www.ycam.jp/
 **（コラムおわり）**
 
 ## 【本題2】なぜFedora Linux?
-結果を先に言えば，私はLinuxディストリビューション^[macOSやWindowsと違って，LinuxではOSの核となる"Linuxカーネル"を元に派生した様々な種類のOSが存在します]として[Fedora Workstation](https://fedoraproject.org/workstation/)を選びました．ここでは簡単にその理由を書きます．この話には議論・闘争が付きものです．以下のミームが物語っています．だから深く立ち入りません．
+結果を先に言えば，私はLinuxディストリビューション^[macOSやWindowsと違って，LinuxにはOSの核となる"Linuxカーネル"を元に派生した様々な種類のOSが存在します]として[Fedora Workstation](https://fedoraproject.org/workstation/)を選びました．ここでは簡単にその理由を書きます．この話には議論・闘争が付きものです．以下のミームが物語っています．だから深く立ち入りません．
 ![Linux is Scary](/images/fedora-macbook/scary-linux.webp =300x)
 *"私，猫ミームが見たいだけやねんけど"*
 
