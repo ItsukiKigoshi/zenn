@@ -118,8 +118,8 @@ https://www.ycam.jp/
 
 さて，脱線が過ぎましたが，彼らが使っていたのが，他ならぬMacintoshだったのです．メディアアートに限らずMacユーザが多いのはアーティストあるあるなのでしょう．当時（2014年）のMacは，今よりも一層「洗練された人が使っているもの」という印象が強かったと思います．山口市という田舎に住んでいたのできっと余計に．りんごマークが光るMacBook Proはもちろん，Mac Pro 
 （2013; "ゴミ箱"）を見たときなんて感動しました．
-[![Trash Bin Mac Pro](https://upload.wikimedia.org/wikipedia/commons/d/d6/New_Mac_Pro_%2812093123884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original =500x)
-*Paul Hudson from United Kingdom, CC BY 2.0, via Wikimedia Commons*](https://commons.wikimedia.org/wiki/File:New_Mac_Pro_(12093123884).jpg)
+![Trash Bin Mac Pro](https://cdsassets.apple.com/live/SZLF0YNV/images/sp/112025_image_productid_134417_size_240x240.jsp =500x)
+*Retrived from [support.apple.com](https://support.apple.com/ja-jp/112025)*
 
 こんな昔語りができるほど，2004年生まれの私も歳を取りました．
 そういえば小さい頃に通っていた[英語教室](http://redrobini.com/)の室長先生もMacが好きで，MacBook ProやiMac，それに発売されたばかりのApple Watchを使っていました．
