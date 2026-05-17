@@ -352,7 +352,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
 私が交換留学しているUC Berkeleyで住んでいる寮（正確には[Coop](https://www.bsc.coop/housing/our-houses-apartments/cloyne-court)）でいつもパソコンを触っている細い男の子がLinuxに詳しいという話を聞いたので，Wi-Fiがつながらないと言ったら相談に乗ってくれました．
 
 ![自作のダンボールパソコン](/images/fedora-macbook/cardboard-laptop.webp =500x)*彼の部屋にあった自作の段ボールラップトップ*
-彼は，アプリのインストール時に1からソフトウェアをビルドをする[Getoo Linux](https://www.gentoo.org/)というディストリビューションを使っていて，部屋には自作の段ボールパソコンがあります．夏休みに開発を進めるらしい．
+彼は，アプリのインストール時に1からソフトウェアをビルドをする[Gentoo Linux](https://www.gentoo.org/)というディストリビューションを使っていて，部屋には自作の段ボールパソコンがあります．夏休みに開発を進めるらしい．
 ![Gentoo is not easy](/images/fedora-macbook/gentoo.webp =500x)*Ianはレポート提出前にFireFoxをアンインストールしてしまい，再インストールとコンパイルに30時間かかったことがあるらしい．全然LOLじゃなさすぎる．*
 
 彼は，寮内の洗濯機を無料にしようとしてました．多分試みは上手くいっていないのだけれど，あそこを分解しようとするだけで充分crazy(褒めてる)．
