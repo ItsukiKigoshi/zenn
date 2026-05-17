@@ -13,7 +13,7 @@ published: false
 
 ## 【概要】
 旧式のMacBook Pro (Retina, 13-inch, Mid 2014) を現役で使用している私は，年初（2026年1月）に開発環境としてのmacOS 11 (Big Sur)に限界を感じ，Linux導入に踏み切りました．
-ここでは10年以上前に発売されたMacBook ProにFedora Linuxをデュアルブートした手順と，Linux移行に係る所感とLinuxあるいはオープンカルチャーへの想いを綴ります．
+ここでは10年以上前に発売されたMacBook ProにFedora Linuxをデュアルブートした手順と，Linux移行に係る所感とAppleやLinuxへの想いを綴ります．
 
 ![日常に溶けるFedora](/images/fedora-macbook/fedora-daily-life.webp)*日常に溶けるFedora*
 
@@ -88,9 +88,9 @@ https://mac.getutm.app
 そもそも，アクティブなサポートが殆ど切れているようなmacOSはセキュリティの観点からもあまり褒められたものではありません．
 macOSから離れる機会をくれてありがとう．
 
-### コラム: 厳格なWindows家系に生まれた私のAppleに対する想い
+---
 
-![2021年のMacBook](/images/fedora-macbook/mac-in-room.webp =300x)*Macと，横に見える親のSurface (2021)*
+### コラム: 厳格なWindows家系に生まれた私のAppleに対する想い
 
 #### 家族はみーんなWindows.
 私は，母方の祖父母がWindows 95だか98のパソコン教室を自宅で開いていたり，父方の祖父は昔からMS-DOSを使っていて，父親もMS-DOSを子供の頃に習ったという厳格なWindows家系に生まれたました．
@@ -102,6 +102,8 @@ macOSから離れる機会をくれてありがとう．
 うちの母親もバックオフィス系の仕事をしているので，自宅でHPを使っているし．
 
 ほんまに誰一人として非Windowsユーザが家族にいない！
+
+![2021年のMacBook](/images/fedora-macbook/mac-in-room.webp =300x)*Macと，横に見える親のSurface (2021)*
 
 #### Macへの羨望
 私が生まれ育った山口県山口市には，[山口情報芸術センター](https://www.ycam.jp/)（YCAM）という，最高にクールなメディアアートの開発・展示拠点があります．
