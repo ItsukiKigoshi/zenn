@@ -118,8 +118,8 @@ https://www.ycam.jp/
 
 さて，脱線が過ぎましたが，彼らが使っていたのが，他ならぬMacintoshだったのです．メディアアートに限らずMacユーザが多いのはアーティストあるあるなのでしょう．当時（2014年）のMacは，今よりも一層「洗練された人が使っているもの」という印象が強かったと思います．山口市という田舎に住んでいたのできっと余計に．りんごマークが光るMacBook Proはもちろん，Mac Pro 
 （2013; "ゴミ箱"）を見たときなんて感動しました．
-[![ゴミ箱Mac Pro](https://upload.wikimedia.org/wikipedia/commons/d/d6/New_Mac_Pro_%2812093123884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original =250x)](https://commons.wikimedia.org/wiki/File:New_Mac_Pro_(12093123884).jpg)
-*Paul Hudson from United Kingdom, CC BY 2.0, via Wikimedia Commons*
+[![ゴミ箱Mac Pro](https://upload.wikimedia.org/wikipedia/commons/d/d6/New_Mac_Pro_%2812093123884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original =250x)
+*Paul Hudson from United Kingdom, CC BY 2.0, via Wikimedia Commons*](https://commons.wikimedia.org/wiki/File:New_Mac_Pro_(12093123884).jpg)
 
 こんな昔語りができるほど，2004年生まれの私も歳を取りました．
 そういえば小さい頃に通っていた[英語教室](http://redrobini.com/)の室長先生もMacが好きで，MacBook ProやiMac，それに発売されたばかりのApple Watchを使っていました．
@@ -128,8 +128,7 @@ https://www.ycam.jp/
 
 #### iMacを買ってもらった
 
-[![iMac Retina](https://upload.wikimedia.org/wikipedia/commons/e/e6/IMac_vector.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original =500x)](https://commons.wikimedia.org/wiki/File:IMac_vector.svg)
-*Rafael Fernandez, CC BY-SA 3.0, via Wikimedia Commons*
+[![iMac Retina](https://upload.wikimedia.org/wikipedia/commons/e/e6/IMac_vector.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original =500x)*Rafael Fernandez, CC BY-SA 3.0, via Wikimedia Commons*](https://commons.wikimedia.org/wiki/File:IMac_vector.svg)
 
 小学4年生の木越少年は当時，家にあった4万円の激安NECパソコン（Windows 7）にインストールした[Windows ムービーメーカー](https://ja.wikipedia.org/wiki/Windows_ムービーメーカー)で，図書館から借りたハンズオン本を片手に動画編集を覚えました．しかし，同ソフトウェアの機能は限定的で，たしか1クリップあたりに細かい継続時間指定が出来ないなど，限界も感じ始めていました．
 私の父親は子どもの潜在的なクリエイティビティに対する投資は惜しまない方針だったようで，iMovieが標準搭載されているiMacを近くのヤマダ電機だかビックカメラで一緒に買ってくれました．
