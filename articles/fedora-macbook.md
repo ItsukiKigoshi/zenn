@@ -11,19 +11,19 @@ topics:
 published: false
 ---
 
-## 概要
+## 【概要】
 旧式のMacBook Pro (Retina, 13-inch, Mid 2014) を現役で使用している私は，年初（2026年1月）に開発環境としてのmacOS 11 (Big Sur)に限界を感じ，Linux導入に踏み切りました．
 ここでは10年以上前に発売されたMacBook ProにFedora Linuxをデュアルブートした手順と，Linux移行に係る所感とLinuxあるいはオープンカルチャーへの想いを綴ります．
 
 ![日常に溶けるFedora](/images/fedora-macbook/fedora-daily-life.webp)*日常に溶けるFedora*
 
-## 動機
+## 【本題1】動機
 
 私は，10年以上前に発売されたMacBook Pro ([Retina, 13-inch, Mid 2014](https://support.apple.com/ja-jp/111942)) を主たるコンピュータとして使用しています（まさかこんなに長く使うことになるなんて！）．
 このMacBook Proは，2018年に亡くなった[祖父](https://ja.wikipedia.org/wiki/木越治)の形見として，彼の息子になる私の父親から譲り受けました．それ以来ですから，私が中学生だった2018年からかれこれ8年近く使用していて，今私は大学生ですがまだ現役で活躍しています．
 しかし，同MacBook Proへインストール可能な最新OSの[macOS Big Sur](https://ja.wikipedia.org/wiki/MacOS_Big_Sur) (v11; 2020年)は私の趣味のWeb開発に関連する最新の開発環境を導入することは殆ど不可能です．高校生 (2022年あたり)からNode.js v18までしか動作せず，当時のLTSである20系を使えなかった記憶があります^[過去に関わっていたプロジェクトではNode v16を使っているので，ひょっとしたらv18すら動かなかったのかもしれない ([GitHub](https://github.com/hibiya-itchief/2024-quaint-app/blob/d0f200655489b32d398071594d55316d2a31afc8/.github/workflows/ci.yml#L22))]^[少なくともNode.js v20のサポートはmacOS 12以上でありそうです ([Github Discussion](https://github.com/nodejs/node/issues/47067#issuecomment-1474810592))]．
 
-### 技術的な限界の詳細
+### コラム: 技術的な限界の詳細
 実際，実験的にHonoのプロジェクトを触ってみようとしたところ，`$pnpm dev`で`Cloudflare Workers runtime cannot run on the current version of macOS`と言われてしまう始末...
 
 ```sh
@@ -53,7 +53,7 @@ Expected in: /usr/lib/libc++.1.dylib
 
 ![カスタムCommand Line](/images/fedora-macbook/cli.webp =400x)*関係ないけど，Berkeleyの寮共用パソコンにインストールされているカスタムCLI*
 
-## macOSで開発環境を整えるための試行錯誤
+## 記録: macOSで開発環境を整えるための試行錯誤
 
 開発環境を整える上で，まずはmacOS上で動く環境構築を模索しました．
 
@@ -76,11 +76,11 @@ https://mac.getutm.app
 自身のOSと関係なく環境を構築する選択肢として，[GitHub Codespace](https://github.com/features/codespaces)も検討しました．
 学生なら[Student Developer Pack](https://education.github.com/pack)を使えば無料で使えることを高校生の頃に使った経験から覚えていましたが，学生認証ができないのでCodespaceの使用は諦めました．そもそもオンラインでしか開発サーバを立ち上げられないのは不便だし...
 
-具体的には，学生認証で私が交換留学生として滞在しているUniversity of California, Berkeleyのアカウント (`itsuki [at] berkeley.edu`)を使おうとしたところ，私みたいなNon-degree studentは受け入れないようになっているのか，ただの`berkeley.edu`ではなく`*.berkeley.edu`という，どこかの学科に属していることが求められ入るドメインでないと登録不可でした．
+具体的には，学生認証で私が交換留学生として滞在しているUniversity of California, Berkeleyのアカウント (`itsuki [at] berkeley.edu`)を使おうとしたところ，私みたいなNon-degree studentは受け入れないようになっているのか，ただの`berkeley.edu`ではなく`*.berkeley.edu`という，どこかの学科に属していることが求められるドメインでないと登録不可でした．
 
 私が所属する国際基督教大学のドメイン（`icu.ac.jp`）も，私が日本からアクセスしていない，という理由ではじかれました．
 
-紛れもなく私は学生であるのに，その正銘がこんなに大変だなんて，ちょっとしたアイデンティティクライシスを覚えました．
+紛れもなく私は学生であるのに，その証明がこんなに大変だなんて，ちょっとしたアイデンティティクライシスを覚えました．
 
 ### Linuxのデュアルブート [採用]
 
@@ -88,11 +88,11 @@ https://mac.getutm.app
 そもそも，アクティブなサポートが殆ど切れているようなmacOSはセキュリティの観点からもあまり褒められたものではありません．
 macOSから離れる機会をくれてありがとう．
 
-## コラム: 厳格なWindows家系に生まれた私のAppleに対する想い
+### コラム: 厳格なWindows家系に生まれた私のAppleに対する想い
 
 ![2021年のMacBook](/images/fedora-macbook/mac-in-room.webp =300x)*Macと，横に見える親のSurface (2021)*
 
-### 家族はみーんなWindows.
+#### 家族はみーんなWindows.
 私は，母方の祖父母がWindows 95だか98のパソコン教室を自宅で開いていたり，父方の祖父は昔からMS-DOSを使っていて，父親もMS-DOSを子供の頃に習ったという厳格なWindows家系に生まれたました．
 
 父方の祖父は私が今使っているMacBookでWindows on Parallel Desktopを使っていました．支給されたのがMacBookだったからそれを使っていただけという理由らしい．多分一番使っていたのはワープロソフト[一太郎](https://www.justsystems.com/jp/products/ichitaro/) (Windowsでしか動作しない)だし．わけわかめ！たしかその祖父は生前にmacOSのライブかな漢字変換が嫌いとか，Macに対して良い事は言っていなかったような...
@@ -103,7 +103,7 @@ macOSから離れる機会をくれてありがとう．
 
 ほんまに誰一人として非Windowsユーザが家族にいない！
 
-### Macへの羨望
+#### Macへの羨望
 私が生まれ育った山口県山口市には，[山口情報芸術センター](https://www.ycam.jp/)（YCAM）という，最高にクールなメディアアートの開発・展示拠点があります．
 https://www.ycam.jp/
 今思い返しても，あんな田舎（ちょっと失礼）に世界からメディアアーティストがやってきたり（時に故・[坂本龍一](https://www.ycam.jp/archive/profile/ryuichi-sakamoto/)，[大友良英](https://www.ycam.jp/archive/profile/yoshihide-otomo/)，[ダムタイプ](https://www.ycam.jp/archive/profile/dumb-type/)），常駐の開発集団・[インターラボ](https://www.ycam.jp/aboutus/interlab/)のクールなみなさんが子どもだった私と遊んでくれたりしたあの環境は，紛れもなく山口市の財産だと思います．ありがとうYCAM．
@@ -112,7 +112,7 @@ https://www.ycam.jp/
 
 まあ小学生当時の私はコンピュータというより[レゴブロックのこまどり撮影](https://youtube.com/playlist?list=PLVxEAWkQVBq7ZLbCohJz4OtNNkQ6UMr0c)にはまっていたので，全然コンピュータ関連に明るかった訳ではなかったですが．そういえばYouTubeへ動画をアップロードする方法を小学3-4年生の私に教えてくれたのも[深澤孝史](https://www.ycam.jp/archive/profile/takafumi-fukasawa/)さんという美術家の方でした．失礼極まりなかったであろう世間知らず・木越斎少年のガキに色々なことを教えてくれたことには感謝しかありません．今も元気にしているかしら．最後に会ったのは確かコロナ禍が始まってすぐの2020年で，Zoom越しの対面でした．
 
-### アートとMac
+#### アートとMac
 
 さて，脱線が過ぎましたが，彼らが使っていたのが，他ならぬMacintoshだったのです．メディアアートに限らずMacユーザが多いのはアーティストあるあるなのでしょう．当時（2014年）のMacは，今よりも一層「洗練された人が使っているもの」という印象が強かったと思います．山口市という田舎に住んでいたのできっと余計に．りんごマークが光るMacBook Proはもちろん，Mac Pro 
 （2013; "ゴミ箱"）を見たときなんて感動しました．
@@ -125,14 +125,15 @@ https://www.ycam.jp/
 まだスキューモーフィズムの面影漂う[OS X Mavericks](https://ja.wikipedia.org/wiki/OS_X_Mavericks)でしたね（"OS X"！なんて懐かしい響き！！）．そういえば室長の彼（"katsu-sensei"）は当時New York旅行でタイムズスクエアに行ったときの写真を見せてくれましたが，その約10年後に私も初めてそこを訪れるわけです．あの英語教室に行っていなかったら私は国際基督教大学に通っていないかもしれないし，UC Berkeleyに留学していなかったかもしれません，ふーん，振り返って見ると色々なものがつながっているのです．[Connecting the Dots](https://youtu.be/UF8uR6Z6KLc)^[こんなに喋って，私はただのApple Fanではありませんか！否定は出来ないけど安直ですみません]^[日本語字幕が関西弁でふざけていますね...今気づきました.]...ってか私の中を流れるこのコンピュータへの関心から今年友達が通うスタンフォードにも訪れたわけで，そこでSteve Jobsは20年前に講演をしたわけで．つーか今日ちょうどBerkeleyの卒業式で，ガウンを着た人がいっぱいいるカフェでこれを書いています．スタンフォードのライバルのBerkeleyで．ちょっとこじつけが過ぎますね．
 
 
-### iMacを買ってもらった
+#### iMacを買ってもらった
 
 [![iMac Retina](https://upload.wikimedia.org/wikipedia/commons/e/e6/IMac_vector.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original =500x)*Rafael Fernandez, CC BY-SA 3.0, via Wikimedia Commons*](https://commons.wikimedia.org/wiki/File:IMac_vector.svg)
 
 小学4年生の木越少年は当時，家にあった4万円の激安NECパソコン（Windows 7）にインストールした[Windows ムービーメーカー](https://ja.wikipedia.org/wiki/Windows_ムービーメーカー)で，図書館から借りたハンズオン本を片手に動画編集を覚えました．しかし，同ソフトウェアの機能は限定的で，たしか1クリップあたりに細かい継続時間指定が出来ないなど，限界も感じ始めていました．
 私の父親は子どもの潜在的なクリエイティビティに対する投資は惜しまない方針だったようで，iMovieが標準搭載されているiMacを近くのヤマダ電機だかビックカメラで一緒に買ってくれました．
 その後，そのiMacはMacBook Proとともに外付けDVDドライブを指したら電源系統のトラブルで（多分私が適当な外部電源をDVDドライブに差したのでショートした）起動しなくなり，数万円で修理したものの8GBのメモリでの作業は辛く，結局私が高校生の頃だったかPCリサイクルされました．ユニファイドボディは美しいですが，「ディスプレイだけは再利用しよう」みたいことがやりにくいですよね．それはまた別のお話．
-### "Yosemite"
+
+#### "Yosemite"
 
 ところで，当時の最新OSはOS X Yosemiteで，子どもの私はその美しいデザインと[その発表方法](https://youtu.be/w87fOAG8fjk?t=812)に感動しました．多分人生で初めて見たWWDC Keynote (WWDC 2014)です．Craig Federighiの冗談と美しいデザイン哲学のミックスは今見ても美しい．Yosemiteは10年以上前だけれど，今見ても見劣りがしないどころか，Liquid Glassよりも洗練されているようにさえ思えます．思い出補正マシマシですが．
 
@@ -144,13 +145,13 @@ https://www.ycam.jp/
 ![壁を登るクラブメイト](/images/fedora-macbook/climbing.webp =400x)
 *写真に写る彼女は，（リアルライフでも）パートナーである少し上にいる彼と一緒にフリークライミングしていました．一緒にトラッドクライミングできるカップルなんて素敵過ぎる．日本帰国後の私の1つの目標はフリークライミングの技術を身につけることかな．*
 
-### 他にもApple...
+#### 他にもApple...
 小学生の頃に買ってもらったiPod nanoも，人生で初めて買った携帯電話のiPhone 12 miniもまだ現役．両親が友人の結婚式でもらったか何かの初代iPod Shuffle（容量1GB!）も以前は使っていました．
 ![Apple Decices Still Workin'](/images/fedora-macbook/apples.webp =250x)
 *iPod nano (6th Gen), MacBook Pro, iPhone 12 mini*
 
 
-### MacBook Pro (Retina, 13-inch, Mid 2014)の魅力
+#### MacBook Pro (Retina, 13-inch, Mid 2014)の魅力
 さて，祖父の形見であるMacBook Pro (Retina, 13-inch, Mid 2014)を今でも使っている理由に，ひとつは形見であることもありますが，それが製品として優れているからというのも理由のひとつです．なんせ，
 - このMacBook Proには**HDMIポート**がついています
 - このMacBook Proには**SDカードスロット**がついています
@@ -171,7 +172,7 @@ https://www.ycam.jp/
 
 **（コラムおわり）**
 
-## 【本題1】なぜFedora Linux?
+## 【本題2】なぜFedora Linux?
 結果を先に言えば，私はLinuxディストリビューション^[macOSやWindowsと違って，LinuxではOSの核となる"Linuxカーネル"を元に派生した様々な種類のOSが存在します]として[Fedora Workstation](https://fedoraproject.org/workstation/)を選びました．ここでは簡単にその理由を書きます．この話には議論・闘争が付きものです．以下のミームが物語っています．だから深く立ち入りません．
 ![Linux is Scary](/images/fedora-macbook/scary-linux.webp =300x)
 *"私，猫ミームが見たいだけやねんけど"*
@@ -206,7 +207,7 @@ https://www.ycam.jp/
     - "チョットデキル"あの人です．この写真の頃と比べると，だいぶお年を召されたよね．![ちょっとできる](/images/fedora-macbook/chotto.webp)*チョットデキル!*
 
 
-## 【本題2】Fedora Linuxをデュアルブートする
+## 【本題3】Fedora Linuxをデュアルブートする
 macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookでデュアルブートしていきます．後述しますが，実際にFinal Cut ProやiTunes (Music)が必要な場面が出てきてmacOSも使いました，しかし，普段macOSの出番は殆どありません．
 
 ### 必要な物
@@ -240,53 +241,92 @@ macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookで
     - 私は[Fedoraの公式サイト](https://fedoraproject.org/ja/workstation/download/)から.isoをダウンロードし，[Balena　Etcher](https://etcher.balena.io/)でSDカードに書き込みました．
     - Fedoraだけをインストールするなら，[Fedora Media Writer](https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/#_fedora_media_writer)というより簡単な方法が提供されています．
 1. USBから起動し，2で作成したパーティションにFedoraをインストールします
-  - 間違えてmacOSの方を消さないでください．
+    - 間違えてmacOSの方を消さないでください．
 1. 晴れて，MacBookを`alt`キーを押しながら起動すると，Fedoraが選べるようになります！
-  - デフォルトの起動ディスクは，[macOSのシステム環境設定](https://support.apple.com/ja-jp/guide/mac-help/mchlp1034/mac)から選べます． 
+    - デフォルトの起動ディスクは，[macOSのシステム環境設定](https://support.apple.com/ja-jp/guide/mac-help/mchlp1034/mac)から選べます． 
 
 
-## 【本題3】Fedoraのセットアップ
-- ドライバ
-    - Wi-Fi: Broadcom-wl
-        - 友達のiPhone借りた
-        - Windowsを同期していたおじいちゃんがThunderbolt-Ethernetを持っていたのはこういうときのためだったんだな
-        - sudo dnf update
-        - sudo dnf install broadcom-wl
-    - Camera: FaceTime HDのドライバ
-- 日本語入力: Anthyの設定から"hangul"と"hangul_hanji"を適切にかな英数キーに割り当てる
-- Tweaks: Caps LockをCtrlとしてつかう
-  - 細かいキー設定はkeyd: 別記事
-- https://github.com/ubuntu/gnome-shell-extension-appindicator を入れな！
-- ソフトウェア
-	- Mailer: Thunderbird
-	- Browser: Zen (Firefox)
-	- Development: Zed, JetBrains; Linux-Firstな分野, 圧倒的な優位性
-	- Bitwarden
-	- 画像: Inkskape, GIMP; 慣れたら使える
-	- 動画: KDENLive; 慣れたら使える
-	- PDF: Document Viewer, ページなら並び替えなどは限定的だがまあ十分
-	- Office: ほとんど使えないが他人から送られてきたものを開く用途ではLibreOfficeで十分．
-		- ってか世の中の人はなぜLibreOfficeを使わないのか？OSに同梱されてないから，とかならクソ商法過ぎるだろ．
-		- GUIで操作できる範囲を広げて，Linux by Defaultを特にパソコンをさわり立ての子どもなどに広めていかなければ．
-		- ChromeOSは好例だが依然としてGoogleのベンダーロックイン
-	- LocalSend: 同じWiFiに接続しなくてはいけないという制限がありながら，ほとんどのケースでこれで事足りる
-  	- AirDropの一番の使いどころは
-  - FreeFileSync
-	- この辺のソフトウェアには寄付せなあかんかも知れん
-	- Flatpakは.appみたいなもの．たまに権限で詰まる
+## 【本題4】Fedoraのセットアップ
+これでFedoraが起動するようになりました！しかし，これだけでは日常使いができません．最大の壁は①WiFi接続と②日本語入力です．ついでに，カメラのセットアップもしておくべきでしょう．
 
+ここで必要になってくるのが有線インターネットです．この時代のMacBookにはBroadcom製のWi-Fiチップが搭載されており，それを使った無線通信には，専用Wi-Fiドライバをインストールする必要があります．というのも，BroadcomのWi-Fiドライバはプロプライエタリである（オープンソフトウェアでない）ため，Linuxに同梱されません．
+
+Ethernet-Thunderbolt^[おじいちゃんがこのMacBookと一緒に持っていて，何に使うんだろうと思っていましたが，Linuxのインストールに必要だったのですね！]でEthernetにつなぐか，Wi-FiにつながったAndroid，または携帯通信容量に余裕のあるiPhone^[Androidと異なり，iPhoneは自分が接続中のWi-Fiを別のデバイスに中継することができません．よって，iPhoneをこの作業に使う場合は携帯通信を使うことになります．]をUSBでMacと繋ぎます．私は容量無制限プランの友達のiPhoneを借りました．初めは無制限であると知らなかったので，最初のインストール時に数GBまで服欄でどうしようかと思いました．Ethernetか，Androidを使いましょう．Linuxを使っていると何かとAndroidの方が都合が良い時がありますが^[他には，ObsidianのDropbox経由の同期とか]，そのうちの1つです．イヤホンジャック返して．
+
+### broadcom-wl: Wi-Fiセットアップ
+ここからの工程は，私がやったときと同じく[こちらのブログ](https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-late-2011.html#:~:text=Updating%20the%20installation)を参照しています．
+インターネットにつながったら，まずは既存のライブラリを一括アップデートします．
+
+```sh
+# 一括アップデート
+sudo dnf --refresh update
+# broadcomのドライバをインストール
+sudo dnf install -y broadcom-wl
+# なんやわからんけどそれをビルド
+sudo akmods
+```
+
+これで
+```sh
+$ lsmod | grep wl
+
+wl                   6529024  0
+cfg80211             1601536  1 wl
+```
+とすればインストールされたwlモジュールが見つかるはずです！これでネットワークメニューにWi-Fiが表示されませんか？もし見つからない場合は再起動してみてください．
+
+### FaceTime HDカメラ
+[こちらのディスカッション](https://discussion.fedoraproject.org/t/mulderje-intel-mac-rpms/130045)の通り，以下を実行してみてください．
+```sh
+$ sudo dnf copr enable mulderje/facetimehd-kmod 
+$ sudo dnf install facetimehd-kmod
+```
+
+### 日本語入力
+- 私は初期設定でIBUS-[Anthy](https://github.com/fujiwarat/anthy-unicode)を選びました，
+- Macの「かな」「英数」キーをその通りに当てはめるには一工夫必要で，Anthy設定内のキー設定で`latin_mode`に`Hangul_Hanja`（「英数」キーに割り当てられた名前）, `hiragana_mode`に`Hangul`（「かな」キーに割り当てられた名前）を設定します．![Anthyで英数・かなキーを設定](/images/fedora-macbook/anthy.webp)
+  - どのキーかを判定するのにものすごく時間がかかりました．みなさんはこれで簡単に設定できる事を祈ります．
+
+ここまでできれば大体パソコンとして使えるようになります！
+
+### キー設定
+- [GNOME Tweaks](https://wiki.gnome.org/Apps/Tweaks)をインストールすることで， Caps LockをCtrlとして使うなどの簡単なキーマップ変更が出来ます
+- さらに細かいキー設定には[keyd](https://github.com/rvaiya/keyd)がおすすめです．
+- 筆者は大西配列にして使っています．
+https://zenn.dev/itsukikigoshi/articles/d550cd8fe41fcd
+
+### その他
+- DropboxやJetBrains Toolboxなど，トップバーに表示されるインジケータの表示には，[こちらのGNOME Extension](https://extensions.gnome.org/extension/615/appindicator-support/)を入れてください！困難最初からあってもいいと思うですが，どうなってまんねやろなあ．
+
+
+### コラム: ソフトウェア
+- Mailer: Thunderbird
+- Browser: Zen (Firefox)
+- Development: Zed, JetBrains; Linux-Firstな分野, 圧倒的な優位性
+- Bitwarden
+- 画像: Inkskape, GIMP; 慣れたら使える
+- 動画: KDENLive; 慣れたら使える, Flatpak版じゃないとプロプライエタリなコーデックが読めない
+- PDF: Document Viewer, ページなら並び替えなどは限定的だがまあ十分
+- Office: ほとんど使えないが他人から送られてきたものを開く用途ではLibreOfficeで十分．
+	- ってか世の中の人はなぜLibreOfficeを使わないのか？OSに同梱されてないから，とかならクソ商法過ぎるだろ．
+	- GUIで操作できる範囲を広げて，Linux by Defaultを特にパソコンをさわり立ての子どもなどに広めていかなければ．
+	- ChromeOSは好例だが依然としてGoogleのベンダーロックイン
+- LocalSend: 同じWiFiに接続しなくてはいけないという制限がありながら，ほとんどのケースでこれで事足りる
+ 	- AirDropの一番の使いどころは
+- FreeFileSync
+- この辺のソフトウェアには寄付せなあかんかも知れん
+- Flatpakは.appみたいなもの．たまに権限で詰まる
+  - Flatreel
 
 - 参考になったブログ
 	  - 誰かがMacBook Air 12だかでFedoraをインストールしているブログが参考になった
 	  - dnfでOS含め一括アップデートしてから
 
 https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-late-2011.html
-https://www.cyberciti.biz/faq/fedora-linux-install-broadcom-wl-sta-wireless-driver-for-bcm43228/
-https://www.thetestspecimen.com/posts/broadcom-wifi-modules-fedora/
 https://alex.dzyoba.com/blog/macbook-air-linux/
 
 
-### おまけ: Computer Hacker - Ian
+## おまけ: Computer Hacker - Ian
 ![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
 
 ![](/images/fedora-macbook/cardboard-laptop.webp =500x)
@@ -313,7 +353,7 @@ Changt : 2026-05-09 18:50:02.739655681 -0700
 使い始めたのは2026/1/31だとよ
 
 
-## Fedoraにしてみて...
+## 【本題5】Fedoraにしてみて...
 ### よかったこと
 - 開発体験の向上
 - OSのバージョンによる制約を受けない
@@ -351,6 +391,7 @@ Changt : 2026-05-09 18:50:02.739655681 -0700
 - オープンソースカルチャーとの強い結びつき
   - Wikipedia
   - Internet ArchiveにもLinuxロゴがあったな
+  - "プロプライエタリ"ってはじめて言った
 - カルチャー
   - "Linuxちょっとできる"
   - Linuxのミームたち
