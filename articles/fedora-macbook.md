@@ -1,16 +1,129 @@
 ---
-title: Fedora LinuxをMacBook Pro (Mid 2014)でデュアルブートしよう
-emoji: 👏
+title: 思い出が詰まったMacBook Pro (Mid 2014)でFedora Linuxをデュアルブートしよう
+emoji: 🧽
 type: tech
 topics:
   - fedora
   - Macbook
 published: false
 ---
+
 ## 概要
+旧式のMacBook Pro (Retina, 13-inch, Mid 2014) を現役で使用している私は，年初（2026年1月）に開発環境としてのmacOS 11 (Big Sur)に限界を感じ，Linux導入に踏み切りました．
+ここでは10年以上前に発売されたMacBook ProにFedora Linuxをデュアルブートした手順と，Linux移行に係る所感とLinuxあるいはオープンカルチャーへの想いを綴ります．
+
+## 動機
+
+私は，10年以上前に発売されたMacBook Pro ([Retina, 13-inch, Mid 2014](https://support.apple.com/ja-jp/111942)) を主たるコンピュータとして使用しています（まさかこんなに長く使うことになるなんて！）．
+このMacBook Proは，2018年に亡くなった[祖父](https://ja.wikipedia.org/wiki/木越治)の形見として，彼の息子になる私の父親から譲り受けました．それ以来ですから，私が中学生だった2018年からかれこれ8年近く使用していて，今私は大学生ですがまだ現役で活躍しています．
+しかし，同MacBook Proへインストール可能な最新OSの[macOS Big Sur](https://ja.wikipedia.org/wiki/MacOS_Big_Sur) (v11; 2020年)は私の趣味のWeb開発に関連する最新の開発環境を導入することは殆ど不可能です．高校生 (2022年あたり)からNode.js v18までしか動作せず，当時のLTSである20系を使えなかった記憶があります^[過去に関わっていたプロジェクトではNode v16を使っているので，ひょっとしたらv18すら動かなかったのかもしれない ([GitHub](https://github.com/hibiya-itchief/2024-quaint-app/blob/d0f200655489b32d398071594d55316d2a31afc8/.github/workflows/ci.yml#L22))]^[少なくともNode.js v20のサポートはmacOS 12以上でありそうです ([Github Discussion](https://github.com/nodejs/node/issues/47067#issuecomment-1474810592))]．
+
+### 技術的な限界の詳細
+実際，実験的にHonoのプロジェクトを触ってみようとしたところ，`$pnpm dev`で`Cloudflare Workers runtime cannot run on the current version of macOS`と言われてしまう始末...
+
+```sh
+$ wrangler dev
+Warning: Unsupported macOS version detected (11.6.0). The Cloudflare Workers runtime may not work correctly on macOS versions below 13.5.0. Consider upgrading to macOS 13.5.0+ or using a DevContainer setup with a supported version of Linux (glibc 2.35+ required). 
+```
+
+また，Nodeに関連するプロジェクトを開発しようとすると，事あるごとに
+```sh
+dyld: Symbol not found: __ZNSt3__113basic_filebufIcNS_11char_traitsIcEEE4openEPKcj
+Referenced from: /Users/user/.nvm/versions/node/v24.13.0/bin/node (which was built for Mac OS X 13.5)
+```
+や
+```sh
+$ pkgx npm create hono@latest app
+dyld: Symbol not found: __ZNKSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE3strEv
+Referenced from: /Users/user/.pkgx/nodejs.org/v25.5.0/bin/node (which was built for Mac OS X 13.5)
+Expected in: /usr/lib/libc++.1.dylib 
+```
+というエラーを目にするようになりました．
+
+まあ，macOSのメジャーアップデートが毎年やってきて，基本的に開発環境は最新OSに追従していることを前提とするならば当然かもしれません...
+
+でも，文章を書いたりYouTubeを見るためには充分働いているのでこれだけでPCを買い換えるのはもったいない...
+
+## macOSからの移行先の検討
+
+開発環境を整える上で，まずはmacOS上で動く環境構築を模索しました．
+
+### Docker / OrbStack / Colima [不可]
+
+仮想環境構築方法の常套手段であろう[Docker](https://www.docker.com/)と，そのmacOS向け軽量代替手段である[OrbStack](https://orbstack.dev/)/[Colima](https://colima.run/)を試しましたが，大抵がmacOS 12以上を想定していて，そもそもmacOS 11には対応していないので諦めました．
+
+### UTM [不可]
+
+macOS上でLinuxを立ち上げる選択肢として，[UTM](https://mac.getutm.app/)を検討しました．しかし，macOS上でLinuxを起動する以上，マシンの性能を最大限生かしきれず動作がとても実用に耐えるものではありませんでした．
+
+### GitHub Codespace [不可]
+
+自身のOSと関係なく環境を構築する選択肢として，[GitHub Codespace](https://github.com/features/codespaces)も検討しました．
+学生なら[Student Developer Pack](https://education.github.com/pack)を使えば無料で使えることを高校生の頃に使った経験から覚えていましたが，学生認証ができないのでCodespaceの使用は諦めました．そもそもオンラインでしか開発サーバを立ち上げられないのは不便だし...
+
+具体的には，学生認証で私が交換留学生として滞在しているUniversity of California, Berkeleyのアカウント (`itsuki [at] berkeley.edu`)を使おうとしたところ，私みたいなNon-degree studentは受け入れないようになっているのか，ただの`berkeley.edu`ではなく`*.berkeley.edu`という，どこかの学科に属していることが求められ入るドメインでないと登録不可でした．
+
+私が所属する国際基督教大学のドメイン（`icu.ac.jp`）も，私が日本からアクセスしていない，という理由ではじかれました．
+
+紛れもなく私は学生であるのに，その正銘がこんなに大変だなんて，ちょっとしたアイデンティティクライシスを覚えました．
+
+### Linuxのデュアルブート [採用]
+
+ここまで試して，私に残された選択肢は殆どこれ1つになっていました．データが飛ぶリスクがあったので怖かったのですが，腹を括ってデュアルブートに踏みきることにしました．
+そもそも，アクティブなサポートが殆ど切れているようなmacOSはセキュリティの観点からもあまり褒められたものではありません．
+macOSから離れる機会をくれてありがとう．
+
+
+## コラム: 厳格なWindows家系に生まれた私のAppleに対する想い
+### 家族はみーんなWindows
+私は，母方の祖父母がWindows 95だか98のパソコン教室を自宅で開いていたり，父方の祖父は昔からMS-DOSを使っていて，父親もMS-DOSを子供の頃に習ったという厳格なWindows家系に生まれたました．
+
+父方の祖父は私が今使っているMacBookでWindows on Parallel Desktopを使っていました．支給されたのがMacBookだったからそれを使っていただけという理由らしい．多分一番使っていたのはワープロソフト[一太郎](https://www.justsystems.com/jp/products/ichitaro/) (Windowsでしか動作しない)だし．わけわかめ！たしかその祖父は生前にmacOSのライブかな漢字変換が嫌いとか，Macに対して良い事は言っていなかったような...
+
+私の父親も，[Let's Note](https://panasonic.jp/cns/pc/products/lineup/)/[VAIO](https://vaio.com/)/Surfaceを使っていて，[秀丸エディタ](https://hide.maruo.co.jp/software/hidemaru.html)（Windows専用のフリーエディタ）でメモとか研究メモの執筆をしています．
+
+うちの母親もバックオフィス系の仕事をしているので，自宅でHPを使っているし．
+
+ほんまに誰一人として非Windowsユーザが家族にいない！
+
+### Macへの羨望
+私が生まれ育った山口県山口市には，[山口情報芸術センター](https://www.ycam.jp/)（YCAM）という，最高にクールなメディアアートの開発・展示拠点があります．
+https://www.ycam.jp/
+今思い返しても，あんな田舎（ちょっと失礼）に世界からメディアアーティストがやってきたり（時に故・[坂本龍一](https://www.ycam.jp/archive/profile/ryuichi-sakamoto/)，[大友良英](https://www.ycam.jp/archive/profile/yoshihide-otomo/)，[ダムタイプ](https://www.ycam.jp/archive/profile/dumb-type/)），常駐の開発集団・[インターラボ](https://www.ycam.jp/aboutus/interlab/)のクールなみなさんが子どもだった私と遊んでくれたりしたあの環境は，紛れもなく山口市の財産だと思います．ありがとうYCAM．
+
+私の趣味の現代アート鑑賞も，プログラミング（YCAMにはArduinoが転がっていた）やオープンカルチャー（作品は積極的にCreative Commonsライセンスで頒布されていた (例: [gonzoCam](https://www.ycam.jp/archive/software-hardware/gonzocam/))）への興味も間違いなくYCAMに根ざしています．
+まあ小学生当時の私はコンピュータというより[レゴブロックのこまどり撮影](https://youtube.com/playlist?list=PLVxEAWkQVBq7ZLbCohJz4OtNNkQ6UMr0c)にはまっていたので，全然コンピュータ関連に明るかった訳ではなかったですが．そういえばYouTubeへ動画をアップロードする方法を小学3-4年生の私に教えてくれたのも[深澤孝史](https://www.ycam.jp/archive/profile/takafumi-fukasawa/)さんという美術家の方でした．失礼極まりなかったであろう世間知らず・木越斎少年のガキに色々なことを教えてくれたことには感謝しかありません．今も元気にしているかしら．最後に会ったのは確かコロナ禍が始まってすぐの2020年で，Zoom越しの対面でした．
+
+さて，脱線が過ぎましたが，彼らが使っていたのが，他ならぬMacintoshだったのです．メディアアートに限らずMacユーザが多いのはアーティストあるあるなのでしょう．当時（2014年）のMacは，今よりも一層「洗練された人が使っているもの」という印象が強かったと思います．山口市という田舎に住んでいたのできっと余計に．りんごマークが光るMacBook Proはもちろん，Mac Pro 
+（2013; "ゴミ箱"）を見たときなんて感動しました．
+![ゴミ箱Mac Pro](https://upload.wikimedia.org/wikipedia/commons/d/d6/New_Mac_Pro_%2812093123884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original  =250x)
+*Paul Hudson from United Kingdom, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons*
+
+こんな昔語りができるほど，2004年生まれの私も歳を取りました．
+そういえば小さい頃に通っていた[英語教室](http://redrobini.com/)の室長先生もMacが好きで，MacBook ProやiMacを使っていました．まだスキューモーフィズムの面影漂う[OS X Mavericks](https://ja.wikipedia.org/wiki/OS_X_Mavericks)でしたね（"OS X"！なんて懐かしい響き！！）．
+
+
+### iMacを買ってもらった
+
+小学4年生の木越少年は当時，家にあった4万円の激安NECパソコン（Windows 7）にインストールした[Windows ムービーメーカー](https://ja.wikipedia.org/wiki/Windows_ムービーメーカー)で，図書館から借りたハンズオン本を片手に動画編集を覚えました．しかし，同ソフトウェアの機能は限定的で，たしか1クリップあたりに細かい継続時間指定が出来ないなど，限界も感じ始めていました．
+私の父親は子どもの潜在的なクリエイティビティに対する投資は惜しまない方針だったようで，iMovieが標準搭載されているiMacを近くのヤマダ電機だかビックカメラで一緒に買ってくれました．
+その後，そのiMacはMacBook Proとともに外付けDVDドライブを指したら電源系統のトラブルで（多分私が適当な外部電源をDVDドライブに差したのでショートした）起動しなくなり，数万円で修理したものの8GBのメモリでの作業は辛く，結局私が高校生の頃だったかPCリサイクルされました．ユニファイドボディは美しいですが，「ディスプレイだけは再利用しよう」みたいことがやりにくいですよね．それはまた別のお話．
+
+ところで，当時の最新OSはOS X Yosemiteで，子どもの私はその美しいデザインと発表会に感動しました．多分人生で初めて見たWWDCのKeynoteが2015です．
+  - そういや実際に行った，聖地巡礼
+
+
+- iPod nano, shuffle
+- Liquied Glass... 重い..
+- スキュモーフィズムが良かった，と手放しに褒めることはしないが，今のiOSにはバグが多い
+- 美しさもさることながら，求めているのはjust works
+- Big Surのデザインが好き．
+
 - MacBook Proが古くて開発に支障が...
 - パソコンを買い直すのも面倒だし，Linux入れてみるか！（Geminiにそう提案された）
 - 結果として大学もこれでいけた
+
+
 
 ## MacBook Pro (13 inch, Mid 2014)の魅力
 - HDMI
@@ -21,21 +134,16 @@ published: false
 - Intel (Linuxがブートしやすい)
   - Apple SiliconにはAsahi Linuxがひつようでちょっとめんどいっぽい
 
-## なぜLinux?
-- 私の使っているMacBook Pro Mid 2014で動く最新のmacOSである11 Big Surを使っていたが，12以降でないと動かない開発ツールが多くなった
-  - Wranglerが動かない
-  - 高校生時代（2022-3頃）から既にNode 18系までしか動かずNode 20系での開発がうまく行かなかった気がする
-- セキュリティ懸念
-```sh
-dyld: Symbol not found: __ZNSt3__113basic_filebufIcNS_11char_traitsIcEEE4openEPKcj
 
-Referenced from: /Users/user/.nvm/versions/node/v24.13.0/bin/node (which was built for Mac OS X 13.5)
-```
 
-```sh
-pnpm dev # in Hono Project
-# Cloudflare Workers runtime cannot run on the current version of macOS
-```
+ wranglerでこんなエラーが出るんだけど, それでもHonoを活用できる?
+
+Warning: Unsupported macOS version detected (11.6.0). The Cloudflare Workers runtime may not work correctly on macOS versions below 13.5.0. Consider upgrading to macOS 13.5.0+ or using a DevContainer setup with a supported version of Linux (glibc 2.35+ required). 
+
+- Dockerすら動かない
+  - https://orbstack.dev/
+
+
 
 ## なぜFedora Linux?
 - なんとなく以下の条件があった
@@ -45,8 +153,22 @@ pnpm dev # in Hono Project
   - PureなGNOMEが綺麗
   - 開発環境として適している
   - Just works （面倒な設定無しでも結構動く）
-    - Linusも使っている
+    - Linusも使っている: https://www.youtube.com/watch?v=mfv0V1SxbNA (直接的な理由ではない)
 - Nix (試した; 面倒; 日本語フォントが汚い), Ubuntu (デフォルトデスクトップが可愛くない), Zorin (試した; 有料版があるのが引かれないかも,だったらUbuntuで良くない？) 
+
+```sh
+(base) itsukikigoshi@fedora:~$ sudo stat / 
+  Fichier : /
+   Taille : 190       	Blocs : 0          Blocs d'E/S : 4096   répertoire
+Périphérique : 0/37	Inœud : 256         Liens : 1
+Accès : (0555/dr-xr-xr-x)  UID : (    0/    root)   GID : (    0/    root)
+Contexte : system_u:object_r:root_t:s0
+ Accès : 2026-05-16 00:25:47.727713744 -0700
+Modif. : 2026-05-09 18:50:02.739655681 -0700
+Changt : 2026-05-09 18:50:02.739655681 -0700
+  Créé : 2026-01-31 01:26:32.065996572 -0800
+```
+使い始めたのは2026/1/31だとよ
 
 ## Fedora Linuxをデュアルブートする手順
 - macOSを使う可能性があるので（実際に使った），Macは残す
@@ -141,6 +263,12 @@ https://www.youtube.com/watch?v=p4lu-_6nY6Q
   - iCloud写真（iPhone写真のバックアップは日本帰ったらやらなきゃ）
   - Final Cut Pro (GPUの扱い方はやはりmacOSの方がうまそう？)
 
+## コラム: 次に買うなら?
+私もLet's Noteのゴツい見た目と，ソニー/NECと並んで数少ない日本メーカーである^[富士通のPC事業子会社である富士通クライアントコンピューティングはレノボに買収されたし...]点が好きなので，次に買うならFedora on Let's Note?
+- Lenovo
+- Framework（アメリカではよく観測した）
+![](/images/fedora-macbook/framework.webp)
+
 ## Linuxの世界
 - オープンソースカルチャーとの強い結びつき
   - Wikipedia
@@ -148,6 +276,16 @@ https://www.youtube.com/watch?v=p4lu-_6nY6Q
 - カルチャー
   - "Linuxちょっとできる"
   - Linuxのミームたち
+- アプリストアにフリーソフトウェアが充実しているのは，コミュニティとともに，参入障壁が低いこと（Apple Developers Program）
+  - せっかく写真ビューワアプリApollo Oneを買ったのに...
+- Arch Wiki
+- 源流志向, できるだけ源流をたどる(source of truth)
+  - 大抵英語で辛いけど，Docsを読むのがかなり利く．Tech Blogは入り口に，最終的に参照するのは公式ドキュメント
+- CLIに抵抗はだいぶなくなった
+  - なぜCLIはコマンドを知らないと何もできないんだろう
+
+これから何するの？
+
 ---
 ## メモ
 https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-late-2011.html
@@ -158,3 +296,4 @@ https://alex.dzyoba.com/blog/macbook-air-linux/
 ![](/images/fedora-macbook/partiton.webp)
 ![](/images/fedora-macbook/scary-linux.webp)
 ![](/images/fedora-macbook/hacking-laundry-machine.webp)
+![](/images/fedora-macbook/munchausen-by-proxy.webp)
