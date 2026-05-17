@@ -1,6 +1,6 @@
 ---
 title: MacBook Pro (Mid 2014)でFedora Linuxをデュアルブートしよう
-emoji: 🧽
+emoji: 🍋
 type: tech
 topics:
   - fedora
@@ -11,6 +11,8 @@ published: false
 ## 概要
 旧式のMacBook Pro (Retina, 13-inch, Mid 2014) を現役で使用している私は，年初（2026年1月）に開発環境としてのmacOS 11 (Big Sur)に限界を感じ，Linux導入に踏み切りました．
 ここでは10年以上前に発売されたMacBook ProにFedora Linuxをデュアルブートした手順と，Linux移行に係る所感とLinuxあるいはオープンカルチャーへの想いを綴ります．
+
+![日常に溶けるFedora](/images/fedora-macbook/fedora-daily-life.webp)*日常に溶けるFedora*
 
 ## 動機
 
@@ -42,9 +44,11 @@ Expected in: /usr/lib/libc++.1.dylib
 
 まあ，macOSのメジャーアップデートが毎年やってきて，基本的に開発環境は最新OSに追従していることを前提とするならば当然かもしれません...
 
-でも，文章を書いたりYouTubeを見るためには充分働いているのでこれだけでPCを買い換えるのはもったいない...
+でも，文章を書いたりYouTubeを見るためにはこのMacで充分なので，これだけでPCを買い換えるのはもったいない...
 
-## macOSからの移行先の検討
+![カスタムCommand Line](/images/fedora-macbook/cli.webp =400x)*関係ないけど，Berkeleyの寮共用パソコンにインストールされているカスタムCLI*
+
+## macOSで開発環境を整えるための試行錯誤
 
 開発環境を整える上で，まずはmacOS上で動く環境構築を模索しました．
 
@@ -52,14 +56,22 @@ Expected in: /usr/lib/libc++.1.dylib
 
 仮想環境構築方法の常套手段であろう[Docker](https://www.docker.com/)と，そのmacOS向け軽量代替手段である[OrbStack](https://orbstack.dev/)/[Colima](https://colima.run/)を試しましたが，大抵がmacOS 12以上を想定していて，そもそもmacOS 11には対応していないので諦めました．
 
+https://www.docker.com/
+https://orbstack.dev/
+https://colima.run/
+
 ### UTM [不可]
 
 macOS上でLinuxを立ち上げる選択肢として，[UTM](https://mac.getutm.app/)を検討しました．しかし，macOS上でLinuxを起動する以上，マシンの性能を最大限生かしきれず動作がとても実用に耐えるものではありませんでした．
+
+https://mac.getutm.app
 
 ### GitHub Codespace [不可]
 
 自身のOSと関係なく環境を構築する選択肢として，[GitHub Codespace](https://github.com/features/codespaces)も検討しました．
 学生なら[Student Developer Pack](https://education.github.com/pack)を使えば無料で使えることを高校生の頃に使った経験から覚えていましたが，学生認証ができないのでCodespaceの使用は諦めました．そもそもオンラインでしか開発サーバを立ち上げられないのは不便だし...
+
+https://github.com/features/codespaces
 
 具体的には，学生認証で私が交換留学生として滞在しているUniversity of California, Berkeleyのアカウント (`itsuki [at] berkeley.edu`)を使おうとしたところ，私みたいなNon-degree studentは受け入れないようになっているのか，ただの`berkeley.edu`ではなく`*.berkeley.edu`という，どこかの学科に属していることが求められ入るドメインでないと登録不可でした．
 
@@ -74,6 +86,9 @@ macOS上でLinuxを立ち上げる選択肢として，[UTM](https://mac.getutm.
 macOSから離れる機会をくれてありがとう．
 
 ## コラム: 厳格なWindows家系に生まれた私のAppleに対する想い，メディアアートとクライミング
+
+![2021年のMacBook](/images/fedora-macbook/mac-in-room.webp =300x)*Macと，横に見える親のSurface (2021)*
+
 ### 家族はみーんなWindows.
 私は，母方の祖父母がWindows 95だか98のパソコン教室を自宅で開いていたり，父方の祖父は昔からMS-DOSを使っていて，父親もMS-DOSを子供の頃に習ったという厳格なWindows家系に生まれたました．
 
@@ -118,11 +133,10 @@ https://www.ycam.jp/
 脱線の脱線ですがBerkeleyに来たからにはYosemite国立公園に行きました．小4の私はカリフォルニア州がどこにあるかも知らなかったわけなのですが，10年の時を経た聖地巡礼です．しかも，大学生になって始めたクライミングの聖地でもあるという，2つの意味での聖地を同時に巡るわけですね．
 
 ![El Capitan](/images/fedora-macbook/elcap.webp =400x)
-*Yosemiteの次のOS Xの名称にもなった，ヨセミテ国立公園の象徴: エル・キャピタン．私の滞在中には[ユージ・ヒラヤマ](https://yuji-hirayama.com/)がこの壁を登っていたらしい^[実は私が高校生の頃に参加した森美術館のワークショップで彼の娘さんとダンスしており，彼からクライミング講習も受けたことがあることを，ヨセミテに行った後思い出しました．縁過ぎる．![森美術館のワークショップでユージ・ヒラヤマのジムを訪れたときの写真](https://live.staticflickr.com/65535/51756727258_f07d7ca887.jpg)
-*©Mori Art Museum. All Rights reserved. Provided thru [Flickr](https://flic.kr/p/2mRyKQw). Another Energy-Related Community Engagement Program “Art Camp for under 22, Vol. 7 Human Begin: What Are We Doing Tomorrow?” Session #2: Saturday, July 10, 2021 Venue: “Climb Park Base Camp” (b-camp.jp/) in Iruma City, Saitama Prefecture Photo: Tayama Tatsuyuki*]．映画『[フリーソロ](https://ja.wikipedia.org/wiki/フリーソロ)』でアレックスオノルドが綱なしで登ったことも有名ですね*
+*Yosemiteの次のOS Xの名称にもなった，ヨセミテ国立公園の象徴: エル・キャピタン．私の滞在中には[ユージ・ヒラヤマ](https://yuji-hirayama.com/)がこの壁を登っていたらしい^[実は私が高校生の頃に参加した森美術館のワークショップで彼の娘さんとダンスしており，彼からクライミング講習も受けたことがあることを，ヨセミテに行った後思い出しました．縁過ぎる．[![森美術館のワークショップでユージ・ヒラヤマのジムを訪れたときの写真](https://live.staticflickr.com/65535/51756727258_f07d7ca887.jpg)](https://flic.kr/p/2mRyKQw)*©Mori Art Museum. All Rights reserved. Provided thru [Flickr](https://flic.kr/p/2mRyKQw). Another Energy-Related Community Engagement Program “Art Camp for under 22, Vol. 7 Human Begin: What Are We Doing Tomorrow?” Session #2: Saturday, July 10, 2021 Venue: “Climb Park Base Camp” (b-camp.jp/) in Iruma City, Saitama Prefecture Photo: Tayama Tatsuyuki*]．映画『[フリーソロ](https://ja.wikipedia.org/wiki/フリーソロ)』でアレックスオノルドが綱なしで登ったことも有名ですね*
 
 ![壁を登るクラブメイト](/images/fedora-macbook/climbing.webp =400x)
-*写真に移る彼女は，（リアルライフでも）パートナーである少し上の彼と一緒にフリークライミングしていました．一緒にトラッドクライミングできるカップルなんて素敵過ぎる．日本帰国後の私の目標の1つはフリークライミングの技術を身につけることかな．*
+*写真に写る彼女は，（リアルライフでも）パートナーである少し上にいる彼と一緒にフリークライミングしていました．一緒にトラッドクライミングできるカップルなんて素敵過ぎる．日本帰国後の私の1つの目標はフリークライミングの技術を身につけることかな．*
 
 ### 他にもApple...
 小学生の頃に買ってもらったiPod nanoも，人生で初めて買った携帯電話のiPhone 12 miniもまだ現役．両親が友人の結婚式でもらったか何かの初代iPod Shuffle（容量1GB!）も以前は使っていました．
@@ -132,32 +146,31 @@ https://www.ycam.jp/
 
 ### MacBook Pro (Retina, 13-inch, Mid 2014)の魅力
 さて，祖父の形見であるMacBook Pro (Retina, 13-inch, Mid 2014)を今でも使っている理由に，ひとつは形見であることもありますが，それが製品として優れているからというのも理由のひとつです．なんせ，
-- このMacBook ProにはHDMIポートがついています
-- このMacBook ProにはSDカードスロットがついています
-- このMacBook ProにはMagSafe (磁石で取り外し可能な充電端子)がついています
+- このMacBook Proには**HDMIポート**がついています
+- このMacBook Proには**SDカードスロット**がついています
+- このMacBook Proには**MagSafe** (磁石で取り外し可能な充電端子)がついています
 
-上記の3機能は，2016年モデルで廃止され，その後また戻ってきた機能たちです．この時代のMacBook Proには必要不可欠がもう揃っていたのです！
+上記の3機能は2016年モデルで廃止され，その後また戻ってきた機能たちです．つまり，必要不可欠な機能はこの時代のMacBook Proにもう揃っていたのです！
 
-- 最新のMacBook Proと重量が殆ど変わりません！（最新の再軽量モデル: [1.55kg](https://www.apple.com/macbook-pro/specs/#:~:text=1%2E55%20kg) vs.私の: [1.57kg](https://support.apple.com/ja-jp/111942#:~:text=1%2E57%20kg2)）
+- 最新のMacBook Proと重量が殆ど変わりません！
+  - 最新の再軽量MacBook Pro: [1.55kg](https://www.apple.com/macbook-pro/specs/#:~:text=1%2E55%20kg) 
+  - 私のMacBook Pro: [1.57kg](https://support.apple.com/ja-jp/111942#:~:text=1%2E57%20kg2)
 - りんごが光ります ![光るりんご](/images/fedora-macbook/shining.webp =500x)
-- Intel製チップ
-  - 性能面は置いておいて，Linuxがブートしやすいです．
+- このMacBook Proは**Intel製チップ**で動作しています
+  - 性能面の優劣はさしおいて，Linuxがブートしやすいです．
   - Apple SiliconでのLinuxにはAsahi Linuxという前提OS(?)が必要でちと手間がかかりそう．
 
 
 長くなりましたが，10年前のAppleが私を形作ったであろうお話でした．
 
-**（コラム終り）**
-
----
+**（コラムおわり）**
 
 ## なぜFedora Linux?
-結果としてLinuxディストリビューション（macOSやWindowsと違って，LinuxではOSの核となる"Linuxカーネル"を元に派生した様々な種類のOSが存在します）として[Fedora](https://fedoraproject.org/)を選びました．簡単にその理由を書きます．
-この話には議論・闘争が付き物です．以下のミームが物語っています．だから深く立ち入りません．
+結果を先に言えば，私はLinuxディストリビューション^[macOSやWindowsと違って，LinuxではOSの核となる"Linuxカーネル"を元に派生した様々な種類のOSが存在します]として[Fedora Workstation](https://fedoraproject.org/workstation/)を選びました．ここでは簡単にその理由を書きます．この話には議論・闘争が付きものです．以下のミームが物語っています．だから深く立ち入りません．
 ![Linux is Scary](/images/fedora-macbook/scary-linux.webp =300x)
 *"私，猫ミームが見たいだけやねんけど"*
 
-私には，なんとなく以下の条件がありました．
+私には，なんとなくですが以下の条件がありました．
 - **セットアップの負担が少ない**: 本業が大学生なので，レポートや課題がこなしやすい環境であることが絶対条件でした．インターネットブラウズや印刷，Zoom参加などです．
 - **開発環境として不自由しない**: そもそものモチベーションが開発環境を整えることだったので，最新のパッケージが動作することが条件でした
 
@@ -175,42 +188,41 @@ https://www.ycam.jp/
   - 小学生の頃に[日経Linux](https://www.fujisan.co.jp/product/1281679734/b/1204373/)を買って読んでいたくらいなので当然Ubuntuは検討しました．
   - しかし，本当に単純な理由で，デフォルトデスクトップの色味が怖い（なぜ紫色で，おまけに不気味なマークなのですか？怖すぎる...）のでやめました．これが動物の写真だったらUbuntuを使っていたことでしょう．
   - 試してすらいないです...試すべきだったかな．
-- [openSUSE](https://www.opensuse.org/)/[Linux Mint](https://www.linuxmint.com/)
+- **[openSUSE](https://www.opensuse.org/)**/**[Linux Mint](https://www.linuxmint.com/)**
   - KDEやXfce環境はWindowsっぽく馴染めそうになかったので考慮しませんでした．
-- [Fedora Workstation](https://fedoraproject.org/workstation/)
+- **[Fedora Workstation](https://fedoraproject.org/workstation/)**: *君に決めた！*
   - Fedora Workstationに搭載されているピュアな[GNOME](https://www.gnome.org/fr/)がただ単純に美しかったです．
   - また，Fedoraはパッケージ更新に積極的で，最新の開発環境を手に入れる文脈からも適していました．
-  - FedoraはIBM傘下の商業向けLinuxディストリビューション・RedHatが開発しているオープンソースなフリーOSです．Red Hatに対するFedora帽子だね．
-  - Just works（面倒な設定無しでも結構動く）ことが特徴だと思います．
+  - FedoraはIBM傘下の商業向けLinuxディストリビューションベンダー・Red Hatが開発しているオープンソースでフリーOSです．Red "Hat"に対するFedora帽子ですね．おしゃれ．
+  - Just worksすることが特徴です．
+    - 面倒な設定無しでもそこそこ動きます．
     - これはFedoraを使い始めた後に知ったことですが，Linuxの生みの親・LinusもFedora使っているようです![Linus uses Fedora](/images/fedora-macbook/linus.webp)*From [Linus Tech Tips on YouTube](https://youtu.be/mfv0V1SxbNA?t=2722)*
-    - "チョットデキル"あの人です．だいぶお年を召されたよね．![ちょっとできる](/images/fedora-macbook/chotto.webp)*チョットデキル!*
+    - "チョットデキル"あの人です．この写真の頃と比べると，だいぶお年を召されたよね．![ちょっとできる](/images/fedora-macbook/chotto.webp)*チョットデキル!*
 
 
-### おまけ: Computer Hacker - Ian
-![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
+## 【本題】Fedora Linuxをデュアルブートする手順
+macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookでデュアルブートしていきます．後述しますが，実際にFinal Cut ProやiTunes (Music)が必要な場面が出てきてmacOSも使いました，しかし，普段macOSの出番は殆どありません．
 
-![](/images/fedora-macbook/cardboard-laptop.webp =500x)
-![](/images/fedora-macbook/hacking-laundry-machine.webp =500x)
+### 必要な物: 
+- **有線インターネット**（もしくはAndroidか，携帯通信容量に余裕のあるiPhone）
+  - おじいちゃんが持っていた理由がわかった，有線結局最強の安定性
+  - 家帰ったらルーターから有線を引けるようにしよう
+- **USB** (インストールメディア用)
+  - 私は無かったのでSDカードで代用しました..
+  - しかしSDカードは比較的衝撃に弱かったりするそうなのでおすすめしません
+- **パソコンオタク**（"Geek"; Optional）
+  - インターネットつながらないって言ったら色々いじってくれた
+  - ダンボール
+  - 洗濯機改造
+  - https://www.gentoo.org/ 彼はGentoo Linuxを使っているようです
+  - Ian "He is a computer hucker"
 
-
-
-## Fedora Linuxをデュアルブートする手順
-- macOSを使う可能性があるので（実際に使った），Macは残す
-
-- 必要な物: 
-  - インターネット（Android, 携帯通信容量に余裕のあるiPhone, Ethernet）
-    - おじいちゃんが持っていた理由がわかった，有線結局最強の安定性
-    - 家帰ったらルーターから有線を引けるようにしよう
-  - パソコンオタク（Geek）
-    - インターネットつながらないって言ったら色々いじってくれた
-    - ダンボール
-    - 洗濯機改造
-    - https://www.gentoo.org/ 彼はGentoo Linuxを使っているようです
-    - Ian "He is a computer hucker"
+---
 
 https://www.youtube.com/watch?v=nqioOaFAfHw
 https://www.youtube.com/watch?v=p4lu-_6nY6Q
-1. バックアップ
+1. macOSの掃除・バックアップ
+  2. おじいちゃんの撮影した私のどうが
 1. パーティションを作成
   1. 確か800MBくらいの1領域余計に必要
 1. インストールメディアを作成
@@ -227,6 +239,13 @@ https://www.youtube.com/watch?v=p4lu-_6nY6Q
 この際だから調べよう:
 - [ ] FAT32などのファイルシステムの違い
 
+
+
+### おまけ: Computer Hacker - Ian
+![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
+
+![](/images/fedora-macbook/cardboard-laptop.webp =500x)
+![](/images/fedora-macbook/hacking-laundry-machine.webp =500x)
 
 ```sh
 (base) itsukikigoshi@fedora:~$ sudo stat / 
@@ -332,4 +351,3 @@ https://www.cyberciti.biz/faq/fedora-linux-install-broadcom-wl-sta-wireless-driv
 https://www.thetestspecimen.com/posts/broadcom-wifi-modules-fedora/
 https://alex.dzyoba.com/blog/macbook-air-linux/
 ![](/images/fedora-macbook/partiton.webp)
-
