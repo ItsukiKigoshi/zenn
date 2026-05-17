@@ -395,7 +395,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
   - アメリカで実際に使っている学生を2例見かけました![カフェで観測したFramework](/images/fedora-macbook/framework.webp =300x)
 - [MacBook Pro](https://www.apple.com/jp/macbook-pro/)
 
-次にPCを買い換えるなら，現在のWindows PCはCopilotマークがおダサなので，それがないFrameworkかMacBook Proを買います．Frameworkはあまり安くない．
+次にPCを買い換えるなら，現在のWindows PCはCopilotマークがおダサなので，それがないFrameworkかMacBook Proを買います．実はFrameworkもあまり安くない．
 
 今年のWWDC (2026)で，macOSのLiquid Glassがもう少し落ち着いたデザインになる事を願います．
 
@@ -412,5 +412,8 @@ Linuxを使ったことで初めて「プロプライエタリ」という言葉
 ### 2026年夏は槍ヶ岳に遊びにきてね
 さしあたり今夏は長野県は北アルプス・槍ヶ岳の山小屋で勤務予定なので，お近くをご通行の際はご一報ください．
 山の上で働きながら，たまに縦走登山する夏にします．
+遊びに来てね．
 
 https://www.enzanso.co.jp/hutte-ooyari
+
+木越 斎 (2026/05/17; Provided with [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en))
