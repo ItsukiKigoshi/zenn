@@ -253,7 +253,7 @@ macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookで
 
 ここで必要になってくるのが有線インターネットです．この時代のMacBookにはBroadcom製のWi-Fiチップが搭載されており，それを使った無線通信には，専用Wi-Fiドライバをインストールする必要があります．というのも，BroadcomのWi-Fiドライバはプロプライエタリである（オープンソフトウェアでない）ため，Linuxに同梱されません．
 
-Ethernet-Thunderbolt^[おじいちゃんがこのMacBookと一緒に持っていて，何に使うんだろうと思っていましたが，Linuxのインストールに必要だったのですね！]でEthernetにつなぐか，Wi-FiにつながったAndroid，または携帯通信容量に余裕のあるiPhone^[Androidと異なり，iPhoneは自分が接続中のWi-Fiを別のデバイスに中継することができません．よって，iPhoneをこの作業に使う場合は携帯通信を使うことになります．]をUSBでMacと繋ぎます．私は容量無制限プランの友達のiPhoneを借りました．初めは無制限であると知らなかったので，最初のインストール時に数GBまで服欄でどうしようかと思いました．Ethernetか，Androidを使いましょう．Linuxを使っていると何かとAndroidの方が都合が良い時がありますが^[他には，ObsidianのDropbox経由の同期とか]，そのうちの1つです．イヤホンジャック返して．
+Ethernet-Thunderbolt^[おじいちゃんがこのMacBookと一緒に持っていて，何に使うんだろうと思っていましたが，Linuxのインストールに必要だったのですね！]でEthernetにつなぐか，Wi-FiにつながったAndroid，または携帯通信容量に余裕のあるiPhone^[Androidと異なり，iPhoneは自分が接続中のWi-Fiを別のデバイスに中継することができません．よって，iPhoneをこの作業に使う場合は携帯通信を使うことになります．]をUSBでMacと繋ぎます．私は容量無制限プランの友達のiPhoneを借りました．初めは無制限であると知らなかったので，最初のインストール時に数GBまで膨らんでどうしようかと思いました．Ethernetか，Androidを使いましょう．Linuxを使っていると何かとAndroidの方が都合が良い時がありますが^[他には，ObsidianのDropbox経由の同期とか]，そのうちの1つです．イヤホンジャック返して．
 
 ### broadcom-wl: Wi-Fiセットアップ
 ここからの工程は，私がやったときと同じく[こちらのブログ](https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-late-2011.html#:~:text=Updating%20the%20installation)を参照しています．
@@ -324,7 +324,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
   - 開発はLinux-Firstな分野で，Linuxに圧倒的な優位性があります．XCcde以外は基本全部動く．
   - 逆に，最新のmacOSがないとビルドできないXcodeって悪目立ちしすぎでは？もうちょっとインクルーシブになってください．
 - パスワード管理: [Bitwarden](https://bitwarden.com/)
-- 画像: [Inkskcpe](https://inkscape.org/), [GIMP](https://www.gimp.org/)
+- 画像: [Inkscape](https://inkscape.org/), [GIMP](https://www.gimp.org/)
   - 老舗たちです．癖はあるけど慣れたら使えます．
   - シンプルさが欲しいならブラウザでFigmaやCanvaも使えますね．
 - 動編集画: [KdenLive](https://kdenlive.org/)
@@ -344,7 +344,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
 - [FreeFileSync](https://freefilesync.org/)
   - デジタルペーパやiPhoneのVLCとパソコンを同期できます．便利．
 - この辺のソフトウェアには寄付せなあかんかも知れんです．
-- Flatpakというアプリの配布形式はmacOSでいう.appみたいなもので，サンドボックス化と言ってOSの他の部分に侵食し内容に設計されています．たまに権限で詰まるので[Flatseal](https://flathub.org/en/apps/com.github.tchx84.Flatseal)などを使って解いてあげます．
+- Flatpakというアプリの配布形式はmacOSでいう.appみたいなもので，サンドボックス化と言ってOSの他の部分に侵食しないように設計されています．たまに権限で詰まるので[Flatseal](https://flathub.org/en/apps/com.github.tchx84.Flatseal)などを使って解いてあげます．
 
 ## おまけ: Computer Hacker - Ian
 ![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
