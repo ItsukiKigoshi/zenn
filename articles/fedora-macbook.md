@@ -4,7 +4,10 @@ emoji: 🍋
 type: tech
 topics:
   - fedora
-  - Macbook
+  - linux
+  - macbook
+  - macbookpro
+  - macos
 published: false
 ---
 
@@ -25,7 +28,9 @@ published: false
 
 ```sh
 $ wrangler dev
-Warning: Unsupported macOS version detected (11.6.0). The Cloudflare Workers runtime may not work correctly on macOS versions below 13.5.0. Consider upgrading to macOS 13.5.0+ or using a DevContainer setup with a supported version of Linux (glibc 2.35+ required). 
+Warning: Unsupported macOS version detected (11.6.0).
+The Cloudflare Workers runtime may not work correctly on macOS versions below 13.5.0.
+Consider upgrading to macOS 13.5.0+ or using a DevContainer setup with a supported version of Linux (glibc 2.35+ required). 
 ```
 
 また，Nodeに関連するプロジェクトを開発しようとすると，事あるごとに
@@ -83,7 +88,7 @@ https://mac.getutm.app
 そもそも，アクティブなサポートが殆ど切れているようなmacOSはセキュリティの観点からもあまり褒められたものではありません．
 macOSから離れる機会をくれてありがとう．
 
-## コラム: 厳格なWindows家系に生まれた私のAppleに対する想い，メディアアートとクライミング
+## コラム: 厳格なWindows家系に生まれた私のAppleに対する想い
 
 ![2021年のMacBook](/images/fedora-macbook/mac-in-room.webp =300x)*Macと，横に見える親のSurface (2021)*
 
@@ -111,8 +116,9 @@ https://www.ycam.jp/
 
 さて，脱線が過ぎましたが，彼らが使っていたのが，他ならぬMacintoshだったのです．メディアアートに限らずMacユーザが多いのはアーティストあるあるなのでしょう．当時（2014年）のMacは，今よりも一層「洗練された人が使っているもの」という印象が強かったと思います．山口市という田舎に住んでいたのできっと余計に．りんごマークが光るMacBook Proはもちろん，Mac Pro 
 （2013; "ゴミ箱"）を見たときなんて感動しました．
-![ゴミ箱Mac Pro](https://upload.wikimedia.org/wikipedia/commons/d/d6/New_Mac_Pro_%2812093123884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original  =250x)
-*Paul Hudson from United Kingdom, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons*
+[![ゴミ箱Mac Pro](https://upload.wikimedia.org/wikipedia/commons/d/d6/New_Mac_Pro_%2812093123884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original  =250x)
+*Paul Hudson from United Kingdom, CC BY 2.0, via Wikimedia Commons*
+](https://commons.wikimedia.org/wiki/File:New_Mac_Pro_(12093123884).jpg)
 
 こんな昔語りができるほど，2004年生まれの私も歳を取りました．
 そういえば小さい頃に通っていた[英語教室](http://redrobini.com/)の室長先生もMacが好きで，MacBook ProやiMac，それに発売されたばかりのApple Watchを使っていました．
@@ -120,6 +126,8 @@ https://www.ycam.jp/
 
 
 ### iMacを買ってもらった
+
+[![iMac Retina](https://upload.wikimedia.org/wikipedia/commons/e/e6/IMac_vector.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original =500x)*Rafael Fernandez, CC BY-SA 3.0, via Wikimedia Commons*](https://commons.wikimedia.org/wiki/File:IMac_vector.svg)
 
 小学4年生の木越少年は当時，家にあった4万円の激安NECパソコン（Windows 7）にインストールした[Windows ムービーメーカー](https://ja.wikipedia.org/wiki/Windows_ムービーメーカー)で，図書館から借りたハンズオン本を片手に動画編集を覚えました．しかし，同ソフトウェアの機能は限定的で，たしか1クリップあたりに細かい継続時間指定が出来ないなど，限界も感じ始めていました．
 私の父親は子どもの潜在的なクリエイティビティに対する投資は惜しまない方針だったようで，iMovieが標準搭載されているiMacを近くのヤマダ電機だかビックカメラで一緒に買ってくれました．
@@ -163,7 +171,7 @@ https://www.ycam.jp/
 
 **（コラムおわり）**
 
-## なぜFedora Linux?
+## 【本題1】なぜFedora Linux?
 結果を先に言えば，私はLinuxディストリビューション^[macOSやWindowsと違って，LinuxではOSの核となる"Linuxカーネル"を元に派生した様々な種類のOSが存在します]として[Fedora Workstation](https://fedoraproject.org/workstation/)を選びました．ここでは簡単にその理由を書きます．この話には議論・闘争が付きものです．以下のミームが物語っています．だから深く立ち入りません．
 ![Linux is Scary](/images/fedora-macbook/scary-linux.webp =300x)
 *"私，猫ミームが見たいだけやねんけど"*
@@ -198,72 +206,46 @@ https://www.ycam.jp/
     - "チョットデキル"あの人です．この写真の頃と比べると，だいぶお年を召されたよね．![ちょっとできる](/images/fedora-macbook/chotto.webp)*チョットデキル!*
 
 
-## 【本題】Fedora Linuxをデュアルブートする手順
+## 【本題2】Fedora Linuxをデュアルブートする
 macOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookでデュアルブートしていきます．後述しますが，実際にFinal Cut ProやiTunes (Music)が必要な場面が出てきてmacOSも使いました，しかし，普段macOSの出番は殆どありません．
 
-### 必要な物: 
+### 必要な物
 - **有線インターネット**（もしくはAndroidか，携帯通信容量に余裕のあるiPhone）
   - おじいちゃんが持っていた理由がわかった，有線結局最強の安定性
   - 家帰ったらルーターから有線を引けるようにしよう
 - **USB** (インストールメディア用)
   - 私は無かったのでSDカードで代用しました..
   - しかしSDカードは比較的衝撃に弱かったりするそうなのでおすすめしません
-- **パソコンオタク**（"Geek"; Optional）
+- **パソコンオタク**（"Geek"; もし近くにいればきっと助けてくれるでしょう）
+  - 「おまけ」で後述
 
 
----
+### 手順
+本手順は，作業の全体像を示すために概略を掲載したものです．
+詳しい手順については，[こちらの動画](https://www.youtube.com/watch?v=p4lu-_6nY6Q)などを参照してください．
 
-https://www.youtube.com/watch?v=nqioOaFAfHw
-https://www.youtube.com/watch?v=p4lu-_6nY6Q
 1. macOSの掃除・バックアップ
-  2. おじいちゃんの撮影した私のどうが
+    - Fedoraをインストールする容量を確保するために，macOSのストレージ内を整理し，消えてほしくないファイルはすべて外部に書き出します．
+    - 私は外部ストレージが無かったので友人のUSBを借りました．
+    - 理想的には，macOSの[Time Machine](https://support.apple.com/ja-jp/104984)バックアップをすると，いざというときにも復元できてよいでしょう．
+    - 容量を削る際には，[GrandPerspective](https://grandperspectiv.sourceforge.net/)というフリーソフトがディスクが何に使われているのかを見る上で役に立ちます． [![GrandPerspective](https://grandperspectiv.sourceforge.net/ScreenShots/3_4-FoldersBujumbura.png =500x)*各ファイルの容量が面積に対応して表示されます*](https://grandperspectiv.sourceforge.net/)
+    - 私の場合は，再インストール可能なXCodeやFinal Cut Pro関連の重たいファイルを消し，写真や動画，音楽を外に出しました．
+    - 整理していたら，おじいちゃんが撮影した幼少期の私の動画が出てきました，ちゃんとMacの中に取っておいてくれたのだと思い胸が熱くなりました．![パンタグラフに見入る](/images/fedora-macbook/pantograph.webp =500x)*鉄道博物館でパンタグラフの動きに刮目する斎少年* ![治・講談](/images/fedora-macbook/osamu.webp =500x)*祖父が講談をやっている動画なんかも見つかりました*
 1. パーティションを作成
-  1. 確か800MBくらいの1領域余計に必要
+    - macOSに標準搭載されているディスクユーティリティでFedora用の容量を空けていきます．
+    - [こちらの記事](https://alex.dzyoba.com/blog/macbook-air-linux/#:~:text=Make%20partition%20for%20Linux)なんかに該当の作業が紹介されてございます．
+    - この工程は非常に繊細で，おそらく失敗するとmacOSが起動しなくなり初期化が必要になるなど注意を要する工程です．ご自身でよく確認なさって，さらにバックアップなどで壊れても大丈夫な予防線を十分張った上で，「えいやっ」としてください（えいやっ，は良くないけど私はそうしました...背水の陣）．![ディスクユーティリティ](/images/fedora-macbook/partition.webp =500x)*作業中の写真; この後Fedoraの容量は300GBまで増やしました*![最終的なパーティション](/images/fedora-macbook/partition-latest.webp =500x)*最終的なパーティション分割はこの通りで，macOS 200GB, Fedora 300GBになっています*
 1. インストールメディアを作成
-  1. https://etcher.balena.io/ : Media Writerの方がいいかも
-1. SDカードから起動
-  1. 多分USBの方が良い（？）
-1. Fedoraを作った容量にインストール
-1. Fedoraを起動 (altキー)
-- 参考になったブログ
-	- 誰かがMacBook Air 12だかでFedoraをインストールしているブログが参考になった
-	- dnfでOS含め一括アップデートしてから
-- 安易に「AIすごい」とは言いたくないけど，Linuxの導入に関してはGoogle検索と，その元になったブログ投稿，Reddit Postsが役立ったと言わざるを得ない．
-
-この際だから調べよう:
-- [ ] FAT32などのファイルシステムの違い
+    - USB（私はSDカード）にFedoraのOS Imageを書き込みます
+    - 私は[Fedoraの公式サイト](https://fedoraproject.org/ja/workstation/download/)から.isoをダウンロードし，[Balena　Etcher](https://etcher.balena.io/)でSDカードに書き込みました．
+    - Fedoraだけをインストールするなら，[Fedora Media Writer](https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/#_fedora_media_writer)というより簡単な方法が提供されています．
+1. USBから起動し，2で作成したパーティションにFedoraをインストールします
+  - 間違えてmacOSの方を消さないでください．
+1. 晴れて，MacBookを`alt`キーを押しながら起動すると，Fedoraが選べるようになります！
+  - デフォルトの起動ディスクは，[macOSのシステム環境設定](https://support.apple.com/ja-jp/guide/mac-help/mchlp1034/mac)から選べます． 
 
 
-
-### おまけ: Computer Hacker - Ian
-![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
-
-![](/images/fedora-macbook/cardboard-laptop.webp =500x)
-![](/images/fedora-macbook/hacking-laundry-machine.webp =500x)
-
-- インターネットつながらないって言ったら色々いじってくれた
-- ダンボール
-- 洗濯機改造
-- https://www.gentoo.org/ 彼はGentoo Linuxを使っているようです
-
-![Gentoo is not easy](/images/fedora-macbook/gentoo.webp =500x)*レポート提出しようと思ったらFireFoxをアンインストールしてしまい，再インストールとコンパイルに30時間かかったらしい．全然LOLじゃなさすぎる．*
-```sh
-(base) itsukikigoshi@fedora:~$ sudo stat / 
-  Fichier : /
-   Taille : 190       	Blocs : 0          Blocs d'E/S : 4096   répertoire
-Périphérique : 0/37	Inœud : 256         Liens : 1
-Accès : (0555/dr-xr-xr-x)  UID : (    0/    root)   GID : (    0/    root)
-Contexte : system_u:object_r:root_t:s0
- Accès : 2026-05-16 00:25:47.727713744 -0700
-Modif. : 2026-05-09 18:50:02.739655681 -0700
-Changt : 2026-05-09 18:50:02.739655681 -0700
-  Créé : 2026-01-31 01:26:32.065996572 -0800
-```
-使い始めたのは2026/1/31だとよ
-
-## Fedoraのセットアップ
-- [ ] どんな感じになったか積極的にスクリーンショットを載せよう
-
+## 【本題3】Fedoraのセットアップ
 - ドライバ
     - Wi-Fi: Broadcom-wl
         - 友達のiPhone借りた
@@ -292,6 +274,44 @@ Changt : 2026-05-09 18:50:02.739655681 -0700
   - FreeFileSync
 	- この辺のソフトウェアには寄付せなあかんかも知れん
 	- Flatpakは.appみたいなもの．たまに権限で詰まる
+
+
+- 参考になったブログ
+	  - 誰かがMacBook Air 12だかでFedoraをインストールしているブログが参考になった
+	  - dnfでOS含め一括アップデートしてから
+
+https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-late-2011.html
+https://www.cyberciti.biz/faq/fedora-linux-install-broadcom-wl-sta-wireless-driver-for-bcm43228/
+https://www.thetestspecimen.com/posts/broadcom-wifi-modules-fedora/
+https://alex.dzyoba.com/blog/macbook-air-linux/
+
+
+### おまけ: Computer Hacker - Ian
+![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
+
+![](/images/fedora-macbook/cardboard-laptop.webp =500x)
+![](/images/fedora-macbook/hacking-laundry-machine.webp =500x)
+
+- インターネットつながらないって言ったら色々いじってくれた
+- ダンボール
+- 洗濯機改造
+- https://www.gentoo.org/ 彼はGentoo Linuxを使っているようです
+
+![Gentoo is not easy](/images/fedora-macbook/gentoo.webp =500x)*レポート提出しようと思ったらFireFoxをアンインストールしてしまい，再インストールとコンパイルに30時間かかったらしい．全然LOLじゃなさすぎる．*
+```sh
+(base) itsukikigoshi@fedora:~$ sudo stat / 
+  Fichier : /
+   Taille : 190       	Blocs : 0          Blocs d'E/S : 4096   répertoire
+Périphérique : 0/37	Inœud : 256         Liens : 1
+Accès : (0555/dr-xr-xr-x)  UID : (    0/    root)   GID : (    0/    root)
+Contexte : system_u:object_r:root_t:s0
+ Accès : 2026-05-16 00:25:47.727713744 -0700
+Modif. : 2026-05-09 18:50:02.739655681 -0700
+Changt : 2026-05-09 18:50:02.739655681 -0700
+  Créé : 2026-01-31 01:26:32.065996572 -0800
+```
+使い始めたのは2026/1/31だとよ
+
 
 ## Fedoraにしてみて...
 ### よかったこと
@@ -346,8 +366,4 @@ Changt : 2026-05-09 18:50:02.739655681 -0700
 
 ---
 ## メモ
-https://www.schabell.org/2025/01/installing-fedora-41-on-macbook-pro-13-inch-late-2011.html
-https://www.cyberciti.biz/faq/fedora-linux-install-broadcom-wl-sta-wireless-driver-for-bcm43228/
-https://www.thetestspecimen.com/posts/broadcom-wifi-modules-fedora/
-https://alex.dzyoba.com/blog/macbook-air-linux/
-![](/images/fedora-macbook/partiton.webp)
+
