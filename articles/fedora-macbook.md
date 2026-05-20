@@ -11,7 +11,7 @@ topics:
 published: true
 ---
 
-## 【概要】
+## 概要
 旧式のMacBook Pro (Retina, 13-inch, Mid 2014) を現役で使用している私は，年初（2026年1月）に開発環境としてのmacOS 11 (Big Sur)に限界を感じ，Linux導入に踏み切りました．
 ここでは10年以上前に発売されたMacBook ProにFedora Linuxをデュアルブートした手順と，Linux移行に係る所感や，Apple・Linuxへの想いを綴ります．
 
@@ -167,7 +167,7 @@ https://www.ycam.jp/
 - さらに，りんごが光ります ![光るりんご](/images/fedora-macbook/shining.webp =500x)
 - また，このMacBook Proは**Intel製チップ**で動作しています
   - 性能面の優劣はさしおいて，Linuxがブートしやすいです．
-  - Apple SiliconでのLinuxにはAsahi Linuxという前提OS(?)が必要でちと手間がかかりそう．
+  - Apple SiliconでのLinuxにはAsahi Linuxという前提OS(?)が必要で，ちと手間がかかりそう．
 
 
 長くなりましたが，10年前のAppleが私を形作ったであろうお話でした．
@@ -208,18 +208,17 @@ https://www.ycam.jp/
   - これはFedoraを使い始めた後に知ったことですが，Linuxの生みの親・LinusもFedoraを使っているようです![Linus uses Fedora](/images/fedora-macbook/linus.webp)*From [Linus Tech Tips on YouTube](https://youtu.be/mfv0V1SxbNA?t=2722)*
     - "チョットデキル"あの人です．この写真の頃と比べると，だいぶお年を召されたよね．![ちょっとできる](/images/fedora-macbook/chotto.webp)*チョットデキル!*
 
-
 ## 【本題3】Fedora Linuxをデュアルブートする
 それでは，macOSとFedora Linuxのデュアルブートを始めましょう．今後もmacOSを使う可能性があるのでmacOSは残しつつ，FedoraをMacBookでデュアルブートしていきます．
 実際に，Final Cut Pro（長い動画の書き出し時間はこっちの方が短い）やiTunes (Music; iPodとの同期)が必要な場面が出てきてmacOSも使いました，しかし，普段macOSの出番は殆どありません．
 
 ### 必要な物
 - **有線インターネット**（もしくはAndroidか，携帯通信容量に余裕のあるiPhone）
-- **USB** (インストールメディア用)
+- **USBメモリ** (インストールメディア用)
   - 私は無かったのでSDカードで代用しました..
   - しかしSDカードは比較的衝撃に弱かったりするそうなのでおすすめしません
 - **パソコンオタク**（"Geek"; もし近くにいればきっと助けてくれるでしょう）
-  - 「おまけ」で後述
+  - 「[おまけ](https://zenn.dev/itsukikigoshi/articles/fedora-macbook#%E3%81%8A%E3%81%BE%E3%81%91%3A-computer-hacker---ian)」で後述
 
 ### 手順
 本手順は，作業の全体像を示すために概略を掲載したものです．
@@ -227,20 +226,20 @@ https://www.ycam.jp/
 
 1. macOSの掃除・バックアップ
     - Fedoraをインストールする容量を確保するために，macOSのストレージ内を整理し，消えてほしくないファイルはすべて外部に書き出します．
-    - 私は外部ストレージが無かったので友人のUSBを借りました．
+    - 私は外部ストレージが無かったので友人のUSBメモリを借りました．
     - 理想的には，macOSの[Time Machine](https://support.apple.com/ja-jp/104984)バックアップをすると，いざというときにも復元できてよいでしょう．
     - 容量を削る際には，[GrandPerspective](https://grandperspectiv.sourceforge.net/)というフリーソフトが，各ファイルのディスク占有割合を確認する上で役に立ちます． ![GrandPerspective](https://grandperspectiv.sourceforge.net/ScreenShots/3_4-FoldersBujumbura.png =500x)*各ファイル容量が面積に対応して表示されます*
-    - 私の場合は，再インストール可能なXCodeやFinal Cut Pro関連の重たいファイルを消し，写真や動画，音楽を外に出しました．
+    - 私の場合は，再インストール可能なXcodeやFinal Cut Pro関連の重たいファイルを消し，写真や動画，音楽を外に出しました．
     - 整理していたら，おじいちゃんが撮影した幼少期の私の動画が出てきました，ちゃんとMacの中に取っておいてくれたのだと思い胸が熱くなりました．![パンタグラフに見入る](/images/fedora-macbook/pantograph.webp =500x)*鉄道博物館でパンタグラフの動きに刮目する斎少年* ![治・講談](/images/fedora-macbook/osamu.webp =500x)*祖父が講談をやっている動画なんかも見つかりました*
 1. パーティションを作成
     - macOSに標準搭載されているディスクユーティリティでFedora用の容量を空けていきます．
     - [こちらの記事](https://alex.dzyoba.com/blog/macbook-air-linux/#:~:text=Make%20partition%20for%20Linux)なんかに該当の作業が紹介されてございます．
     - この工程は非常に繊細で，おそらく失敗するとmacOSが起動しなくなり初期化が必要になるなど注意を要する工程です．ご自身でよく確認なさって，さらにバックアップなどで壊れても大丈夫な予防線を十分張った上で，「えいやっ」としてください（えいやっ，は良くないけど私はそうしました...背水の陣）．![ディスクユーティリティ](/images/fedora-macbook/partition.webp =500x)*作業中の写真; この後Fedoraの容量は300GBまで増やしました*![最終的なパーティション](/images/fedora-macbook/partition-latest.webp =500x)*最終的なパーティション分割はこの通りで，macOS 200GB, Fedora 300GBになっています*
 1. インストールメディアを作成
-    - USB（私はSDカード）にFedoraのOS Imageを書き込みます
+    - USBメモリ（私はSDカード）にFedoraのOS Imageを書き込みます
     - 私は[Fedoraの公式サイト](https://fedoraproject.org/ja/workstation/download/)から.isoをダウンロードし，[Balena Etcher](https://etcher.balena.io/)でSDカードに書き込みました．
     - Fedoraだけをインストールするなら，[Fedora Media Writer](https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/#_fedora_media_writer)というより簡単な方法が提供されています．
-1. USBから起動し，2で作成したパーティションにFedoraをインストールします
+1. USBメモリから起動し，2で作成したパーティションにFedoraをインストールします
     - 間違えてmacOSの方を消さないでください．
 1. 晴れて，MacBookを`alt`キーを押しながら起動すると，Fedoraが選べるようになります！
     - デフォルトの起動ディスクは，[macOSのシステム環境設定](https://support.apple.com/ja-jp/guide/mac-help/mchlp1034/mac)から選べます． 
@@ -329,7 +328,7 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
   - シンプルさが欲しいならブラウザでFigmaやCanvaも使えますね．
 - 動画編集: [KdenLive](https://kdenlive.org/)
   - 慣れたら使えます
-  - Flatpak版じゃない（RPM版など）とプロプライエタリなコーデック（.movなど）が読めない
+  - Flatpak^[Flatpakというアプリの配布形式はmacOSでいう.appみたいなもので，サンドボックス化と言ってOSの他の部分に侵食しないように設計されています．たまに権限で詰まるので[Flatseal](https://flathub.org/en/apps/com.github.tchx84.Flatseal)などを使って解いてあげます．]版じゃない（RPM版など）とプロプライエタリなコーデック（.movなど）が読めない
   - 書き出し速度はmacOSでFinal Cut Proを使ったときより流石に劣ると思います．
 - PDF: [Document Viewer](https://apps.gnome.org/fr/Papers/)（標準）
   - ページ並び替えなどは限定的だがまあ十分
@@ -339,12 +338,11 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
 	- ってか世の中の人はなぜLibreOfficeを使わないのでしょうか？多分OSに同梱されてないからです．Microsoft Officeなどなくても殆どの用途はLibreOfficeで済む（しかも無料である）のに，普及していないのが悲しすぎます．
 	- パソコンをさわり立ての子どもなどに，より簡単に使えるLinuxや自由ソフトウェアを広めていかなければ，子どもの世代まで不要なMS365に高額を払わせることになってしまいます...ここで負の連鎖は終わらせましょう．
 - [LocalSend](https://localsend.org/): AirDropの代替
-  - 同じWi-Fiに接続しなくてはいけないという制限がありながら，ほとんどのケースでこれで事足りる
- 	- AirDropの一番の使いどころは自分のPC↔iPhoneであることに気づいたので，その用途が満たせれば十分．
+  - 同じWi-Fiに接続しなくてはいけないという制限がありながら，ほとんどのケースはこれで事足りる
+  - AirDropの一番の使いどころは自分のPC↔iPhoneであることに気づいたので，その用途が満たせれば十分．
 - [FreeFileSync](https://freefilesync.org/)
   - デジタルペーパやiPhoneのVLCとパソコンを同期できます．便利．
 - この辺のソフトウェアには寄付せなあかんかも知れんです．
-- Flatpakというアプリの配布形式はmacOSでいう.appみたいなもので，サンドボックス化と言ってOSの他の部分に侵食しないように設計されています．たまに権限で詰まるので[Flatseal](https://flathub.org/en/apps/com.github.tchx84.Flatseal)などを使って解いてあげます．
 
 ## おまけ: Computer Hacker - Ian
 ![computer hacker ian](/images/fedora-macbook/munchausen-by-proxy.webp)*Munchausen By Proxy - From the Movie "Yes Man" (2008)*
@@ -366,13 +364,14 @@ Créé : 2026-01-31 01:26:32.065996572 -0800
   - 開発が止まってた原因は，Mac自体の性能ではなくmacOSのせいでした．
 ### よくないところ
 - Wi-Fiの接続がよく切れる
-	- 住んでいる寮のWi-Fiが不安定なのもその理由の一つだろうが，どのWi-Fiにも接続になくなって，再起動するまで治らないことがあります．
+	- 住んでいる寮のWi-Fiが不安定なのもその理由の一つだろうが，どのWi-Fiにも接続されなくなって，再起動するまで治らないことがあります．
  	- そもそもLinuxを使うならbroadcomでなくIntel製やMediaTek製のワイヤレスチップが推奨されるようです．Broadcom-wlドライバはそもそもが非推奨なので切れても仕方ない．
+  - 一応[コマンドを組み合わせれば](https://zenn.dev/itsukikigoshi/scraps/337c0d77d76639)再起動なしでも治りますが，ここまでしないといけないなら不安定であることに変わりない．
 - 日本語
 	- かな漢字変換は，ATOKが恋しいです．ATOKで打っていて漢字変換について考える事なんてほとんど無かったのにい
 	- オフライン辞書 (Mac辞書, 物書堂; 国語, 英和)が使いたい
     - Mac標準の辞書や物書堂のような引きやすい辞書が欲しいです．[GoldenDict](https://www.goldendict.org/)など，あるにはあるようですが辞書ファイルの追加方法が分かりません．
-- 標準アプリが（これはFedoraではなくGNOME）限定的
+- 標準アプリ（これはFedoraではなくGNOME）が限定的
   - Apple Musicに代わる良い音楽プレイヤー (編集, iPodとの同期)が無い
     - Rhythmboxはカバーアートが出ない
     - GNOME Musicも初回起動に時間がかかる，同じアルバムなのに別物と認識されるなど
